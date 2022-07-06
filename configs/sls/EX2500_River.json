@@ -1,0 +1,3468 @@
+{
+    "Hardware": {
+        "d0w1": {
+            "Parent": "d0",
+            "Xname": "d0w1",
+            "Type": "comptype_cdu_mgmt_switch",
+            "Class": "Mountain",
+            "TypeString": "CDUMgmtSwitch",
+            "ExtraProperties": {
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-cdu-001"
+                ]
+            }
+        },
+        "d0w2": {
+            "Parent": "d0",
+            "Xname": "d0w2",
+            "Type": "comptype_cdu_mgmt_switch",
+            "Class": "Mountain",
+            "TypeString": "CDUMgmtSwitch",
+            "ExtraProperties": {
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-cdu-002"
+                ]
+            }
+        },
+        "x3000": {
+            "Parent": "s0",
+            "Xname": "x3000",
+            "Type": "comptype_cabinet",
+            "Class": "River",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.107.0.0/22",
+                            "Gateway": "10.107.0.1",
+                            "VLan": 1513
+                        },
+                        "NMN": {
+                            "CIDR": "10.106.0.0/22",
+                            "Gateway": "10.106.0.1",
+                            "VLan": 1770
+                        }
+                    },
+                    "ncn": {
+                        "HMN": {
+                            "CIDR": "10.107.0.0/22",
+                            "Gateway": "10.107.0.1",
+                            "VLan": 1513
+                        },
+                        "NMN": {
+                            "CIDR": "10.106.0.0/22",
+                            "Gateway": "10.106.0.1",
+                            "VLan": 1770
+                        }
+                    }
+                }
+            }
+        },
+        "x3000c0h33s1": {
+            "Parent": "x3000c0h33",
+            "Xname": "x3000c0h33s1",
+            "Type": "comptype_hl_switch",
+            "Class": "River",
+            "TypeString": "MgmtHLSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.4",
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-leaf-001"
+                ]
+            }
+        },
+        "x3000c0h34s1": {
+            "Parent": "x3000c0h34",
+            "Xname": "x3000c0h34s1",
+            "Type": "comptype_hl_switch",
+            "Class": "River",
+            "TypeString": "MgmtHLSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.5",
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-leaf-002"
+                ]
+            }
+        },
+        "x3000c0h35s1": {
+            "Parent": "x3000c0h35",
+            "Xname": "x3000c0h35s1",
+            "Type": "comptype_hl_switch",
+            "Class": "River",
+            "TypeString": "MgmtHLSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.6",
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-leaf-003"
+                ]
+            }
+        },
+        "x3000c0h36s1": {
+            "Parent": "x3000c0h36",
+            "Xname": "x3000c0h36s1",
+            "Type": "comptype_hl_switch",
+            "Class": "River",
+            "TypeString": "MgmtHLSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.7",
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-leaf-004"
+                ]
+            }
+        },
+        "x3000c0h37s1": {
+            "Parent": "x3000c0h37",
+            "Xname": "x3000c0h37s1",
+            "Type": "comptype_hl_switch",
+            "Class": "River",
+            "TypeString": "MgmtHLSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.2",
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-spine-001"
+                ]
+            }
+        },
+        "x3000c0h38s1": {
+            "Parent": "x3000c0h38",
+            "Xname": "x3000c0h38s1",
+            "Type": "comptype_hl_switch",
+            "Class": "River",
+            "TypeString": "MgmtHLSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.3",
+                "Brand": "Aruba",
+                "Aliases": [
+                    "sw-spine-002"
+                ]
+            }
+        },
+        "x3000c0r39b0": {
+            "Parent": "x3000c0r39",
+            "Xname": "x3000c0r39b0",
+            "Type": "comptype_rtr_bmc",
+            "Class": "River",
+            "TypeString": "RouterBMC",
+            "ExtraProperties": {
+                "Username": "vault://hms-creds/x3000c0r39b0",
+                "Password": "vault://hms-creds/x3000c0r39b0"
+            }
+        },
+        "x3000c0r40b0": {
+            "Parent": "x3000c0r40",
+            "Xname": "x3000c0r40b0",
+            "Type": "comptype_rtr_bmc",
+            "Class": "River",
+            "TypeString": "RouterBMC",
+            "ExtraProperties": {
+                "Username": "vault://hms-creds/x3000c0r40b0",
+                "Password": "vault://hms-creds/x3000c0r40b0"
+            }
+        },
+        "x3000c0s10b0n0": {
+            "Parent": "x3000c0s10b0",
+            "Xname": "x3000c0s10b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100001,
+                "Role": "Management",
+                "SubRole": "Storage",
+                "Aliases": [
+                    "ncn-s003"
+                ]
+            }
+        },
+        "x3000c0s15b0n0": {
+            "Parent": "x3000c0s15b0",
+            "Xname": "x3000c0s15b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "Role": "Application",
+                "SubRole": "UAN",
+                "Aliases": [
+                    "uan01"
+                ]
+            }
+        },
+        "x3000c0s16b0n0": {
+            "Parent": "x3000c0s16b0",
+            "Xname": "x3000c0s16b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "Role": "Application",
+                "SubRole": "UAN",
+                "Aliases": [
+                    "uan02"
+                ]
+            }
+        },
+        "x3000c0s1b0n0": {
+            "Parent": "x3000c0s1b0",
+            "Xname": "x3000c0s1b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100010,
+                "Role": "Management",
+                "SubRole": "Master",
+                "Aliases": [
+                    "ncn-m001"
+                ]
+            }
+        },
+        "x3000c0s24b1n0": {
+            "Parent": "x3000c0s24b1",
+            "Xname": "x3000c0s24b1n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid000001"
+                ]
+            }
+        },
+        "x3000c0s2b0n0": {
+            "Parent": "x3000c0s2b0",
+            "Xname": "x3000c0s2b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100009,
+                "Role": "Management",
+                "SubRole": "Master",
+                "Aliases": [
+                    "ncn-m002"
+                ]
+            }
+        },
+        "x3000c0s3b0n0": {
+            "Parent": "x3000c0s3b0",
+            "Xname": "x3000c0s3b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100008,
+                "Role": "Management",
+                "SubRole": "Master",
+                "Aliases": [
+                    "ncn-m003"
+                ]
+            }
+        },
+        "x3000c0s4b0n0": {
+            "Parent": "x3000c0s4b0",
+            "Xname": "x3000c0s4b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100007,
+                "Role": "Management",
+                "SubRole": "Worker",
+                "Aliases": [
+                    "ncn-w001"
+                ]
+            }
+        },
+        "x3000c0s5b0n0": {
+            "Parent": "x3000c0s5b0",
+            "Xname": "x3000c0s5b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100006,
+                "Role": "Management",
+                "SubRole": "Worker",
+                "Aliases": [
+                    "ncn-w002"
+                ]
+            }
+        },
+        "x3000c0s6b0n0": {
+            "Parent": "x3000c0s6b0",
+            "Xname": "x3000c0s6b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100005,
+                "Role": "Management",
+                "SubRole": "Worker",
+                "Aliases": [
+                    "ncn-w003"
+                ]
+            }
+        },
+        "x3000c0s7b0n0": {
+            "Parent": "x3000c0s7b0",
+            "Xname": "x3000c0s7b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100004,
+                "Role": "Management",
+                "SubRole": "Worker",
+                "Aliases": [
+                    "ncn-w004"
+                ]
+            }
+        },
+        "x3000c0s8b0n0": {
+            "Parent": "x3000c0s8b0",
+            "Xname": "x3000c0s8b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100003,
+                "Role": "Management",
+                "SubRole": "Storage",
+                "Aliases": [
+                    "ncn-s001"
+                ]
+            }
+        },
+        "x3000c0s9b0n0": {
+            "Parent": "x3000c0s9b0",
+            "Xname": "x3000c0s9b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 100002,
+                "Role": "Management",
+                "SubRole": "Storage",
+                "Aliases": [
+                    "ncn-s002"
+                ]
+            }
+        },
+        "x3000c0w31": {
+            "Parent": "x3000c0",
+            "Xname": "x3000c0w31",
+            "Type": "comptype_mgmt_switch",
+            "Class": "River",
+            "TypeString": "MgmtSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.8",
+                "Brand": "Aruba",
+                "SNMPAuthPassword": "vault://hms-creds/x3000c0w31",
+                "SNMPAuthProtocol": "MD5",
+                "SNMPPrivPassword": "vault://hms-creds/x3000c0w31",
+                "SNMPPrivProtocol": "DES",
+                "SNMPUsername": "testuser",
+                "Aliases": [
+                    "sw-leaf-bmc-001"
+                ]
+            }
+        },
+        "x3000c0w31j29": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j29",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s24b1"
+                ],
+                "VendorName": "1/1/29"
+            }
+        },
+        "x3000c0w31j34": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j34",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s2b0"
+                ],
+                "VendorName": "1/1/34"
+            }
+        },
+        "x3000c0w31j35": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j35",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s4b0"
+                ],
+                "VendorName": "1/1/35"
+            }
+        },
+        "x3000c0w31j36": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j36",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s5b0"
+                ],
+                "VendorName": "1/1/36"
+            }
+        },
+        "x3000c0w31j37": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j37",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s6b0"
+                ],
+                "VendorName": "1/1/37"
+            }
+        },
+        "x3000c0w31j38": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j38",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s8b0"
+                ],
+                "VendorName": "1/1/38"
+            }
+        },
+        "x3000c0w31j39": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j39",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s9b0"
+                ],
+                "VendorName": "1/1/39"
+            }
+        },
+        "x3000c0w31j40": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j40",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s15b0"
+                ],
+                "VendorName": "1/1/40"
+            }
+        },
+        "x3000c0w31j41": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j41",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s16b0"
+                ],
+                "VendorName": "1/1/41"
+            }
+        },
+        "x3000c0w31j47": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j47",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0r39b0"
+                ],
+                "VendorName": "1/1/47"
+            }
+        },
+        "x3000c0w31j48": {
+            "Parent": "x3000c0w31",
+            "Xname": "x3000c0w31j48",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000m0"
+                ],
+                "VendorName": "1/1/48"
+            }
+        },
+        "x3000c0w32": {
+            "Parent": "x3000c0",
+            "Xname": "x3000c0w32",
+            "Type": "comptype_mgmt_switch",
+            "Class": "River",
+            "TypeString": "MgmtSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.9",
+                "Brand": "Aruba",
+                "SNMPAuthPassword": "vault://hms-creds/x3000c0w32",
+                "SNMPAuthProtocol": "MD5",
+                "SNMPPrivPassword": "vault://hms-creds/x3000c0w32",
+                "SNMPPrivProtocol": "DES",
+                "SNMPUsername": "testuser",
+                "Aliases": [
+                    "sw-leaf-bmc-002"
+                ]
+            }
+        },
+        "x3000c0w32j36": {
+            "Parent": "x3000c0w32",
+            "Xname": "x3000c0w32j36",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s3b0"
+                ],
+                "VendorName": "1/1/36"
+            }
+        },
+        "x3000c0w32j37": {
+            "Parent": "x3000c0w32",
+            "Xname": "x3000c0w32j37",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s7b0"
+                ],
+                "VendorName": "1/1/37"
+            }
+        },
+        "x3000c0w32j38": {
+            "Parent": "x3000c0w32",
+            "Xname": "x3000c0w32j38",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s10b0"
+                ],
+                "VendorName": "1/1/38"
+            }
+        },
+        "x3000c0w32j47": {
+            "Parent": "x3000c0w32",
+            "Xname": "x3000c0w32j47",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0r40b0"
+                ],
+                "VendorName": "1/1/47"
+            }
+        },
+        "x3000c0w32j48": {
+            "Parent": "x3000c0w32",
+            "Xname": "x3000c0w32j48",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000m1"
+                ],
+                "VendorName": "1/1/48"
+            }
+        },
+        "x3000m0": {
+            "Parent": "x3000",
+            "Xname": "x3000m0",
+            "Type": "comptype_cab_pdu_controller",
+            "Class": "River",
+            "TypeString": "CabinetPDUController"
+        },
+        "x3000m1": {
+            "Parent": "x3000",
+            "Xname": "x3000m1",
+            "Type": "comptype_cab_pdu_controller",
+            "Class": "River",
+            "TypeString": "CabinetPDUController"
+        },
+        "x8001": {
+            "Parent": "s0",
+            "Xname": "x8001",
+            "Type": "comptype_cabinet",
+            "Class": "Hill",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Model": "EX2500",
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.104.0.0/22",
+                            "Gateway": "10.104.0.1",
+                            "VLan": 3004
+                        },
+                        "NMN": {
+                            "CIDR": "10.100.0.0/22",
+                            "Gateway": "10.100.0.1",
+                            "VLan": 2004
+                        }
+                    }
+                }
+            }
+        },
+        "x8001c0": {
+            "Parent": "x8001",
+            "Xname": "x8001c0",
+            "Type": "comptype_chassis",
+            "Class": "Hill",
+            "TypeString": "Chassis"
+        },
+        "x8001c0b0": {
+            "Parent": "x8001c0",
+            "Xname": "x8001c0b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Hill",
+            "TypeString": "ChassisBMC"
+        },
+        "x8001c0s0b0n0": {
+            "Parent": "x8001c0s0b0",
+            "Xname": "x8001c0s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1000,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001000"
+                ]
+            }
+        },
+        "x8001c0s0b0n1": {
+            "Parent": "x8001c0s0b0",
+            "Xname": "x8001c0s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1001,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001001"
+                ]
+            }
+        },
+        "x8001c0s0b1n0": {
+            "Parent": "x8001c0s0b1",
+            "Xname": "x8001c0s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1002,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001002"
+                ]
+            }
+        },
+        "x8001c0s0b1n1": {
+            "Parent": "x8001c0s0b1",
+            "Xname": "x8001c0s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1003,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001003"
+                ]
+            }
+        },
+        "x8001c0s1b0n0": {
+            "Parent": "x8001c0s1b0",
+            "Xname": "x8001c0s1b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1004,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001004"
+                ]
+            }
+        },
+        "x8001c0s1b0n1": {
+            "Parent": "x8001c0s1b0",
+            "Xname": "x8001c0s1b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1005,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001005"
+                ]
+            }
+        },
+        "x8001c0s1b1n0": {
+            "Parent": "x8001c0s1b1",
+            "Xname": "x8001c0s1b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1006,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001006"
+                ]
+            }
+        },
+        "x8001c0s1b1n1": {
+            "Parent": "x8001c0s1b1",
+            "Xname": "x8001c0s1b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1007,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001007"
+                ]
+            }
+        },
+        "x8001c0s2b0n0": {
+            "Parent": "x8001c0s2b0",
+            "Xname": "x8001c0s2b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1008,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001008"
+                ]
+            }
+        },
+        "x8001c0s2b0n1": {
+            "Parent": "x8001c0s2b0",
+            "Xname": "x8001c0s2b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1009,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001009"
+                ]
+            }
+        },
+        "x8001c0s2b1n0": {
+            "Parent": "x8001c0s2b1",
+            "Xname": "x8001c0s2b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1010,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001010"
+                ]
+            }
+        },
+        "x8001c0s2b1n1": {
+            "Parent": "x8001c0s2b1",
+            "Xname": "x8001c0s2b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1011,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001011"
+                ]
+            }
+        },
+        "x8001c0s3b0n0": {
+            "Parent": "x8001c0s3b0",
+            "Xname": "x8001c0s3b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1012,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001012"
+                ]
+            }
+        },
+        "x8001c0s3b0n1": {
+            "Parent": "x8001c0s3b0",
+            "Xname": "x8001c0s3b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1013,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001013"
+                ]
+            }
+        },
+        "x8001c0s3b1n0": {
+            "Parent": "x8001c0s3b1",
+            "Xname": "x8001c0s3b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1014,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001014"
+                ]
+            }
+        },
+        "x8001c0s3b1n1": {
+            "Parent": "x8001c0s3b1",
+            "Xname": "x8001c0s3b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1015,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001015"
+                ]
+            }
+        },
+        "x8001c0s4b0n0": {
+            "Parent": "x8001c0s4b0",
+            "Xname": "x8001c0s4b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1016,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001016"
+                ]
+            }
+        },
+        "x8001c0s4b0n1": {
+            "Parent": "x8001c0s4b0",
+            "Xname": "x8001c0s4b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1017,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001017"
+                ]
+            }
+        },
+        "x8001c0s4b1n0": {
+            "Parent": "x8001c0s4b1",
+            "Xname": "x8001c0s4b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1018,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001018"
+                ]
+            }
+        },
+        "x8001c0s4b1n1": {
+            "Parent": "x8001c0s4b1",
+            "Xname": "x8001c0s4b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1019,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001019"
+                ]
+            }
+        },
+        "x8001c0s5b0n0": {
+            "Parent": "x8001c0s5b0",
+            "Xname": "x8001c0s5b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1020,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001020"
+                ]
+            }
+        },
+        "x8001c0s5b0n1": {
+            "Parent": "x8001c0s5b0",
+            "Xname": "x8001c0s5b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1021,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001021"
+                ]
+            }
+        },
+        "x8001c0s5b1n0": {
+            "Parent": "x8001c0s5b1",
+            "Xname": "x8001c0s5b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1022,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001022"
+                ]
+            }
+        },
+        "x8001c0s5b1n1": {
+            "Parent": "x8001c0s5b1",
+            "Xname": "x8001c0s5b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1023,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001023"
+                ]
+            }
+        },
+        "x8001c0s6b0n0": {
+            "Parent": "x8001c0s6b0",
+            "Xname": "x8001c0s6b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1024,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001024"
+                ]
+            }
+        },
+        "x8001c0s6b0n1": {
+            "Parent": "x8001c0s6b0",
+            "Xname": "x8001c0s6b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1025,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001025"
+                ]
+            }
+        },
+        "x8001c0s6b1n0": {
+            "Parent": "x8001c0s6b1",
+            "Xname": "x8001c0s6b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1026,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001026"
+                ]
+            }
+        },
+        "x8001c0s6b1n1": {
+            "Parent": "x8001c0s6b1",
+            "Xname": "x8001c0s6b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1027,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001027"
+                ]
+            }
+        },
+        "x8001c0s7b0n0": {
+            "Parent": "x8001c0s7b0",
+            "Xname": "x8001c0s7b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1028,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001028"
+                ]
+            }
+        },
+        "x8001c0s7b0n1": {
+            "Parent": "x8001c0s7b0",
+            "Xname": "x8001c0s7b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1029,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001029"
+                ]
+            }
+        },
+        "x8001c0s7b1n0": {
+            "Parent": "x8001c0s7b1",
+            "Xname": "x8001c0s7b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1030,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001030"
+                ]
+            }
+        },
+        "x8001c0s7b1n1": {
+            "Parent": "x8001c0s7b1",
+            "Xname": "x8001c0s7b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1031,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001031"
+                ]
+            }
+        },
+        "x8002": {
+            "Parent": "s0",
+            "Xname": "x8002",
+            "Type": "comptype_cabinet",
+            "Class": "Hill",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Model": "EX2500",
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.104.4.0/22",
+                            "Gateway": "10.104.4.1",
+                            "VLan": 3005
+                        },
+                        "NMN": {
+                            "CIDR": "10.100.4.0/22",
+                            "Gateway": "10.100.4.1",
+                            "VLan": 2005
+                        }
+                    }
+                }
+            }
+        },
+        "x8002c0": {
+            "Parent": "x8002",
+            "Xname": "x8002c0",
+            "Type": "comptype_chassis",
+            "Class": "Hill",
+            "TypeString": "Chassis"
+        },
+        "x8002c0b0": {
+            "Parent": "x8002c0",
+            "Xname": "x8002c0b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Hill",
+            "TypeString": "ChassisBMC"
+        },
+        "x8002c0s0b0n0": {
+            "Parent": "x8002c0s0b0",
+            "Xname": "x8002c0s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1032,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001032"
+                ]
+            }
+        },
+        "x8002c0s0b0n1": {
+            "Parent": "x8002c0s0b0",
+            "Xname": "x8002c0s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1033,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001033"
+                ]
+            }
+        },
+        "x8002c0s0b1n0": {
+            "Parent": "x8002c0s0b1",
+            "Xname": "x8002c0s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1034,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001034"
+                ]
+            }
+        },
+        "x8002c0s0b1n1": {
+            "Parent": "x8002c0s0b1",
+            "Xname": "x8002c0s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1035,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001035"
+                ]
+            }
+        },
+        "x8002c0s1b0n0": {
+            "Parent": "x8002c0s1b0",
+            "Xname": "x8002c0s1b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1036,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001036"
+                ]
+            }
+        },
+        "x8002c0s1b0n1": {
+            "Parent": "x8002c0s1b0",
+            "Xname": "x8002c0s1b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1037,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001037"
+                ]
+            }
+        },
+        "x8002c0s1b1n0": {
+            "Parent": "x8002c0s1b1",
+            "Xname": "x8002c0s1b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1038,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001038"
+                ]
+            }
+        },
+        "x8002c0s1b1n1": {
+            "Parent": "x8002c0s1b1",
+            "Xname": "x8002c0s1b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1039,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001039"
+                ]
+            }
+        },
+        "x8002c0s2b0n0": {
+            "Parent": "x8002c0s2b0",
+            "Xname": "x8002c0s2b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1040,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001040"
+                ]
+            }
+        },
+        "x8002c0s2b0n1": {
+            "Parent": "x8002c0s2b0",
+            "Xname": "x8002c0s2b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1041,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001041"
+                ]
+            }
+        },
+        "x8002c0s2b1n0": {
+            "Parent": "x8002c0s2b1",
+            "Xname": "x8002c0s2b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1042,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001042"
+                ]
+            }
+        },
+        "x8002c0s2b1n1": {
+            "Parent": "x8002c0s2b1",
+            "Xname": "x8002c0s2b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1043,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001043"
+                ]
+            }
+        },
+        "x8002c0s3b0n0": {
+            "Parent": "x8002c0s3b0",
+            "Xname": "x8002c0s3b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1044,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001044"
+                ]
+            }
+        },
+        "x8002c0s3b0n1": {
+            "Parent": "x8002c0s3b0",
+            "Xname": "x8002c0s3b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1045,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001045"
+                ]
+            }
+        },
+        "x8002c0s3b1n0": {
+            "Parent": "x8002c0s3b1",
+            "Xname": "x8002c0s3b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1046,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001046"
+                ]
+            }
+        },
+        "x8002c0s3b1n1": {
+            "Parent": "x8002c0s3b1",
+            "Xname": "x8002c0s3b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1047,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001047"
+                ]
+            }
+        },
+        "x8002c0s4b0n0": {
+            "Parent": "x8002c0s4b0",
+            "Xname": "x8002c0s4b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1048,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001048"
+                ]
+            }
+        },
+        "x8002c0s4b0n1": {
+            "Parent": "x8002c0s4b0",
+            "Xname": "x8002c0s4b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1049,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001049"
+                ]
+            }
+        },
+        "x8002c0s4b1n0": {
+            "Parent": "x8002c0s4b1",
+            "Xname": "x8002c0s4b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1050,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001050"
+                ]
+            }
+        },
+        "x8002c0s4b1n1": {
+            "Parent": "x8002c0s4b1",
+            "Xname": "x8002c0s4b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1051,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001051"
+                ]
+            }
+        },
+        "x8002c0s5b0n0": {
+            "Parent": "x8002c0s5b0",
+            "Xname": "x8002c0s5b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1052,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001052"
+                ]
+            }
+        },
+        "x8002c0s5b0n1": {
+            "Parent": "x8002c0s5b0",
+            "Xname": "x8002c0s5b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1053,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001053"
+                ]
+            }
+        },
+        "x8002c0s5b1n0": {
+            "Parent": "x8002c0s5b1",
+            "Xname": "x8002c0s5b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1054,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001054"
+                ]
+            }
+        },
+        "x8002c0s5b1n1": {
+            "Parent": "x8002c0s5b1",
+            "Xname": "x8002c0s5b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1055,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001055"
+                ]
+            }
+        },
+        "x8002c0s6b0n0": {
+            "Parent": "x8002c0s6b0",
+            "Xname": "x8002c0s6b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1056,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001056"
+                ]
+            }
+        },
+        "x8002c0s6b0n1": {
+            "Parent": "x8002c0s6b0",
+            "Xname": "x8002c0s6b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1057,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001057"
+                ]
+            }
+        },
+        "x8002c0s6b1n0": {
+            "Parent": "x8002c0s6b1",
+            "Xname": "x8002c0s6b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1058,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001058"
+                ]
+            }
+        },
+        "x8002c0s6b1n1": {
+            "Parent": "x8002c0s6b1",
+            "Xname": "x8002c0s6b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1059,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001059"
+                ]
+            }
+        },
+        "x8002c0s7b0n0": {
+            "Parent": "x8002c0s7b0",
+            "Xname": "x8002c0s7b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1060,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001060"
+                ]
+            }
+        },
+        "x8002c0s7b0n1": {
+            "Parent": "x8002c0s7b0",
+            "Xname": "x8002c0s7b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1061,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001061"
+                ]
+            }
+        },
+        "x8002c0s7b1n0": {
+            "Parent": "x8002c0s7b1",
+            "Xname": "x8002c0s7b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1062,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001062"
+                ]
+            }
+        },
+        "x8002c0s7b1n1": {
+            "Parent": "x8002c0s7b1",
+            "Xname": "x8002c0s7b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1063,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001063"
+                ]
+            }
+        },
+        "x8002c1": {
+            "Parent": "x8002",
+            "Xname": "x8002c1",
+            "Type": "comptype_chassis",
+            "Class": "Hill",
+            "TypeString": "Chassis"
+        },
+        "x8002c1b0": {
+            "Parent": "x8002c1",
+            "Xname": "x8002c1b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Hill",
+            "TypeString": "ChassisBMC"
+        },
+        "x8002c1s0b0n0": {
+            "Parent": "x8002c1s0b0",
+            "Xname": "x8002c1s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1064,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001064"
+                ]
+            }
+        },
+        "x8002c1s0b0n1": {
+            "Parent": "x8002c1s0b0",
+            "Xname": "x8002c1s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1065,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001065"
+                ]
+            }
+        },
+        "x8002c1s0b1n0": {
+            "Parent": "x8002c1s0b1",
+            "Xname": "x8002c1s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1066,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001066"
+                ]
+            }
+        },
+        "x8002c1s0b1n1": {
+            "Parent": "x8002c1s0b1",
+            "Xname": "x8002c1s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1067,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001067"
+                ]
+            }
+        },
+        "x8002c1s1b0n0": {
+            "Parent": "x8002c1s1b0",
+            "Xname": "x8002c1s1b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1068,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001068"
+                ]
+            }
+        },
+        "x8002c1s1b0n1": {
+            "Parent": "x8002c1s1b0",
+            "Xname": "x8002c1s1b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1069,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001069"
+                ]
+            }
+        },
+        "x8002c1s1b1n0": {
+            "Parent": "x8002c1s1b1",
+            "Xname": "x8002c1s1b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1070,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001070"
+                ]
+            }
+        },
+        "x8002c1s1b1n1": {
+            "Parent": "x8002c1s1b1",
+            "Xname": "x8002c1s1b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1071,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001071"
+                ]
+            }
+        },
+        "x8002c1s2b0n0": {
+            "Parent": "x8002c1s2b0",
+            "Xname": "x8002c1s2b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1072,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001072"
+                ]
+            }
+        },
+        "x8002c1s2b0n1": {
+            "Parent": "x8002c1s2b0",
+            "Xname": "x8002c1s2b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1073,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001073"
+                ]
+            }
+        },
+        "x8002c1s2b1n0": {
+            "Parent": "x8002c1s2b1",
+            "Xname": "x8002c1s2b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1074,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001074"
+                ]
+            }
+        },
+        "x8002c1s2b1n1": {
+            "Parent": "x8002c1s2b1",
+            "Xname": "x8002c1s2b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1075,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001075"
+                ]
+            }
+        },
+        "x8002c1s3b0n0": {
+            "Parent": "x8002c1s3b0",
+            "Xname": "x8002c1s3b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1076,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001076"
+                ]
+            }
+        },
+        "x8002c1s3b0n1": {
+            "Parent": "x8002c1s3b0",
+            "Xname": "x8002c1s3b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1077,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001077"
+                ]
+            }
+        },
+        "x8002c1s3b1n0": {
+            "Parent": "x8002c1s3b1",
+            "Xname": "x8002c1s3b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1078,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001078"
+                ]
+            }
+        },
+        "x8002c1s3b1n1": {
+            "Parent": "x8002c1s3b1",
+            "Xname": "x8002c1s3b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1079,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001079"
+                ]
+            }
+        },
+        "x8002c1s4b0n0": {
+            "Parent": "x8002c1s4b0",
+            "Xname": "x8002c1s4b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1080,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001080"
+                ]
+            }
+        },
+        "x8002c1s4b0n1": {
+            "Parent": "x8002c1s4b0",
+            "Xname": "x8002c1s4b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1081,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001081"
+                ]
+            }
+        },
+        "x8002c1s4b1n0": {
+            "Parent": "x8002c1s4b1",
+            "Xname": "x8002c1s4b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1082,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001082"
+                ]
+            }
+        },
+        "x8002c1s4b1n1": {
+            "Parent": "x8002c1s4b1",
+            "Xname": "x8002c1s4b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1083,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001083"
+                ]
+            }
+        },
+        "x8002c1s5b0n0": {
+            "Parent": "x8002c1s5b0",
+            "Xname": "x8002c1s5b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1084,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001084"
+                ]
+            }
+        },
+        "x8002c1s5b0n1": {
+            "Parent": "x8002c1s5b0",
+            "Xname": "x8002c1s5b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1085,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001085"
+                ]
+            }
+        },
+        "x8002c1s5b1n0": {
+            "Parent": "x8002c1s5b1",
+            "Xname": "x8002c1s5b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1086,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001086"
+                ]
+            }
+        },
+        "x8002c1s5b1n1": {
+            "Parent": "x8002c1s5b1",
+            "Xname": "x8002c1s5b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1087,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001087"
+                ]
+            }
+        },
+        "x8002c1s6b0n0": {
+            "Parent": "x8002c1s6b0",
+            "Xname": "x8002c1s6b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1088,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001088"
+                ]
+            }
+        },
+        "x8002c1s6b0n1": {
+            "Parent": "x8002c1s6b0",
+            "Xname": "x8002c1s6b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1089,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001089"
+                ]
+            }
+        },
+        "x8002c1s6b1n0": {
+            "Parent": "x8002c1s6b1",
+            "Xname": "x8002c1s6b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1090,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001090"
+                ]
+            }
+        },
+        "x8002c1s6b1n1": {
+            "Parent": "x8002c1s6b1",
+            "Xname": "x8002c1s6b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1091,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001091"
+                ]
+            }
+        },
+        "x8002c1s7b0n0": {
+            "Parent": "x8002c1s7b0",
+            "Xname": "x8002c1s7b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1092,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001092"
+                ]
+            }
+        },
+        "x8002c1s7b0n1": {
+            "Parent": "x8002c1s7b0",
+            "Xname": "x8002c1s7b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1093,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001093"
+                ]
+            }
+        },
+        "x8002c1s7b1n0": {
+            "Parent": "x8002c1s7b1",
+            "Xname": "x8002c1s7b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1094,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001094"
+                ]
+            }
+        },
+        "x8002c1s7b1n1": {
+            "Parent": "x8002c1s7b1",
+            "Xname": "x8002c1s7b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1095,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001095"
+                ]
+            }
+        },
+        "x8003": {
+            "Parent": "s0",
+            "Xname": "x8003",
+            "Type": "comptype_cabinet",
+            "Class": "Hill",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Model": "EX2500",
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.104.8.0/22",
+                            "Gateway": "10.104.8.1",
+                            "VLan": 3006
+                        },
+                        "NMN": {
+                            "CIDR": "10.100.8.0/22",
+                            "Gateway": "10.100.8.1",
+                            "VLan": 2006
+                        }
+                    }
+                }
+            }
+        },
+        "x8003c0": {
+            "Parent": "x8003",
+            "Xname": "x8003c0",
+            "Type": "comptype_chassis",
+            "Class": "Hill",
+            "TypeString": "Chassis"
+        },
+        "x8003c0b0": {
+            "Parent": "x8003c0",
+            "Xname": "x8003c0b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Hill",
+            "TypeString": "ChassisBMC"
+        },
+        "x8003c0s0b0n0": {
+            "Parent": "x8003c0s0b0",
+            "Xname": "x8003c0s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1096,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001096"
+                ]
+            }
+        },
+        "x8003c0s0b0n1": {
+            "Parent": "x8003c0s0b0",
+            "Xname": "x8003c0s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1097,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001097"
+                ]
+            }
+        },
+        "x8003c0s0b1n0": {
+            "Parent": "x8003c0s0b1",
+            "Xname": "x8003c0s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1098,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001098"
+                ]
+            }
+        },
+        "x8003c0s0b1n1": {
+            "Parent": "x8003c0s0b1",
+            "Xname": "x8003c0s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1099,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001099"
+                ]
+            }
+        },
+        "x8003c0s1b0n0": {
+            "Parent": "x8003c0s1b0",
+            "Xname": "x8003c0s1b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1100,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001100"
+                ]
+            }
+        },
+        "x8003c0s1b0n1": {
+            "Parent": "x8003c0s1b0",
+            "Xname": "x8003c0s1b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1101,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001101"
+                ]
+            }
+        },
+        "x8003c0s1b1n0": {
+            "Parent": "x8003c0s1b1",
+            "Xname": "x8003c0s1b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1102,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001102"
+                ]
+            }
+        },
+        "x8003c0s1b1n1": {
+            "Parent": "x8003c0s1b1",
+            "Xname": "x8003c0s1b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1103,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001103"
+                ]
+            }
+        },
+        "x8003c0s2b0n0": {
+            "Parent": "x8003c0s2b0",
+            "Xname": "x8003c0s2b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1104,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001104"
+                ]
+            }
+        },
+        "x8003c0s2b0n1": {
+            "Parent": "x8003c0s2b0",
+            "Xname": "x8003c0s2b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1105,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001105"
+                ]
+            }
+        },
+        "x8003c0s2b1n0": {
+            "Parent": "x8003c0s2b1",
+            "Xname": "x8003c0s2b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1106,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001106"
+                ]
+            }
+        },
+        "x8003c0s2b1n1": {
+            "Parent": "x8003c0s2b1",
+            "Xname": "x8003c0s2b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1107,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001107"
+                ]
+            }
+        },
+        "x8003c0s3b0n0": {
+            "Parent": "x8003c0s3b0",
+            "Xname": "x8003c0s3b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1108,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001108"
+                ]
+            }
+        },
+        "x8003c0s3b0n1": {
+            "Parent": "x8003c0s3b0",
+            "Xname": "x8003c0s3b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1109,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001109"
+                ]
+            }
+        },
+        "x8003c0s3b1n0": {
+            "Parent": "x8003c0s3b1",
+            "Xname": "x8003c0s3b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1110,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001110"
+                ]
+            }
+        },
+        "x8003c0s3b1n1": {
+            "Parent": "x8003c0s3b1",
+            "Xname": "x8003c0s3b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1111,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001111"
+                ]
+            }
+        },
+        "x8003c0s4b0n0": {
+            "Parent": "x8003c0s4b0",
+            "Xname": "x8003c0s4b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1112,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001112"
+                ]
+            }
+        },
+        "x8003c0s4b0n1": {
+            "Parent": "x8003c0s4b0",
+            "Xname": "x8003c0s4b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1113,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001113"
+                ]
+            }
+        },
+        "x8003c0s4b1n0": {
+            "Parent": "x8003c0s4b1",
+            "Xname": "x8003c0s4b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1114,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001114"
+                ]
+            }
+        },
+        "x8003c0s4b1n1": {
+            "Parent": "x8003c0s4b1",
+            "Xname": "x8003c0s4b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1115,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001115"
+                ]
+            }
+        },
+        "x8003c0s5b0n0": {
+            "Parent": "x8003c0s5b0",
+            "Xname": "x8003c0s5b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1116,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001116"
+                ]
+            }
+        },
+        "x8003c0s5b0n1": {
+            "Parent": "x8003c0s5b0",
+            "Xname": "x8003c0s5b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1117,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001117"
+                ]
+            }
+        },
+        "x8003c0s5b1n0": {
+            "Parent": "x8003c0s5b1",
+            "Xname": "x8003c0s5b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1118,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001118"
+                ]
+            }
+        },
+        "x8003c0s5b1n1": {
+            "Parent": "x8003c0s5b1",
+            "Xname": "x8003c0s5b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1119,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001119"
+                ]
+            }
+        },
+        "x8003c0s6b0n0": {
+            "Parent": "x8003c0s6b0",
+            "Xname": "x8003c0s6b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1120,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001120"
+                ]
+            }
+        },
+        "x8003c0s6b0n1": {
+            "Parent": "x8003c0s6b0",
+            "Xname": "x8003c0s6b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1121,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001121"
+                ]
+            }
+        },
+        "x8003c0s6b1n0": {
+            "Parent": "x8003c0s6b1",
+            "Xname": "x8003c0s6b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1122,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001122"
+                ]
+            }
+        },
+        "x8003c0s6b1n1": {
+            "Parent": "x8003c0s6b1",
+            "Xname": "x8003c0s6b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1123,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001123"
+                ]
+            }
+        },
+        "x8003c0s7b0n0": {
+            "Parent": "x8003c0s7b0",
+            "Xname": "x8003c0s7b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1124,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001124"
+                ]
+            }
+        },
+        "x8003c0s7b0n1": {
+            "Parent": "x8003c0s7b0",
+            "Xname": "x8003c0s7b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1125,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001125"
+                ]
+            }
+        },
+        "x8003c0s7b1n0": {
+            "Parent": "x8003c0s7b1",
+            "Xname": "x8003c0s7b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1126,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001126"
+                ]
+            }
+        },
+        "x8003c0s7b1n1": {
+            "Parent": "x8003c0s7b1",
+            "Xname": "x8003c0s7b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1127,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001127"
+                ]
+            }
+        },
+        "x8003c1": {
+            "Parent": "x8003",
+            "Xname": "x8003c1",
+            "Type": "comptype_chassis",
+            "Class": "Hill",
+            "TypeString": "Chassis"
+        },
+        "x8003c1b0": {
+            "Parent": "x8003c1",
+            "Xname": "x8003c1b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Hill",
+            "TypeString": "ChassisBMC"
+        },
+        "x8003c1s0b0n0": {
+            "Parent": "x8003c1s0b0",
+            "Xname": "x8003c1s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1128,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001128"
+                ]
+            }
+        },
+        "x8003c1s0b0n1": {
+            "Parent": "x8003c1s0b0",
+            "Xname": "x8003c1s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1129,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001129"
+                ]
+            }
+        },
+        "x8003c1s0b1n0": {
+            "Parent": "x8003c1s0b1",
+            "Xname": "x8003c1s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1130,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001130"
+                ]
+            }
+        },
+        "x8003c1s0b1n1": {
+            "Parent": "x8003c1s0b1",
+            "Xname": "x8003c1s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1131,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001131"
+                ]
+            }
+        },
+        "x8003c1s1b0n0": {
+            "Parent": "x8003c1s1b0",
+            "Xname": "x8003c1s1b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1132,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001132"
+                ]
+            }
+        },
+        "x8003c1s1b0n1": {
+            "Parent": "x8003c1s1b0",
+            "Xname": "x8003c1s1b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1133,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001133"
+                ]
+            }
+        },
+        "x8003c1s1b1n0": {
+            "Parent": "x8003c1s1b1",
+            "Xname": "x8003c1s1b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1134,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001134"
+                ]
+            }
+        },
+        "x8003c1s1b1n1": {
+            "Parent": "x8003c1s1b1",
+            "Xname": "x8003c1s1b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1135,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001135"
+                ]
+            }
+        },
+        "x8003c1s2b0n0": {
+            "Parent": "x8003c1s2b0",
+            "Xname": "x8003c1s2b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1136,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001136"
+                ]
+            }
+        },
+        "x8003c1s2b0n1": {
+            "Parent": "x8003c1s2b0",
+            "Xname": "x8003c1s2b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1137,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001137"
+                ]
+            }
+        },
+        "x8003c1s2b1n0": {
+            "Parent": "x8003c1s2b1",
+            "Xname": "x8003c1s2b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1138,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001138"
+                ]
+            }
+        },
+        "x8003c1s2b1n1": {
+            "Parent": "x8003c1s2b1",
+            "Xname": "x8003c1s2b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1139,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001139"
+                ]
+            }
+        },
+        "x8003c1s3b0n0": {
+            "Parent": "x8003c1s3b0",
+            "Xname": "x8003c1s3b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1140,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001140"
+                ]
+            }
+        },
+        "x8003c1s3b0n1": {
+            "Parent": "x8003c1s3b0",
+            "Xname": "x8003c1s3b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1141,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001141"
+                ]
+            }
+        },
+        "x8003c1s3b1n0": {
+            "Parent": "x8003c1s3b1",
+            "Xname": "x8003c1s3b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1142,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001142"
+                ]
+            }
+        },
+        "x8003c1s3b1n1": {
+            "Parent": "x8003c1s3b1",
+            "Xname": "x8003c1s3b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1143,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001143"
+                ]
+            }
+        },
+        "x8003c1s4b0n0": {
+            "Parent": "x8003c1s4b0",
+            "Xname": "x8003c1s4b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1144,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001144"
+                ]
+            }
+        },
+        "x8003c1s4b0n1": {
+            "Parent": "x8003c1s4b0",
+            "Xname": "x8003c1s4b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1145,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001145"
+                ]
+            }
+        },
+        "x8003c1s4b1n0": {
+            "Parent": "x8003c1s4b1",
+            "Xname": "x8003c1s4b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1146,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001146"
+                ]
+            }
+        },
+        "x8003c1s4b1n1": {
+            "Parent": "x8003c1s4b1",
+            "Xname": "x8003c1s4b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1147,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001147"
+                ]
+            }
+        },
+        "x8003c1s5b0n0": {
+            "Parent": "x8003c1s5b0",
+            "Xname": "x8003c1s5b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1148,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001148"
+                ]
+            }
+        },
+        "x8003c1s5b0n1": {
+            "Parent": "x8003c1s5b0",
+            "Xname": "x8003c1s5b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1149,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001149"
+                ]
+            }
+        },
+        "x8003c1s5b1n0": {
+            "Parent": "x8003c1s5b1",
+            "Xname": "x8003c1s5b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1150,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001150"
+                ]
+            }
+        },
+        "x8003c1s5b1n1": {
+            "Parent": "x8003c1s5b1",
+            "Xname": "x8003c1s5b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1151,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001151"
+                ]
+            }
+        },
+        "x8003c1s6b0n0": {
+            "Parent": "x8003c1s6b0",
+            "Xname": "x8003c1s6b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1152,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001152"
+                ]
+            }
+        },
+        "x8003c1s6b0n1": {
+            "Parent": "x8003c1s6b0",
+            "Xname": "x8003c1s6b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1153,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001153"
+                ]
+            }
+        },
+        "x8003c1s6b1n0": {
+            "Parent": "x8003c1s6b1",
+            "Xname": "x8003c1s6b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1154,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001154"
+                ]
+            }
+        },
+        "x8003c1s6b1n1": {
+            "Parent": "x8003c1s6b1",
+            "Xname": "x8003c1s6b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1155,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001155"
+                ]
+            }
+        },
+        "x8003c1s7b0n0": {
+            "Parent": "x8003c1s7b0",
+            "Xname": "x8003c1s7b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1156,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001156"
+                ]
+            }
+        },
+        "x8003c1s7b0n1": {
+            "Parent": "x8003c1s7b0",
+            "Xname": "x8003c1s7b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1157,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001157"
+                ]
+            }
+        },
+        "x8003c1s7b1n0": {
+            "Parent": "x8003c1s7b1",
+            "Xname": "x8003c1s7b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1158,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001158"
+                ]
+            }
+        },
+        "x8003c1s7b1n1": {
+            "Parent": "x8003c1s7b1",
+            "Xname": "x8003c1s7b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1159,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001159"
+                ]
+            }
+        },
+        "x8003c2": {
+            "Parent": "x8003",
+            "Xname": "x8003c2",
+            "Type": "comptype_chassis",
+            "Class": "Hill",
+            "TypeString": "Chassis"
+        },
+        "x8003c2b0": {
+            "Parent": "x8003c2",
+            "Xname": "x8003c2b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Hill",
+            "TypeString": "ChassisBMC"
+        },
+        "x8003c2s0b0n0": {
+            "Parent": "x8003c2s0b0",
+            "Xname": "x8003c2s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1160,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001160"
+                ]
+            }
+        },
+        "x8003c2s0b0n1": {
+            "Parent": "x8003c2s0b0",
+            "Xname": "x8003c2s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1161,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001161"
+                ]
+            }
+        },
+        "x8003c2s0b1n0": {
+            "Parent": "x8003c2s0b1",
+            "Xname": "x8003c2s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1162,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001162"
+                ]
+            }
+        },
+        "x8003c2s0b1n1": {
+            "Parent": "x8003c2s0b1",
+            "Xname": "x8003c2s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1163,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001163"
+                ]
+            }
+        },
+        "x8003c2s1b0n0": {
+            "Parent": "x8003c2s1b0",
+            "Xname": "x8003c2s1b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1164,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001164"
+                ]
+            }
+        },
+        "x8003c2s1b0n1": {
+            "Parent": "x8003c2s1b0",
+            "Xname": "x8003c2s1b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1165,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001165"
+                ]
+            }
+        },
+        "x8003c2s1b1n0": {
+            "Parent": "x8003c2s1b1",
+            "Xname": "x8003c2s1b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1166,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001166"
+                ]
+            }
+        },
+        "x8003c2s1b1n1": {
+            "Parent": "x8003c2s1b1",
+            "Xname": "x8003c2s1b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1167,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001167"
+                ]
+            }
+        },
+        "x8003c2s2b0n0": {
+            "Parent": "x8003c2s2b0",
+            "Xname": "x8003c2s2b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1168,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001168"
+                ]
+            }
+        },
+        "x8003c2s2b0n1": {
+            "Parent": "x8003c2s2b0",
+            "Xname": "x8003c2s2b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1169,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001169"
+                ]
+            }
+        },
+        "x8003c2s2b1n0": {
+            "Parent": "x8003c2s2b1",
+            "Xname": "x8003c2s2b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1170,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001170"
+                ]
+            }
+        },
+        "x8003c2s2b1n1": {
+            "Parent": "x8003c2s2b1",
+            "Xname": "x8003c2s2b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1171,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001171"
+                ]
+            }
+        },
+        "x8003c2s3b0n0": {
+            "Parent": "x8003c2s3b0",
+            "Xname": "x8003c2s3b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1172,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001172"
+                ]
+            }
+        },
+        "x8003c2s3b0n1": {
+            "Parent": "x8003c2s3b0",
+            "Xname": "x8003c2s3b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1173,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001173"
+                ]
+            }
+        },
+        "x8003c2s3b1n0": {
+            "Parent": "x8003c2s3b1",
+            "Xname": "x8003c2s3b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1174,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001174"
+                ]
+            }
+        },
+        "x8003c2s3b1n1": {
+            "Parent": "x8003c2s3b1",
+            "Xname": "x8003c2s3b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1175,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001175"
+                ]
+            }
+        },
+        "x8003c2s4b0n0": {
+            "Parent": "x8003c2s4b0",
+            "Xname": "x8003c2s4b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1176,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001176"
+                ]
+            }
+        },
+        "x8003c2s4b0n1": {
+            "Parent": "x8003c2s4b0",
+            "Xname": "x8003c2s4b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1177,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001177"
+                ]
+            }
+        },
+        "x8003c2s4b1n0": {
+            "Parent": "x8003c2s4b1",
+            "Xname": "x8003c2s4b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1178,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001178"
+                ]
+            }
+        },
+        "x8003c2s4b1n1": {
+            "Parent": "x8003c2s4b1",
+            "Xname": "x8003c2s4b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1179,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001179"
+                ]
+            }
+        },
+        "x8003c2s5b0n0": {
+            "Parent": "x8003c2s5b0",
+            "Xname": "x8003c2s5b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1180,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001180"
+                ]
+            }
+        },
+        "x8003c2s5b0n1": {
+            "Parent": "x8003c2s5b0",
+            "Xname": "x8003c2s5b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1181,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001181"
+                ]
+            }
+        },
+        "x8003c2s5b1n0": {
+            "Parent": "x8003c2s5b1",
+            "Xname": "x8003c2s5b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1182,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001182"
+                ]
+            }
+        },
+        "x8003c2s5b1n1": {
+            "Parent": "x8003c2s5b1",
+            "Xname": "x8003c2s5b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1183,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001183"
+                ]
+            }
+        },
+        "x8003c2s6b0n0": {
+            "Parent": "x8003c2s6b0",
+            "Xname": "x8003c2s6b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1184,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001184"
+                ]
+            }
+        },
+        "x8003c2s6b0n1": {
+            "Parent": "x8003c2s6b0",
+            "Xname": "x8003c2s6b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1185,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001185"
+                ]
+            }
+        },
+        "x8003c2s6b1n0": {
+            "Parent": "x8003c2s6b1",
+            "Xname": "x8003c2s6b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1186,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001186"
+                ]
+            }
+        },
+        "x8003c2s6b1n1": {
+            "Parent": "x8003c2s6b1",
+            "Xname": "x8003c2s6b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1187,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001187"
+                ]
+            }
+        },
+        "x8003c2s7b0n0": {
+            "Parent": "x8003c2s7b0",
+            "Xname": "x8003c2s7b0n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1188,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001188"
+                ]
+            }
+        },
+        "x8003c2s7b0n1": {
+            "Parent": "x8003c2s7b0",
+            "Xname": "x8003c2s7b0n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1189,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001189"
+                ]
+            }
+        },
+        "x8003c2s7b1n0": {
+            "Parent": "x8003c2s7b1",
+            "Xname": "x8003c2s7b1n0",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1190,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001190"
+                ]
+            }
+        },
+        "x8003c2s7b1n1": {
+            "Parent": "x8003c2s7b1",
+            "Xname": "x8003c2s7b1n1",
+            "Type": "comptype_node",
+            "Class": "Hill",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1191,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001191"
+                ]
+            }
+        }
+    },
+    "Networks": {}
+}

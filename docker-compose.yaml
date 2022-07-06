@@ -1,0 +1,250 @@
+---
+# MIT License
+#
+# (C) Copyright [2022] Hewlett Packard Enterprise Development LP
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+# OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+version: '3.7'
+networks:
+  meds:
+
+services:
+  #
+  # Vault
+  # 
+  vault:
+    hostname: vault
+    image: artifactory.algol60.net/docker.io/library/vault:1.5.5
+    environment:
+      - VAULT_DEV_ROOT_TOKEN_ID=hms
+      - VAULT_DEV_LISTEN_ADDRESS=0.0.0.0:8200
+      - VAULT_ADDR=http://127.0.0.1:8200
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    networks:
+      - meds
+  vault-kv-enabler:
+    image: artifactory.algol60.net/csm-docker/stable/vault-kv-enabler:1.13.4
+    environment:
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - KV_STORES=secret
+    depends_on:
+      - vault
+    networks:
+      - meds
+
+  #
+  # SLS
+  #
+  cray-sls-postgres:
+    hostname: sls-postgres
+    image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
+    environment:
+      - POSTGRES_USER=slsuser
+      - POSTGRES_DB=sls
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "54321:5432"
+    networks:
+      - meds
+  cray-sls-init:
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.16.0
+    command: ["sls-init"]
+    environment:
+      - POSTGRES_HOST=sls-postgres
+      - DBOPTS=sslmode=disable
+      - DBUSER=slsuser
+    depends_on:
+      - cray-sls-postgres
+    networks:
+      - meds
+  cray-sls:
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.16.0
+    environment:
+      - POSTGRES_HOST=cray-sls-postgres
+      - DBOPTS=sslmode=disable
+      - DBUSER=slsuser
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+    ports:
+      - "8376:8376"
+    depends_on:
+      - cray-sls-postgres
+      - cray-sls-init
+      - vault
+    networks:
+      - meds
+
+  #
+  # HSM
+  #
+  cray-smd-postgres:
+    hostname: hmsds-postgres
+    image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
+    environment:
+      - POSTGRES_PASSWORD=hmsdsuser
+      - POSTGRES_USER=hmsdsuser
+      - POSTGRES_DB=hmsds
+    ports:
+      - "54322:5432"
+    networks:
+      - meds
+  cray-smd-init:
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
+    environment:
+      - SMD_DBHOST=cray-smd-postgres
+      - SMD_DBPORT=5432
+    depends_on:
+      - cray-smd-postgres
+    networks:
+      - meds
+    command: /entrypoint.sh smd-init
+  cray-smd:
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
+    environment:
+      - POSTGRES_HOST=cray-smd-postgres
+      - SMD_DBHOST=cray-smd-postgres
+      - POSTGRES_PORT=5432
+      - RF_MSG_HOST=kafka:9092:cray-dmtf-resource-event
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+      - SMD_WVAULT=true
+      - SMD_RVAULT=true
+      - SMD_SLS_HOST=http://cray-sls:8376/v1
+    hostname: cray-smd
+    depends_on:
+      - cray-smd-init
+      - vault
+    ports:
+      - "27779:27779"
+    networks:
+      - meds
+
+  #
+  # MEDS
+  #
+  meds-vault-loader:
+    image: artifactory.algol60.net/csm-docker/unstable/cray-meds:1.19.0-20220630134803.893f6b9
+    environment:
+      HSM_URL: http://cray-smd:27779/hsm/v1
+      CRAY_VAULT_AUTH_PATH: auth/token/create
+      CRAY_VAULT_ROLE_FILE: configs/namespace
+      CRAY_VAULT_JWT_FILE: configs/token
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: hms
+      VAULT_KEYPATH: secret/hms-creds
+      VAULT_REDFISH_DEFAULTS: '{"Username": "root", "Password": "root_password"}'
+    command: vault_loader
+    volumes: 
+      - ./configs:/configs
+    depends_on:
+      - vault-kv-enabler
+    networks:
+      - meds
+  
+  meds:
+    image: artifactory.algol60.net/csm-docker/unstable/cray-meds:1.19.0-20220707210011.d63bc7a
+    environment:
+      - HSM_URL=http://cray-smd:27779/hsm/v1
+      - "MEDS_OPTS=-sls http://cray-sls:8376/v1"
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=hms-creds # MEDS has a hardcode to prepend secret/ to this path.
+      - VAULT_SKIP_VERIFY=true
+
+      - MEDS_SYSLOG_TARG=localhost:514
+      # - MEDS_SYSLOG_TARG_USE_IP=
+      - MEDS_NTP_TARG=localhost:123
+      # - MEDS_NTP_TARG_USE_IP=
+      - MEDS_CA_URI=
+
+      # - MEDS_NTP_TARG="time-hmn:123"
+      # - MEDS_SYSLOG_TARG="rsyslog-aggregator.hmnlb:514"
+      # - MEDS_NP_RF_URL=/redfish/v1/Managers/BMC/NetworkProtocol
+      # - MEDS_ROOT_SSH_KEY=""
+    volumes: 
+      - ./configs:/configs
+    networks:
+      - meds
+    depends_on:
+      - cray-sls-init
+      - cray-sls
+      - vault
+
+  #
+  # REDS
+  cray-reds-etcd:
+    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    networks:
+      - meds
+  cray-reds-init:
+    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.23.0
+    environment:
+      CRAY_VAULT_AUTH_PATH: auth/token/create
+      CRAY_VAULT_ROLE_FILE: configs/namespace
+      CRAY_VAULT_JWT_FILE: configs/token
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: hms
+      VAULT_KEYPATH: hms-creds
+      VAULT_SKIP_VERIFY: "true"
+      VAULT_ENABLED: "true"
+      VAULT_REDFISH_BMC_DEFAULTS: '{"Cray": {"Username": "root", "Password": "root_password"}}'
+      VAULT_REDFISH_SWITCH_DEFAULTS: '{"SNMPUsername": "testuser", "SNMPAuthPassword": "authpass", "SNMPPrivPassword": "privpass"}'
+    command: vault_loader
+    networks:
+      - meds
+    depends_on:
+    - vault-kv-enabler
+  cray-reds:
+    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.23.0
+    environment:
+      - HSM_URL=http://cray-smd:27779/hsm/v1
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=hms-creds
+      - VAULT_SKIP_VERIFY=true
+      - VAULT_ENABLED=true
+      - DATASTORE_URL=http://cray-reds-etcd:2379
+      - SLS_ADDR=cray-sls:8376/v1
+    networks:
+      - meds
+    depends_on:
+      - cray-sls
+      - cray-reds-init
