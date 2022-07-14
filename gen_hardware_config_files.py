@@ -32,7 +32,7 @@ import random
 import itertools
 
 RIE_IMAGE="artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.0"
-NETWORK="meds"
+NETWORK="simulation"
 
 def make_emulator(xname, mockup, network):
     return {

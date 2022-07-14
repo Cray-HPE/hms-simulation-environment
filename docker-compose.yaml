@@ -23,7 +23,7 @@
 #
 version: '3.7'
 networks:
-  meds:
+  simulation:
 
 services:
   #
@@ -41,7 +41,7 @@ services:
     cap_add:
       - IPC_LOCK
     networks:
-      - meds
+      - simulation
   vault-kv-enabler:
     image: artifactory.algol60.net/csm-docker/stable/vault-kv-enabler:1.13.4
     environment:
@@ -51,7 +51,7 @@ services:
     depends_on:
       - vault
     networks:
-      - meds
+      - simulation
 
   #
   # SLS
@@ -66,7 +66,7 @@ services:
     ports:
       - "54321:5432"
     networks:
-      - meds
+      - simulation
   cray-sls-init:
     image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.16.0
     command: ["sls-init"]
@@ -77,7 +77,7 @@ services:
     depends_on:
       - cray-sls-postgres
     networks:
-      - meds
+      - simulation
   cray-sls:
     image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.16.0
     environment:
@@ -97,7 +97,7 @@ services:
       - cray-sls-init
       - vault
     networks:
-      - meds
+      - simulation
 
   #
   # HSM
@@ -112,7 +112,7 @@ services:
     ports:
       - "54322:5432"
     networks:
-      - meds
+      - simulation
   cray-smd-init:
     image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
     environment:
@@ -121,7 +121,7 @@ services:
     depends_on:
       - cray-smd-postgres
     networks:
-      - meds
+      - simulation
     command: /entrypoint.sh smd-init
   cray-smd:
     image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
@@ -146,7 +146,7 @@ services:
     ports:
       - "27779:27779"
     networks:
-      - meds
+      - simulation
 
   #
   # MEDS
@@ -168,7 +168,7 @@ services:
     depends_on:
       - vault-kv-enabler
     networks:
-      - meds
+      - simulation
   
   meds:
     image: artifactory.algol60.net/csm-docker/unstable/cray-meds:1.19.0-20220707210011.d63bc7a
@@ -196,7 +196,7 @@ services:
     volumes: 
       - ./configs:/configs
     networks:
-      - meds
+      - simulation
     depends_on:
       - cray-sls-init
       - cray-sls
@@ -211,7 +211,7 @@ services:
       - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     networks:
-      - meds
+      - simulation
   cray-reds-init:
     image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.23.0
     environment:
@@ -227,7 +227,7 @@ services:
       VAULT_REDFISH_SWITCH_DEFAULTS: '{"SNMPUsername": "testuser", "SNMPAuthPassword": "authpass", "SNMPPrivPassword": "privpass"}'
     command: vault_loader
     networks:
-      - meds
+      - simulation
     depends_on:
     - vault-kv-enabler
   cray-reds:
@@ -245,7 +245,26 @@ services:
       - DATASTORE_URL=http://cray-reds-etcd:2379
       - SLS_ADDR=cray-sls:8376/v1
     networks:
-      - meds
+      - simulation
     depends_on:
       - cray-sls
       - cray-reds-init
+  cray-capmc:
+    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:2.3.0
+    environment:
+      - HSM_URL=http://cray-smd:27779
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+      - VAULT_SKIP_VERIFY=true
+      - VAULT_ENABLED=true
+      - LOG_LEVEL=DEBUG
+      - TRS_IMPLEMENTATION=LOCAL
+      - HSMLOCK_ENABLED=true
+    ports:
+      - "27777:27777"
+    networks:
+      - simulation

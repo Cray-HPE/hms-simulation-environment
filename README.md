@@ -65,7 +65,7 @@
     
     1.  Overall discovery status:
         ```bash
-        curl -s http://localhost:27779/hsm/v1/Inventory/RedfishEndpoints | jq .RedfishEndpoints[].DiscoveryInfo.LastDiscoveryStatus | sort | uniq -c
+        curl -s http://localhost:27779/hsm/v1/Inventory/RedfishEndpoints | jq '.RedfishEndpoints[].DiscoveryInfo.LastDiscoveryStatus' | sort | uniq -c
         ```
 
         Expected output:

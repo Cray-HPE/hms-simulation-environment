@@ -4,3 +4,4 @@ configs/portMap.json
 configs/portNumberMap.json
 configs/seed_ethernet_interfaces.json
 docker-compose.hardware.yaml
+.idea/
