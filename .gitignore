@@ -4,3 +4,11 @@ configs/portMap.json
 configs/portNumberMap.json
 configs/seed_ethernet_interfaces.json
 docker-compose.hardware.yaml
+
+# Prevent certificates from getting checked in
+*.ca
+*.cer
+*.crt
+*.csr
+*.key
+*.pem
