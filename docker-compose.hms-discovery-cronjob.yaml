@@ -24,15 +24,15 @@
 version: '3.7'
 
 networks:
-  meds:
+  simulation:
 
 services:
   hms-discovery:
-    # image: artifactory.algol60.net/csm-docker/stable/hms-discovery:1.11.0
-    image: hms-discovery:local
+    image: artifactory.algol60.net/csm-docker/unstable/hms-discovery:1.13.0-20220728171836.d35cea5
     environment:
       SLS_URL: http://cray-sls:8376
       HSM_URL: http://cray-smd:27779
+      CAPMC_URL: http://cray-capmc:27777
       CRAY_VAULT_AUTH_PATH: auth/token/create
       CRAY_VAULT_ROLE_FILE: configs/namespace
       CRAY_VAULT_JWT_FILE: configs/token
@@ -46,4 +46,4 @@ services:
     volumes: 
       - ./configs:/configs
     networks:
-      - meds
+      - simulation
