@@ -1,0 +1,62 @@
+{
+  "smoke_test_name": "hse-api-gateway-services-smoke-tests",
+  "default_base_url": "http://api-gateway/",
+  "test_paths": [
+    {
+      "path": "/apis/sls/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/smd/hsm/v2/service/ready",
+      "expected_status_code": 200,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/reds/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/capmc/capmc/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/bss/boot/v1/service/status/all",
+      "expected_status_code": 200,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/fas/v1/service/status/details",
+      "expected_status_code": 200,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/collector-ingress/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/collector-ingress/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    }
+  ]
+}

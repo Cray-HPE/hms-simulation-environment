@@ -1,7 +1,6 @@
-#
 # MIT License
 #
-# (C) Copyright 2022 Hewlett Packard Enterprise Development LP
+# (C) Copyright 2021-2022 Hewlett Packard Enterprise Development LP
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -15,35 +14,16 @@
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
 # THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
 # OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
-#
-version: '3.7'
 
-networks:
-  simulation:
+all: integration
 
-services:
-  hms-discovery:
-    image: artifactory.algol60.net/csm-docker/unstable/hms-discovery:1.13.0-20220728171836.d35cea5
-    environment:
-      SLS_URL: http://cray-sls:8376
-      HSM_URL: http://cray-smd:27779
-      CAPMC_URL: http://cray-capmc:27777
-      CRAY_VAULT_AUTH_PATH: auth/token/create
-      CRAY_VAULT_ROLE_FILE: configs/namespace
-      CRAY_VAULT_JWT_FILE: configs/token
-      VAULT_ADDR: http://vault:8200
-      VAULT_TOKEN: hms
-      VAULT_BASE_PATH: secret
-      SNMP_MODE: MOCK
-      DISCOVER_MOUNTAIN: "true"
-      DISCOVER_RIVER: "true"
-      LOG_LEVEL: DEBUG
-    volumes: 
-      - ./configs:/configs
-    networks:
-      - simulation
+setup-venv:
+	./setup_venv.sh
+
+integration: setup-venv
+	./runIntegration.sh

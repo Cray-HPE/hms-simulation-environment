@@ -52,6 +52,61 @@ services:
       - vault
     networks:
       - simulation
+    profiles:
+      - do-not-start-automatically 
+
+  #
+  # Kafka
+  #
+  cray-shared-kafka-zookeeper:
+    image: artifactory.algol60.net/docker.io/confluentinc/cp-zookeeper:6.1.1
+    hostname: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - simulation
+  cray-shared-kafka:
+    image: artifactory.algol60.net/docker.io/confluentinc/cp-kafka:6.1.1
+    hostname: kafka
+    depends_on:
+      - cray-shared-kafka-zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+    networks:
+      - simulation
+
+  #
+  # S3
+  #
+  s3:
+    image: artifactory.algol60.net/docker.io/minio/minio:latest
+    hostname: s3
+    environment:
+      MINIO_ACCESS_KEY: s3-access-key
+      MINIO_SECRET_KEY: s3-secret-key
+    command:  server /data
+    ports:
+      - "9000:9000"
+  # TODO figure how to deal with buckets, this should maybe be done with the standup 
+  # script
+  # s3-init:
+  #   image: artifactory.algol60.net/docker.io/minio/mc:latest
+  #   hostname: s3-init
+  #   environment:
+  #     - MC_HOST_S3=http://s3-access-key:s3-secret-key@s3:9000
+  #   command:  mb S3/sls
+  #   depends_on:
+  #     - s3
 
   #
   # SLS
@@ -63,12 +118,12 @@ services:
       - POSTGRES_USER=slsuser
       - POSTGRES_DB=sls
       - POSTGRES_HOST_AUTH_METHOD=trust
-    ports:
-      - "54321:5432"
+    # ports:
+    #   - "54321:5432"
     networks:
       - simulation
   cray-sls-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.16.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.28.0
     command: ["sls-init"]
     environment:
       - POSTGRES_HOST=sls-postgres
@@ -79,7 +134,7 @@ services:
     networks:
       - simulation
   cray-sls:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.16.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.28.0
     environment:
       - POSTGRES_HOST=cray-sls-postgres
       - DBOPTS=sslmode=disable
@@ -109,12 +164,12 @@ services:
       - POSTGRES_PASSWORD=hmsdsuser
       - POSTGRES_USER=hmsdsuser
       - POSTGRES_DB=hmsds
-    ports:
-      - "54322:5432"
+    # ports:
+    #   - "54322:5432"
     networks:
       - simulation
   cray-smd-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.58.1
     environment:
       - SMD_DBHOST=cray-smd-postgres
       - SMD_DBPORT=5432
@@ -124,12 +179,12 @@ services:
       - simulation
     command: /entrypoint.sh smd-init
   cray-smd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.58.1
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
       - POSTGRES_PORT=5432
-      - RF_MSG_HOST=kafka:9092:cray-dmtf-resource-event
+      - RF_MSG_HOST=cray-shared-kafka:9092:cray-dmtf-resource-event
       - CRAY_VAULT_AUTH_PATH=auth/token/create
       - CRAY_VAULT_ROLE_FILE=configs/namespace
       - CRAY_VAULT_JWT_FILE=configs/token
@@ -151,8 +206,8 @@ services:
   #
   # MEDS
   #
-  meds-vault-loader:
-    image: artifactory.algol60.net/csm-docker/unstable/cray-meds:1.19.0-20220630134803.893f6b9
+  cray-meds-vault-loader:
+    image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
       HSM_URL: http://cray-smd:27779/hsm/v1
       CRAY_VAULT_AUTH_PATH: auth/token/create
@@ -161,17 +216,20 @@ services:
       VAULT_ADDR: http://vault:8200
       VAULT_TOKEN: hms
       VAULT_KEYPATH: secret/hms-creds
-      VAULT_REDFISH_DEFAULTS: '{"Username": "root", "Password": "root_password"}'
+    env_file:
+    - configs/cray-meds-vault-loader.env
     command: vault_loader
     volumes: 
       - ./configs:/configs
-    depends_on:
-      - vault-kv-enabler
+    # depends_on:
+    #   - vault-kv-enabler
     networks:
       - simulation
-  
-  meds:
-    image: artifactory.algol60.net/csm-docker/unstable/cray-meds:1.19.0-20220707210011.d63bc7a
+    profiles:
+      - do-not-start-automatically 
+
+  cray-meds:
+    image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
       - HSM_URL=http://cray-smd:27779/hsm/v1
       - "MEDS_OPTS=-sls http://cray-sls:8376/v1"
@@ -204,6 +262,7 @@ services:
 
   #
   # REDS
+  #
   cray-reds-etcd:
     image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
     environment:
@@ -212,8 +271,8 @@ services:
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     networks:
       - simulation
-  cray-reds-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.23.0
+  cray-reds-vault-loader:
+    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.24.0
     environment:
       CRAY_VAULT_AUTH_PATH: auth/token/create
       CRAY_VAULT_ROLE_FILE: configs/namespace
@@ -223,15 +282,17 @@ services:
       VAULT_KEYPATH: hms-creds
       VAULT_SKIP_VERIFY: "true"
       VAULT_ENABLED: "true"
-      VAULT_REDFISH_BMC_DEFAULTS: '{"Cray": {"Username": "root", "Password": "root_password"}}'
-      VAULT_REDFISH_SWITCH_DEFAULTS: '{"SNMPUsername": "testuser", "SNMPAuthPassword": "authpass", "SNMPPrivPassword": "privpass"}'
+    env_file:
+      - configs/cray-reds-vault-loader.env
     command: vault_loader
     networks:
       - simulation
-    depends_on:
-    - vault-kv-enabler
+    # depends_on:
+    # - vault-kv-enabler
+    profiles:
+      - do-not-start-automatically 
   cray-reds:
-    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.23.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.24.0
     environment:
       - HSM_URL=http://cray-smd:27779/hsm/v1
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -248,9 +309,39 @@ services:
       - simulation
     depends_on:
       - cray-sls
-      - cray-reds-init
+      # - cray-reds-init
+
+  #
+  # HMS Discovery job
+  #
+  hms-discovery:
+    image: artifactory.algol60.net/csm-docker/stable/hms-discovery:1.14.0
+    environment:
+      SLS_URL: http://cray-sls:8376
+      HSM_URL: http://cray-smd:27779
+      CAPMC_URL: http://cray-capmc:27777
+      CRAY_VAULT_AUTH_PATH: auth/token/create
+      CRAY_VAULT_ROLE_FILE: configs/namespace
+      CRAY_VAULT_JWT_FILE: configs/token
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: hms
+      VAULT_BASE_PATH: secret
+      SNMP_MODE: MOCK
+      DISCOVER_MOUNTAIN: "true"
+      DISCOVER_RIVER: "true"
+      LOG_LEVEL: DEBUG
+    volumes: 
+      - ./configs:/configs
+    networks:
+      - simulation
+    profiles:
+      - do-not-start-automatically
+
+  #
+  # CAPMC
+  #
   cray-capmc:
-    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:2.3.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:2.5.0
     environment:
       - HSM_URL=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -268,3 +359,182 @@ services:
       - "27777:27777"
     networks:
       - simulation
+
+  #
+  # BSS
+  #
+  cray-bss-etcd:
+    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    hostname: etcd
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    networks:
+      - simulation
+    # ports:
+      # - 2379:2379
+      # - 2380:2380
+
+  cray-bss:
+    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.21.0
+    hostname: bss
+    environment:
+      - BSS_ADVERTISE_ADDRESS=http://0.0.0.0:8888
+      - ETCD_HOST=cray-bss-etcd
+      - ETCD_PORT=2379
+      - HSM_URL=http://cray-smd:27779
+      # - NFD_URL=http://fake_hsm_${HSUFFIX:-bss}:${FAKE_SM_PORT:-28000}/hsm/v1
+      - S3_ACCESS_KEY=foo
+      - S3_SECRET_KEY=foo
+      - S3_BUCKET=images
+      - S3_ENDPOINT=s3
+    networks:
+      - simulation
+    ports:
+      - 27778:27778
+ 
+  #
+  # FAS
+  #
+  cray-fas-etcd:
+    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    # ports:
+    #   - 2379:2379
+    #   - 2380:2380
+    networks:
+      - simulation
+  cray-fas:
+    image: artifactory.algol60.net/csm-docker/stable/cray-firmware-action:1.23.0
+    environment:
+      - SMS_SERVER=http://cray-smd:27779
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - S3_ENDPOINT=http://s3
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=hms-creds
+      - VAULT_SKIP_VERIFY=true
+      - VAULT_ENABLED=true
+      - LOG_LEVEL=DEBUG
+      - TRS_IMPLEMENTATION=LOCAL
+      - HSMLOCK_ENABLED=true
+      - STORAGE=ETCD
+      - ETCD_HOST=etcd
+      - ETCD_PORT=2379
+    networks:
+      - simulation
+    depends_on:
+      - cray-fas-etcd
+      - s3
+      - cray-smd
+      - cray-hms-hmcollector-ingress
+      - cray-hms-hmcollector-poll
+      # - vault-kv-enabler
+
+  #
+  # Collector
+  #
+  cray-hms-hmcollector-ingress:
+    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.20.0
+    environment:
+      - LOG_LEVEL=TRACE
+      - SM_URL=http://cray-smd:27779
+     
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_ENABLED=false
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+ 
+      - POLLING_ENABLED=false
+      - POLLING_INTERVAL=30
+      - RF_SUBSCRIBE_ENABLED=false
+      - RF_STREAMING_ENABLED=false
+      - REST_PORT=80
+      - REST_ENABLED=true
+
+      - HSM_REFRESH_INTERVAL=30
+      - REST_URL=http://api-gateway-hmn/
+      
+    volumes:
+      - ./configs/collector/kafka_brokers.json:/configs/kafka_brokers.json
+      - ./configs/namespace:/configs/namespace
+      - ./configs/token:/configs/token
+    networks:
+      - simulation
+
+  cray-hms-hmcollector-poll:
+    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.20.0
+    environment:
+      - LOG_LEVEL=INFO
+      - SM_URL=http://cray-smd:27779
+     
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_ENABLED=true
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+ 
+      - POLLING_ENABLED=true
+      - POLLING_INTERVAL=30
+      - RF_SUBSCRIBE_ENABLED=true
+      - RF_STREAMING_ENABLED=true
+      - REST_PORT=80
+      - REST_ENABLED=true
+
+      - HSM_REFRESH_INTERVAL=30
+      - REST_URL=http://api-gateway-hmn/
+    volumes:
+      - ./configs/collector/kafka_brokers.json:/configs/kafka_brokers.json
+      - ./configs/namespace:/configs/namespace
+      - ./configs/token:/configs/token
+    networks:
+      - simulation
+
+  #
+  # Heart Beat Tracking Deamon
+  #
+
+  # TODO Add
+  # cray-hbtd-etcd
+  # cray-hbtd
+
+  #
+  # Fanout Deamon
+  #
+
+  # TODO Add
+  # cray-hmnfd-etcd
+  # cray-hmnfd
+
+  #
+  # SCSD
+  #
+
+  # TODO Add SCSD
+
+  # Nginx is being used as a standin for the Istio Ingress API gateway we use on
+  # real systems.
+  api-gateway:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./configs/nginx/conf.d:/etc/nginx/conf.d
+      - ./configs/nginx/certs:/etc/nginx/certs
+    networks:
+      simulation:
+          aliases:
+          - api-gateway-hmn

@@ -1,0 +1,48 @@
+{
+    "smoke_test_name": "hse-api-gateway-rie-proxy-smoke-tests",
+    "default_base_url": "http://api-gateway/",
+    "test_paths": [
+      {
+        "path": "/x1000c0b0/redfish/v1/",
+        "expected_status_code": 200,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      },
+      {
+        "path": "/x1000c0b0/redfish/v1/Managers",
+        "expected_status_code": 200,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      },
+      {
+        "path": "/x1000c0s0b0/redfish/v1/",
+        "expected_status_code": 200,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      },
+      {
+        "path": "/x1000c0s0b0/redfish/v1/Managers",
+        "expected_status_code": 200,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      },
+      {
+        "path": "/x1000c0s0b1/redfish/v1/",
+        "expected_status_code": 200,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      },
+      {
+        "path": "/x1000c0s0b1/redfish/v1/Managers",
+        "expected_status_code": 200,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      }
+    ]
+  }

@@ -1,0 +1,98 @@
+# MIT License
+#
+# (C) Copyright [2022] Hewlett Packard Enterprise Development LP
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+# OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+# ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+# This is a test to verify redfish eventing is working between the RIE instances, Collector, and HSM.
+
+---
+test_name: redfishPowerEvents
+
+strict:
+  - headers:on
+  - json:off # Allow for checking partial keys in response.
+
+stages:
+- name: Verify current power state of node is on with CAPMC
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      xnames:
+        - "{node_xname}"
+  response:
+    status_code: 200
+    json:
+      e: 0
+      err_msg: ""
+      "on":
+        - "{node_xname}"
+
+- name: Verify current power state of node is on with HSM
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      State: "On"
+
+- name: Power off node with CAPMC
+  request:
+    url: "{capmc_base_url}/capmc/v1/xname_off"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      xnames:
+        - "{node_xname}"
+  response:
+    status_code: 200
+    json:
+      e: 0
+      err_msg: ""
+  delay_after: 10 # Wait to allow the event to propagate from RIE to HSM
+
+- name: Verify current power state of node is off with CAPMC
+  request:
+    url: "{capmc_base_url}/capmc/v1/get_xname_status"
+    method: POST
+    verify: !bool "{verify}"
+    json:
+      xnames:
+        - "{node_xname}"
+  response:
+    status_code: 200
+    json:
+      e: 0
+      err_msg: ""
+      "off":
+        - "{node_xname}"
+
+- name: Verify power state in HSM is now Off
+  request:
+    url: "{hsm_base_url}/hsm/v2/State/Components/{node_xname}"
+    method: GET
+    verify: !bool "{verify}"
+  response:
+    status_code: 200
+    json:
+      State: "Off"

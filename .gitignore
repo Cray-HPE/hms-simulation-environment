@@ -1,7 +1,23 @@
 venv
+.idea/
+__pycache__/
+.pytest_cache/
+
+
+# Prevent generated files from getting checked in
+configs/cray-meds-vault-loader.env
+configs/cray-reds-vault-loader.env
 configs/macPortMap.json
 configs/portMap.json
 configs/portNumberMap.json
 configs/seed_ethernet_interfaces.json
+configs/nginx/conf.d/proxy/rie.conf
 docker-compose.hardware.yaml
-.idea/
+
+# Prevent certificates from getting checked in
+*.ca
+*.cer
+*.crt
+*.csr
+*.key
+*.pem
