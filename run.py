@@ -94,12 +94,17 @@ class State:
         self.console.log(f"Verified docker-compose is at version {docker_compose_version}")
             
     def teardown_environment(self):
-        # Stop any running containers
-        result = subprocess.run(["docker", "compose", "down", "--remove-orphans"], capture_output=True, text=True)
-        if result.returncode != 0:
-            raise SubprocessException(result)
+        running_containers = len(self.dockerClient.containers.list(filters={"label": ["com.docker.compose.project=hms-simulation-environment", "com.github.cray-hpe.hms-simulation-environment.xname"]}))
+        if running_containers > 0:
+            # Stop any running containers
+            self.console.log(f"Found {running_containers} existing containers")
+            result = subprocess.run(["docker", "compose", "down", "--remove-orphans"], capture_output=True, text=True)
+            if result.returncode != 0:
+                raise SubprocessException(result)
 
-        self.console.log(f"Removed existing containers (if present)")
+            self.console.log(f"Removed existing containers")
+        else:
+            self.console.log("No existing containers were running")
 
     def generate_secrets_and_credentials(self):
         # Generate a random credentials
