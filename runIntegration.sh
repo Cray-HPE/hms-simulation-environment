@@ -50,6 +50,9 @@ fi
 
 sleep 120
 
+docker compose exec vault vault login hms
+docker compose exec vault vault kv list secret 
+
 docker compose ps
 docker compose logs vault
 docker compose logs cray-meds
