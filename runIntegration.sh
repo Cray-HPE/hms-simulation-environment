@@ -7,7 +7,7 @@ source ./venv/bin/activate
 
 function cleanup() {
   echo "Cleaning up containers..."
-  docker-compose down --remove-orphans
+  docker compose down --remove-orphans
   if ! [[ $? -eq 0 ]]; then
     echo "Failed to decompose environment!"
     exit 1

@@ -77,11 +77,11 @@ class State:
 
     def verify_docker_compose_version(self):
         # Verify docker-compose is installed
-        docker_compose_path = shutil.which('docker-compose')
-        self.console.log(f"Verified docker-compose is present at {docker_compose_path}")
+        docker_path = shutil.which('docker')
+        self.console.log(f"Verified docker is present at {docker_path}")
 
         # Verify docker-compose is at version 2.6.1 or greater.
-        result = subprocess.run(["docker-compose", "--version", "--short"], capture_output=True, text=True)
+        result = subprocess.run(["docker", "compose", "version", "--short"], capture_output=True, text=True)
         if result.returncode != 0:
             raise SubprocessException(result)
 
@@ -92,12 +92,10 @@ class State:
             raise IllegalStateException(f'Unexpected docker-compose version installed "{docker_compose_version}" expected 2.6.1 or greater')
 
         self.console.log(f"Verified docker-compose is at version {docker_compose_version}")
-
-        sys.exit(1)
             
     def teardown_environment(self):
         # Stop any running containers
-        result = subprocess.run(["docker-compose", "down", "--remove-orphans"], capture_output=True, text=True)
+        result = subprocess.run(["docker", "compose", "down", "--remove-orphans"], capture_output=True, text=True)
         if result.returncode != 0:
             raise SubprocessException(result)
 
@@ -209,14 +207,14 @@ class State:
             self.console.log("Skipping starting emulated hardware, as no emulated hardware was generated.")
             return
 
-        result = subprocess.run(["docker-compose", "-f", "docker-compose.hardware.yaml", "up", "-d"], capture_output=True, text=True)
+        result = subprocess.run(["docker", "compose", "-f", "docker-compose.hardware.yaml", "up", "-d"], capture_output=True, text=True)
         if result.returncode != 0:
             raise SubprocessException(result)
 
         self.console.log("Started emulated hardware")
 
     def start_hms_services(self):
-        result = subprocess.run(["docker-compose", "-f", "docker-compose.yaml", "up", "-d"], capture_output=True, text=True)
+        result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "up", "-d"], capture_output=True, text=True)
         if result.returncode != 0:
             raise SubprocessException(result)
 
@@ -260,7 +258,7 @@ class State:
         # The previous of vault in pervious iterations of the hms-simulation-environment has been fragile
         # so we will stand up each init job one at a time after we know that vault is healthy.
         for service in ["vault-kv-enabler", "cray-reds-vault-loader", "cray-meds-vault-loader"]:
-            result = subprocess.run(["docker-compose", "-f", "docker-compose.yaml", "up", "--exit-code-from", service, service], capture_output=True, text=True)
+            result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "up", "--exit-code-from", service, service], capture_output=True, text=True)
             if result.returncode != 0:
                 raise SubprocessException(result)
 
@@ -318,7 +316,7 @@ class State:
             self.console.log(f"Seeded EthernetInterface in HSM for {xname}: " + json.dumps(ei))
 
     def run_hms_discovery(self):
-        result = subprocess.run(["docker-compose", "-f", "docker-compose.yaml", "up", "--exit-code-from", "hms-discovery", "hms-discovery"], capture_output=True, text=True)
+        result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "up", "--exit-code-from", "hms-discovery", "hms-discovery"], capture_output=True, text=True)
         if result.returncode != 0:
             raise SubprocessException(result)
 
