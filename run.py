@@ -10,11 +10,8 @@ import semver
 import json
 import yaml
 import requests
-import http
 import hvac
-import urllib3
 import docker
-import time
 import datetime
 import string
 import secrets
@@ -88,12 +85,15 @@ class State:
         if result.returncode != 0:
             raise SubprocessException(result)
 
-        docker_compose_version = result.stdout.strip()
+        # We only care about the major/minor/patch versions.
+        docker_compose_version = re.search('([0-9]+\.[0-9]+\.[0-9]+)', result.stdout.strip()).group(0)
 
         if semver.compare("2.6.1", docker_compose_version) == 1:
             raise IllegalStateException(f'Unexpected docker-compose version installed "{docker_compose_version}" expected 2.6.1 or greater')
 
         self.console.log(f"Verified docker-compose is at version {docker_compose_version}")
+
+        sys.exit(1)
             
     def teardown_environment(self):
         # Stop any running containers
