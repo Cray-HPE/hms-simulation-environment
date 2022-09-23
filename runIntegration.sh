@@ -48,6 +48,8 @@ if ! ./run.py configs/sls/small_mountain.json; then
   cleanup 1 
 fi
 
+sleep 120
+
 docker compose ps
 docker compose logs vault
 docker compose logs cray-meds
