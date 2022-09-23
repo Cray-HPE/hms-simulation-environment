@@ -41,7 +41,11 @@ function cleanup() {
 docker compose -f docker-compose.integration.yaml build
 
 # Standup the simulation environment!
-./run.py configs/sls/small_mountain.json
+if ./run.py configs/sls/small_mountain.json; then
+  echo "Failed to standup simulation environment!"
+  docker-compose logs cray-meds
+  cleanup 1 
+fi
 
 # Run the smoke tests
 for smoke_test in test-smoke-api-gateway-services test-smoke-api-gateway-hmn test-smoke-api-gateway-rie-proxy; do
