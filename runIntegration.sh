@@ -43,7 +43,8 @@ docker compose -f docker-compose.integration.yaml build
 # Standup the simulation environment!
 if ! ./run.py configs/sls/small_mountain.json; then
   echo "Failed to standup simulation environment!"
-  docker-compose logs cray-meds
+  docker compose ps
+  docker compose logs cray-meds
   cleanup 1 
 fi
 

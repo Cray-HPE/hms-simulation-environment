@@ -501,12 +501,12 @@ def main():
         }, {
             "in_progress": "Running hms-discovery to discovery River hardware...",
             "run": state.run_hms_discovery
-        }, {
-            "in_progress": "Waiting for hardware to get discovered...",
-            "run": state.wait_for_hardware_to_be_discovered
-        }, {
-            "in_progress": "Waiting for redfish event subscriptions to be setup...",
-            "run": state.wait_for_redfish_event_subscriptions
+        # }, {
+        #     "in_progress": "Waiting for hardware to get discovered...",
+        #     "run": state.wait_for_hardware_to_be_discovered
+        # }, {
+        #     "in_progress": "Waiting for redfish event subscriptions to be setup...",
+        #     "run": state.wait_for_redfish_event_subscriptions
         }
     ]
 
