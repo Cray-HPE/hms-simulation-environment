@@ -1,10 +1,10 @@
 # hms-simulation-environment
 
 The HMS Simulation Environment provides... (change to enable)
-* ...an environment for automated tests to be ran against the HMS stack and hardware.
+* An environment for automated tests to be ran against the HMS stack and hardware.
    * Allows for destructive automated testing development without harming a real system.
    * Development of new tests without the need for real hardware.
-* an environment for local development testing against simulated hardware.
+* An environment for local development testing against simulated hardware.
 
 
 ## Usage
@@ -13,21 +13,21 @@ The HMS Simulation Environment provides... (change to enable)
     >
     > To enable installing the Cray CLI under Python 3.10 on macOS the following workaround can be applied..
     > 1. Install Python 3.8
-    > ```bash
-    > brew install python@3.8
-    > ```
+    >     ```bash
+    >     brew install python@3.8
+    >     ```
     > 1. Set `PYTHON_EXE` to `python3.8`. This will change which Python interpreter the script `setup_venv.sh` uses.
-    >   ```bash
-    >   export PYTHON_EXE=python3.8
-    >   ```
+    >     ```bash
+    >     export PYTHON_EXE=python3.8
+    >     ```
     > 1. Remove any existing Python virtual enviroment.
-    >   ```bash
-    >   rm -rv venv
-    >   ```
+    >     ```bash
+    >     rm -rv venv
+    >     ```
     > 1. Create the Python Virtual Enviroment:
-    >   ```bash
-    >   ./setup_venv.sh
-    >   ```
+    >     ```bash
+    >     ./setup_venv.sh
+    >     ```
 
     ```bash
     ./setup_venv.sh
@@ -50,15 +50,13 @@ The HMS Simulation Environment provides... (change to enable)
         cray config set core hostname=https://localhost:8443
         ```
 
-1. Standup the simulation environment with a desired hardware topology:
+1. Standup the simulation environment with a desired hardware topology. The desired hardware topology can selected by choosing one of the existing SLS state files present in the `configs/sls/`.
 
     ```bash
     ./run.py configs/sls/small_mountain.json
     ```
 
-    The desired hardware topology can selected by choosing one of the existing SLS state files present in the `configs/sls/`.
-
-    The `--rie-image` flag can be specified 
+    The `--rie-image` flag can be specified to override the default RIE image in use.
 
 1.  The simulation environment is now ready for use. All hardware has been discovered, and ready for use. See the [Use cases](#use-cases) section for some things to try out.
 
@@ -216,7 +214,7 @@ curl -k https://localhost:8443/x1000c0b0/redfish/v1/EventService/Subscriptions
     kafka-console-consumer --bootstrap-server cray-shared-kafka:9092  --topic cray-dmtf-resource-event --from-beginning
     ``` 
 
-2. Sent a test event:
+2. Send a test event:
     ```bash
     curl -i -k -X POST https://localhost:8443/apis/collector-ingress/ -d '{
         "Context": "bar",
