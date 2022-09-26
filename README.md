@@ -94,17 +94,17 @@ The HMS Simulation Environment provides... (change to enable)
     
 1.  Teardown the simulation environment:
     ```bash
-    docker-compose down --remove-orphans
+    docker compose down --remove-orphans
     ```
 
 ## Use cases
 ### Update HMS service image.
 
-1. Update `docker-compose.yaml` to specify a different container image:
+1. Update `docker-compose.yaml` to specify a different container image version.
 
-1. Use docker-compose to re-create the service with the new image. Remove the `-d` flag if you want to have the service run in the foreground. 
+1. Use docker compose to re-create the service with the new image. Remove the `-d` flag if you want to have the service run in the foreground. 
     ```bash
-    docker-compose up --force-recreate  --no-deps cray-fas
+    docker compose up --force-recreate --no-deps -d cray-fas
     ```
 
 ### Run CT tests against the environment.
@@ -206,13 +206,13 @@ curl -k https://localhost:8443/x1000c0b0/redfish/v1/EventService/Subscriptions
 1. Edit configuration files under `configs/nginx`
 2. Restart NGINX
     ```bash
-    docker-compose restart nginx 
+    docker compose restart api-gateway
     ```
 
 ### Redfish event troubleshooting:
 1. View Redfish events received in Kafka
     ```bash
-    docker-compose exec -it cray-shared-kafka bash
+    docker compose exec -it cray-shared-kafka bash
     kafka-console-consumer --bootstrap-server cray-shared-kafka:9092  --topic cray-dmtf-resource-event --from-beginning
     ``` 
 
@@ -235,5 +235,5 @@ curl -k https://localhost:8443/x1000c0b0/redfish/v1/EventService/Subscriptions
 
 ### Log into a RIE simulated BMC:
 ```bash
-docker-compose exec -it x1000c0s0b0 sh 
+docker compose exec -it x1000c0s0b0 sh 
 ```
