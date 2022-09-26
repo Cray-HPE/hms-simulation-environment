@@ -362,6 +362,7 @@ class State:
         attempts = 120
         for i in range(1, attempts+1):
             discovery_status_counts = {}
+            redfish_endpoints_to_rediscover = []
 
             result = requests.get("http://localhost:27779/hsm/v2/Inventory/RedfishEndpoints")
             if result.status_code != 200:
@@ -372,10 +373,15 @@ class State:
             for redfish_endpoint in result.json()["RedfishEndpoints"]:
                 discovery_status = redfish_endpoint["DiscoveryInfo"]["LastDiscoveryStatus"]
 
+                # Build up a list of discovery counts,
                 if discovery_status not in discovery_status_counts:
                     discovery_status_counts[discovery_status] = 0
                 discovery_status_counts[discovery_status] += 1
 
+                # Identify redfish endpoints that are not DiscoverOK or DiscoveryStarted 
+                if discovery_status not in ["DiscoverOK", "DiscoveryStarted"]:
+                    redfish_endpoints_to_rediscover.append(redfish_endpoint["ID"])
+        
             if "DiscoverOK" in discovery_status_counts and discovery_status_counts["DiscoverOK"] == expected_bmc_count:
                 break
 
@@ -383,7 +389,14 @@ class State:
                 raise IllegalStateException(f"Exhausted attempts waiting for redfish endpoints to become discovered")
             
             self.console.log(f"Waiting for {expected_bmc_count} redfish endpoints to become discovered. {json.dumps(discovery_status_counts)} Attempt {i}/{attempts}")
+            
+            # Rediscover all redfish endpoints that are not DiscoverOK or DiscoveryStarted. This is taking the place of the hms-discovery job
+            result = requests.post('http://localhost:27779/hsm/v2/Inventory/Discover', json={"xnames": redfish_endpoints_to_rediscover})
+            result.raise_for_status()
+            
             sleep(5)
+
+
 
         self.console.log("Hardware has been discovered by HSM")
 
