@@ -379,7 +379,7 @@ class State:
                 discovery_status_counts[discovery_status] += 1
 
                 # Identify redfish endpoints that are not DiscoverOK or DiscoveryStarted 
-                if discovery_status not in ["DiscoverOK", "DiscoveryStarted"]:
+                if discovery_status not in ["DiscoverOK", "DiscoveryStarted", "NotYetQueried"]:
                     redfish_endpoints_to_rediscover.append(redfish_endpoint["ID"])
         
             if "DiscoverOK" in discovery_status_counts and discovery_status_counts["DiscoverOK"] == expected_bmc_count:
@@ -391,8 +391,10 @@ class State:
             self.console.log(f"Waiting for {expected_bmc_count} redfish endpoints to become discovered. {json.dumps(discovery_status_counts)} Attempt {i}/{attempts}")
             
             # Rediscover all redfish endpoints that are not DiscoverOK or DiscoveryStarted. This is taking the place of the hms-discovery job
-            result = requests.post('http://localhost:27779/hsm/v2/Inventory/Discover', json={"xnames": redfish_endpoints_to_rediscover})
-            result.raise_for_status()
+            if len(redfish_endpoints_to_rediscover) > 0:
+                self.console.log("Issuing a rediscovery on: ", json.dumps(redfish_endpoints_to_rediscover))
+                result = requests.post('http://localhost:27779/hsm/v2/Inventory/Discover', json={"xnames": redfish_endpoints_to_rediscover})
+                result.raise_for_status()
             
             sleep(5)
 

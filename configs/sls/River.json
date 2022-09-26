@@ -199,13 +199,14 @@
                 ]
             }
         },
-        "x3000c0s24b1n0": {
-            "Parent": "x3000c0s24b1",
-            "Xname": "x3000c0s24b1n0",
+        "x3000c0s24b0n0": {
+            "Parent": "x3000c0s24b0",
+            "Xname": "x3000c0s24b0n0",
             "Type": "comptype_node",
             "Class": "River",
             "TypeString": "Node",
             "ExtraProperties": {
+                "@rie.mockup": "XL675d_A40",
                 "NID": 1,
                 "Role": "Compute",
                 "Aliases": [
@@ -360,7 +361,7 @@
             "TypeString": "MgmtSwitchConnector",
             "ExtraProperties": {
                 "NodeNics": [
-                    "x3000c0s24b1"
+                    "x3000c0s24b0"
                 ],
                 "VendorName": "1/1/29"
             }
