@@ -359,7 +359,7 @@ class State:
 
     
         # Wait for hardware to get discovered
-        attempts = 120
+        attempts = self.args.wait_attempts_for_discovered_hardware
         for i in range(1, attempts+1):
             discovery_status_counts = {}
             redfish_endpoints_to_rediscover = []
@@ -411,7 +411,7 @@ class State:
         bmcs_with_subscriptions = set()
 
         # Wait for each to have at least 1 event subscriptions
-        attempts = 120
+        attempts = self.args.wait_attempts_for_redfish_events
         for i in range(1, attempts+1):            
             for xname in self.rie_xnames:
                 # Only checkup on the BMCs that do not have subscriptions
@@ -452,6 +452,8 @@ def main():
     # TODO we should have mockups created from different falvors of management NCNs, as they have different hardware configurations, and therefor would have different redfish data
     parser.add_argument("sls_file", help="Seed SLS file to generate a environment from.")
     parser.add_argument("--rie-image", default="artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.0")
+    parser.add_argument("--wait-attempts-for-discovered-hardware", type=int, default=120)
+    parser.add_argument("--wait-attempts-for-redfish-events", type=int, default=120)
     # TODO add args for default hardware types. This might just be hard coded
     # parser.add_argument("--default-mockup-management-ncn", type=str, default="DL325")
     # parser.add_argument("--default-mockup-air-cooled-compute", type=str, default="Gigabyte")
