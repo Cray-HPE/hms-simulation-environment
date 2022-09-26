@@ -25,6 +25,7 @@
 
 import yaml
 import json
+import re
 import sys
 import random
 
@@ -116,7 +117,7 @@ def get_mockup_type(hardware: dict, default: str):
     return mockup
 
 def generate_hardware_config_files(rie_image: str, sls_hardware: dict, root_password: str) -> dict:
-   
+    #
     # Identify Mountain/Hill Hardware
     #
     liquid_cooled_chassis = []
@@ -138,6 +139,38 @@ def generate_hardware_config_files(rie_image: str, sls_hardware: dict, root_pass
             if hardware["Parent"] not in liquid_cooled_router_blades:
                 liquid_cooled_router_blades[hardware["Parent"]] = []
             liquid_cooled_router_blades[hardware["Parent"]].append(hardware)
+
+    # Add in default blades types for all nodes that did not have a explicit blade type specified.
+    for _, hardware in sls_hardware.items():
+        if hardware["Class"] not in ["Hill", "Mountain"]:
+            continue
+
+        if hardware["TypeString"] != "Node":
+            continue
+
+        # Determine the xname of of the chassis slot
+        matches = re.findall("^((x[0-9]{1,4}c[0-7])s[0-9])+b[0-9]+n[0-9]+$", hardware["Xname"])
+        if len(matches) != 1:
+            print("Unable to extract blade slot xname from node xname", hardware["Xname"])
+            sys.exit(1)
+        chassis_slot, chassis = matches[0]
+        
+        # If this is the first time we are seeing the chassis, create a empty list of blades for it
+        if chassis not in liquid_cooled_compute_blades:
+            liquid_cooled_compute_blades[chassis] = []
+
+        # Check to see if we already know the RIE mockup type for the blade
+        if chassis_slot in list(map(lambda e: e["Xname"],liquid_cooled_compute_blades[chassis])):
+            continue
+
+        # Add in the default blade type. The default will be chosen when creating the mockup
+        liquid_cooled_compute_blades[chassis].append({
+            "Parent": chassis,
+            "Xname": chassis_slot,
+            "Type": "comptype_compmod",
+            "TypeString": "ComputeModule",
+            "Class": hardware["Class"],
+        })
 
     #
     # Identify River Hardware 
