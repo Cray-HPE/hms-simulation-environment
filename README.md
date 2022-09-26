@@ -31,6 +31,7 @@ The HMS Simulation Environment provides... (change to enable)
 
     ```bash
     ./setup_venv.sh
+    . ./venv/bin/activate
     ```
 
 1.  **If desired**, install and configure the [Cray CLI](https://github.com/Cray-HPE/Craycli).
