@@ -3,6 +3,9 @@ venv
 __pycache__/
 .pytest_cache/
 
+# Craycli
+
+
 
 # Prevent generated files from getting checked in
 configs/cray-meds-vault-loader.env

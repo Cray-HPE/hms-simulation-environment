@@ -52,7 +52,7 @@
       "headers": {}
     },
     {
-      "path": "/apis/collector-ingress/readiness",
+      "path": "/apis/collector-poll/readiness",
       "expected_status_code": 204,
       "method": "GET",
       "body": null,

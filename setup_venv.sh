@@ -24,8 +24,10 @@
 
 set -eu
 
+PYTHON_EXE=${PYTHON_EXE:=python3}
+
 # Setup a python virtual environment
-python3 -m venv venv
+${PYTHON_EXE} -m venv venv
 source ./venv/bin/activate
 
 # Install dependencies

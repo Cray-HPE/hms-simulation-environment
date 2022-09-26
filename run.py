@@ -116,7 +116,7 @@ class State:
         self.console.log(f"Verified docker-compose is at version {docker_compose_version}")
             
     def teardown_environment(self):
-        running_containers = len(self.dockerClient.containers.list(filters={"label": ["com.docker.compose.project=hms-simulation-environment", "com.github.cray-hpe.hms-simulation-environment.xname"]}))
+        running_containers = len(self.dockerClient.containers.list(filters={"label": ["com.docker.compose.project=hms-simulation-environment"]}))
         if running_containers > 0:
             # Stop any running containers
             self.console.log(f"Found {running_containers} existing containers")

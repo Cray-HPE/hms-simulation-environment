@@ -118,8 +118,8 @@ services:
       - POSTGRES_USER=slsuser
       - POSTGRES_DB=sls
       - POSTGRES_HOST_AUTH_METHOD=trust
-    # ports:
-    #   - "54321:5432"
+    ports:
+      - "54321:5432"
     networks:
       - simulation
   cray-sls-init:
@@ -164,8 +164,8 @@ services:
       - POSTGRES_PASSWORD=hmsdsuser
       - POSTGRES_USER=hmsdsuser
       - POSTGRES_DB=hmsds
-    # ports:
-    #   - "54322:5432"
+    ports:
+      - "54322:5432"
     networks:
       - simulation
   cray-smd-init:
@@ -429,6 +429,8 @@ services:
       - ETCD_PORT=2379
     networks:
       - simulation
+    ports:
+      - "28800:28800"
     depends_on:
       - cray-fas-etcd
       - s3
