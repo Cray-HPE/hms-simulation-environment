@@ -212,21 +212,23 @@ def generate_hardware_config_files(rie_image: str, sls_hardware: dict, root_pass
         endpoints[chassisBMCXname] = make_emulator(rie_image, chassisBMCXname, "CMM", NETWORK, root_password)
 
         # Identify slots in use
-        for blade in liquid_cooled_compute_blades[chassis["Xname"]]:
-            # By default assume windom blades
-            mockup = get_mockup_type(blade, "EX425")
-            
-            for nodeBMC in EXPECTED_BLADE_BMCS[mockup]:
-                # NodeBMC
-                nodeBMCXname = blade["Xname"]+nodeBMC
-                endpoints[nodeBMCXname] = make_emulator(rie_image, nodeBMCXname, mockup, NETWORK, root_password)
-        for blade in liquid_cooled_router_blades[chassis["Xname"]]:
-            # By default assume Slingshot_Switch_Blade blades
-            mockup = get_mockup_type(blade, "Slingshot_Switch_Blade")
-            
-            # RouterBMC
-            routerBMCXname = blade["Xname"]+"b0"
-            endpoints[routerBMCXname] = make_emulator(rie_image, routerBMCXname, mockup, NETWORK, root_password)
+        if chassis["Xname"] in liquid_cooled_compute_blades: 
+            for blade in liquid_cooled_compute_blades[chassis["Xname"]]:
+                # By default assume windom blades
+                mockup = get_mockup_type(blade, "EX425")
+                
+                for nodeBMC in EXPECTED_BLADE_BMCS[mockup]:
+                    # NodeBMC
+                    nodeBMCXname = blade["Xname"]+nodeBMC
+                    endpoints[nodeBMCXname] = make_emulator(rie_image, nodeBMCXname, mockup, NETWORK, root_password)
+        if chassis["Xname"] in liquid_cooled_router_blades: 
+            for blade in liquid_cooled_router_blades[chassis["Xname"]]:
+                # By default assume Slingshot_Switch_Blade blades
+                mockup = get_mockup_type(blade, "Slingshot_Switch_Blade")
+                
+                # RouterBMC
+                routerBMCXname = blade["Xname"]+"b0"
+                endpoints[routerBMCXname] = make_emulator(rie_image, routerBMCXname, mockup, NETWORK, root_password)
 
 
     # River BMCs
