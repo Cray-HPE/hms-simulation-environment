@@ -240,6 +240,13 @@ class State:
 
         self.console.log("Started emulated hardware")
 
+    def start_vault(self):
+        result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "-f", "docker-compose.health.yaml", "up", "-d", "vault"], capture_output=True, text=True)
+        if result.returncode != 0:
+            raise SubprocessException(result)
+
+        self.console.log("Started Vault Services")
+
     def start_hms_services(self):
         result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "-f", "docker-compose.health.yaml", "up", "-d"], capture_output=True, text=True)
         if result.returncode != 0:
@@ -504,14 +511,17 @@ def main():
             "in_progress": "Starting emulated hardware...",
             "run": state.start_hardware
         }, {
-            "in_progress": "Starting HMS services...",
-            "run": state.start_hms_services
+            "in_progress": "Starting Vault...",
+            "run": state.start_vault
         }, {
             "in_progress": "Waiting for Vault to become ready...",
             "run": state.wait_for_vault
         }, {
             "in_progress": "Provisioning Vault...",
             "run": state.provision_vault
+        }, {
+            "in_progress": "Starting HMS services...",
+            "run": state.start_hms_services
         }, {
             "in_progress": "Waiting for SLS to become ready...",
             "run": state.wait_for_sls

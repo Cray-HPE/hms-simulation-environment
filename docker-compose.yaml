@@ -48,8 +48,8 @@ services:
       - VAULT_ADDR=http://vault:8200
       - VAULT_TOKEN=hms
       - KV_STORES=secret
-    depends_on:
-      - vault
+    # depends_on:
+    #   - vault
     networks:
       - simulation
     profiles:
@@ -150,7 +150,6 @@ services:
     depends_on:
       - cray-sls-postgres
       - cray-sls-init
-      - vault
     networks:
       - simulation
 
@@ -197,7 +196,6 @@ services:
     hostname: cray-smd
     depends_on:
       - cray-smd-init
-      - vault
     ports:
       - "27779:27779"
     networks:
@@ -258,7 +256,6 @@ services:
     depends_on:
       - cray-sls-init
       - cray-sls
-      - vault
 
   #
   # REDS
