@@ -1,0 +1,8 @@
+[
+    {
+        "BrokerAddress": "cray-shared-kafka:9092",
+        "TopicsToPublish": {
+            "cray-dmtf-resource-event": null
+        }
+    }
+]

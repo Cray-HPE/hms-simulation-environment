@@ -1,0 +1,19 @@
+{
+    "smoke_test_name": "hse-api-gateway-hmn-smoke-tests",
+    "default_base_url": "http://api-gateway-hmn/",
+    "test_paths": [
+      {
+        "path": "/readiness",
+        "expected_status_code": 204,
+        "method": "GET",
+        "body": null,
+        "headers": {}
+      }, {
+        "path": "/x9999c0s0b0",
+        "expected_status_code": 200,
+        "method": "POST",
+        "body": "{\"Context\":\"bar\",\"Events\":[{\"EventId\":\"0000001\",\"EventTimestamp\":\"2022-09-22T13:15:05-05:00\",\"Severity\":\"OK\",\"Message\":\"The power state of resource /foo has changed to type Off.\",\"MessageId\":\"CrayAlerts.1.0.ResourcePowerStateChanged\",\"MessageArgs\":[\"/foo\",\"Off\"],\"OriginOfCondition\":\"/foo\"}],\"Events@odata.count\":1}",
+        "headers": {}
+      }
+    ]
+  }

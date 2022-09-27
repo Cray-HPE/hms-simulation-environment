@@ -1,0 +1,135 @@
+{
+    "Hardware": {
+
+        "x1000": {
+            "Parent": "s0",
+            "Xname": "x1000",
+            "Type": "comptype_cabinet",
+            "Class": "Mountain",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.104.0.0/22",
+                            "Gateway": "10.104.0.1",
+                            "VLan": 3001
+                        },
+                        "NMN": {
+                            "CIDR": "10.100.0.0/22",
+                            "Gateway": "10.100.0.1",
+                            "VLan": 2001
+                        }
+                    }
+                }
+            }
+        },
+        "x1000c0": {       "Parent": "x1000",       "Xname": "x1000c0",       "Type": "comptype_chassis",     "TypeString": "Chassis",       "Class": "Mountain" },
+        "x1000c0b0": {     "Parent": "x1000c0",     "Xname": "x1000c0b0",     "Type": "comptype_chassis_bmc", "TypeString": "ChassisBMC",    "Class": "Mountain" },
+        
+        "x1000c0r0": {     "Parent": "x1000c0",     "Xname": "x1000c0r3",     "Type": "comptype_rtrmod",     "TypeString": "RouterModule",   "Class": "Mountain", "ExtraProperties": {"@rie.mockup": "Slingshot_Switch_Blade"}},
+
+        "x1000c0s0": {     "Parent": "x1000c0",     "Xname": "x1000c0s0",     "Type": "comptype_compmod",     "TypeString": "ComputeModule", "Class": "Mountain", "ExtraProperties": {"@rie.mockup": "EX425"}},
+        "x1000c0s0b0n0": { "Parent": "x1000c0s0b0", "Xname": "x1000c0s0b0n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1000, "Role": "Compute", "Aliases": ["nid001000"]}},
+        "x1000c0s0b0n1": { "Parent": "x1000c0s0b0", "Xname": "x1000c0s0b0n1", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1001, "Role": "Compute", "Aliases": ["nid001001"]}},
+        "x1000c0s0b1n0": { "Parent": "x1000c0s0b1", "Xname": "x1000c0s0b1n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1002, "Role": "Compute", "Aliases": ["nid001002"]}},
+        "x1000c0s0b1n1": { "Parent": "x1000c0s0b1", "Xname": "x1000c0s0b1n1", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1003, "Role": "Compute", "Aliases": ["nid001003"]}},
+
+        "x1000c0s1": {     "Parent": "x1000c0",     "Xname": "x1000c0s1",     "Type": "comptype_compmod",     "TypeString": "ComputeModule", "Class": "Mountain", "ExtraProperties": {"@rie.mockup": "EX420"}},
+        "x1000c0s1b0n0": { "Parent": "x1000c0s1b0", "Xname": "x1000c0s1b0n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1100, "Role": "Compute", "Aliases": ["nid001100"]}},
+        "x1000c0s1b0n1": { "Parent": "x1000c0s1b0", "Xname": "x1000c0s1b0n1", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1101, "Role": "Compute", "Aliases": ["nid001101"]}},
+        "x1000c0s1b1n0": { "Parent": "x1000c0s1b1", "Xname": "x1000c0s1b1n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1102, "Role": "Compute", "Aliases": ["nid001102"]}},
+        "x1000c0s1b1n1": { "Parent": "x1000c0s1b1", "Xname": "x1000c0s1b1n1", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1103, "Role": "Compute", "Aliases": ["nid001103"]}},
+
+        "x1000c0s2": {     "Parent": "x1000c0",     "Xname": "x1000c0s2",     "Type": "comptype_compmod",     "TypeString": "ComputeModule", "Class": "Mountain", "ExtraProperties": {"@rie.mockup": "EX235a"}},
+        "x1000c0s2b0n0": { "Parent": "x1000c0s2b0", "Xname": "x1000c0s2b0n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1200, "Role": "Compute", "Aliases": ["nid001200"]}},
+        "x1000c0s2b1n0": { "Parent": "x1000c0s2b1", "Xname": "x1000c0s2b1n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1201, "Role": "Compute", "Aliases": ["nid001201"]}},
+
+        "x1000c0s3": {     "Parent": "x1000c0",     "Xname": "x1000c0s3",     "Type": "comptype_compmod",     "TypeString": "ComputeModule", "Class": "Mountain", "ExtraProperties": {"@rie.mockup": "EX235n"}},
+        "x1000c0s3b0n0": { "Parent": "x1000c0s3b0", "Xname": "x1000c0s3b0n0", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1300, "Role": "Compute", "Aliases": ["nid001300"]}},
+        "x1000c0s3b1n0": { "Parent": "x1000c0s3b0", "Xname": "x1000c0s3b0n1", "Type": "comptype_node",        "TypeString": "Node",          "Class": "Mountain", "ExtraProperties": {"NID": 1301, "Role": "Compute", "Aliases": ["nid001301"]}},
+
+        "x3000": {
+            "Parent": "s0",
+            "Xname": "x3000",
+            "Type": "comptype_cabinet",
+            "Class": "River",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.107.0.0/22",
+                            "Gateway": "10.107.0.1",
+                            "VLan": 1513
+                        },
+                        "NMN": {
+                            "CIDR": "10.106.0.0/22",
+                            "Gateway": "10.106.0.1",
+                            "VLan": 1770
+                        }
+                    },
+                    "ncn": {
+                        "HMN": {
+                            "CIDR": "10.107.0.0/22",
+                            "Gateway": "10.107.0.1",
+                            "VLan": 1513
+                        },
+                        "NMN": {
+                            "CIDR": "10.106.0.0/22",
+                            "Gateway": "10.106.0.1",
+                            "VLan": 1770
+                        }
+                    }
+                }
+            }
+        },
+
+        "x3000c0s1b1n0": { "Parent": "x3000c0s1b1", "Xname": "x3000c0s1b1n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Intel", "NID": 1, "Role": "Compute", "Aliases": ["nid000001"]}},
+        "x3000c0s1b2n0": { "Parent": "x3000c0s1b2", "Xname": "x3000c0s1b2n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Intel", "NID": 2, "Role": "Compute", "Aliases": ["nid000002"]}},
+        "x3000c0s1b3n0": { "Parent": "x3000c0s1b3", "Xname": "x3000c0s1b3n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Intel", "NID": 3, "Role": "Compute", "Aliases": ["nid000003"]}},
+        "x3000c0s1b4n0": { "Parent": "x3000c0s1b4", "Xname": "x3000c0s1b4n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Intel", "NID": 4, "Role": "Compute", "Aliases": ["nid000004"]}},
+
+        "x3000c0s3b1n0": { "Parent": "x3000c0s3b1", "Xname": "x3000c0s3b1n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Gigabyte", "NID": 11, "Role": "Compute", "Aliases": ["nid000011"]}},
+        "x3000c0s3b2n0": { "Parent": "x3000c0s3b2", "Xname": "x3000c0s3b2n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Gigabyte", "NID": 12, "Role": "Compute", "Aliases": ["nid000012"]}},
+        "x3000c0s3b3n0": { "Parent": "x3000c0s3b3", "Xname": "x3000c0s3b3n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Gigabyte", "NID": 13, "Role": "Compute", "Aliases": ["nid000013"]}},
+        "x3000c0s3b4n0": { "Parent": "x3000c0s3b4", "Xname": "x3000c0s3b4n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "Gigabyte", "NID": 14, "Role": "Compute", "Aliases": ["nid000014"]}},
+
+        "x3000c0s5b0n0": { "Parent": "x3000c0s5b0", "Xname": "x3000c0s5b0n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "DL325",      "Role": "Application", "SubRole": "UAN", "Aliases": ["uan01"]}},
+
+        "x3000c0s6b0n0": { "Parent": "x3000c0s6b0", "Xname": "x3000c0s6b0n0", "Type": "comptype_node", "TypeString": "Node", "Class": "River", "ExtraProperties": {"@rie.mockup": "XL675d_A40", "NID": 20, "Role": "Compute",   "Aliases": ["nid000020"]}},
+
+        "x3000c0w31": {"Parent": "x3000c0",
+            "Xname": "x3000c0w31",
+            "Type": "comptype_mgmt_switch",
+            "Class": "River",
+            "TypeString": "MgmtSwitch",
+            "ExtraProperties": {
+                "IP4addr": "10.254.0.8",
+                "Brand": "Aruba",
+                "SNMPAuthPassword": "vault://hms-creds/x3000c0w31",
+                "SNMPAuthProtocol": "MD5",
+                "SNMPPrivPassword": "vault://hms-creds/x3000c0w31",
+                "SNMPPrivProtocol": "DES",
+                "SNMPUsername": "testuser",
+                "Aliases": [
+                    "sw-leaf-bmc-001"
+                ]
+            }
+        },
+
+        "x3000c0w31j10": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j10", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s1b1"], "VendorName": "1/1/10"}},
+        "x3000c0w31j11": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j11", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s1b2"], "VendorName": "1/1/11"}},
+        "x3000c0w31j12": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j12", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s1b3"], "VendorName": "1/1/12"}},
+        "x3000c0w31j13": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j13", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s1b4"], "VendorName": "1/1/13"}},
+        
+        "x3000c0w31j14": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j14", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s3b1"], "VendorName": "1/1/14"}},
+        "x3000c0w31j15": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j15", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s3b2"], "VendorName": "1/1/15"}},
+        "x3000c0w31j16": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j16", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s3b3"], "VendorName": "1/1/16"}},
+        "x3000c0w31j17": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j17", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s3b4"], "VendorName": "1/1/17"}},
+        
+        "x3000c0w31j18": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j18", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s5b0"], "VendorName": "1/1/18"}},
+        "x3000c0w31j19": { "Parent": "x3000c0w31", "Xname": "x3000c0w31j19", "Type": "comptype_mgmt_switch_connector", "TypeString": "MgmtSwitchConnector", "Class": "River", "ExtraProperties": {"NodeNics": ["x3000c0s6b0"], "VendorName": "1/1/19"}}
+    },
+    "Networks": {}
+}

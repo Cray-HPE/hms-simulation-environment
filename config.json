@@ -1,0 +1,35 @@
+{
+  "capmc": {
+    "urls": {
+      "gateway": {
+        "path": "https://api-gw-service-nmn.local/apis/capmc/capmc/v1/",
+        "requiresAuth": true
+      },
+      "service-mesh": {
+        "path": "http://cray-capmc/capmc/v1/",
+        "requiresAuth": false
+      },
+      "development": {
+        "path": "http://localhost:27777/capmc/v1/",
+        "requiresAuth": false
+      }
+    }
+  },
+  "hsm": {
+    "urls": {
+      "gateway": {
+        "path": "https://api-gw-service-nmn.local/apis/smd/hsm/v2/",
+        "requiresAuth": true
+      },
+      "service-mesh": {
+        "path": "http://cray-smd/hsm/v2/",
+        "requiresAuth": false
+      },
+      "development": {
+        "path": "http://localhost:27779/hsm/v2/",
+        "name": "development",
+        "requiresAuth": false
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+    "Hardware": {
+
+        "x1000": {
+            "Parent": "s0",
+            "Xname": "x1000",
+            "Type": "comptype_cabinet",
+            "Class": "Mountain",
+            "TypeString": "Cabinet",
+            "ExtraProperties": {
+                "Networks": {
+                    "cn": {
+                        "HMN": {
+                            "CIDR": "10.104.0.0/22",
+                            "Gateway": "10.104.0.1",
+                            "VLan": 3001
+                        },
+                        "NMN": {
+                            "CIDR": "10.100.0.0/22",
+                            "Gateway": "10.100.0.1",
+                            "VLan": 2001
+                        }
+                    }
+                }
+            }
+        },
+        "x1000c0": {
+            "Parent": "x1000",
+            "Xname": "x1000c0",
+            "Type": "comptype_chassis",
+            "Class": "Mountain",
+            "TypeString": "Chassis"
+        },
+        "x1000c0b0": {
+            "Parent": "x1000c0",
+            "Xname": "x1000c0b0",
+            "Type": "comptype_chassis_bmc",
+            "Class": "Mountain",
+            "TypeString": "ChassisBMC"
+        },
+        "x1000c0s0": {
+            "Parent": "x1000c0",
+            "Xname": "x1000c0s0",
+            "Type": "comptype_compmod",
+            "TypeString": "ComputeModule",
+            "Class": "Mountain",
+            "ExtraProperties": {
+                "@rie.mockup": "EX425"
+            }
+        },
+        "x1000c0s0b0n0": {
+            "Parent": "x1000c0s0b0",
+            "Xname": "x1000c0s0b0n0",
+            "Type": "comptype_node",
+            "Class": "Mountain",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1000,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001000"
+                ]
+            }
+        },
+        "x1000c0s0b0n1": {
+            "Parent": "x1000c0s0b0",
+            "Xname": "x1000c0s0b0n1",
+            "Type": "comptype_node",
+            "Class": "Mountain",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1001,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001001"
+                ]
+            }
+        },
+        "x1000c0s0b1n0": {
+            "Parent": "x1000c0s0b1",
+            "Xname": "x1000c0s0b1n0",
+            "Type": "comptype_node",
+            "Class": "Mountain",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1002,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001002"
+                ]
+            }
+        },
+        "x1000c0s0b1n1": {
+            "Parent": "x1000c0s0b1",
+            "Xname": "x1000c0s0b1n1",
+            "Type": "comptype_node",
+            "Class": "Mountain",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "NID": 1003,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid001003"
+                ]
+            }
+        }
+    },
+    "Networks": {}
+}

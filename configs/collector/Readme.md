@@ -1,0 +1,3 @@
+# Collector configuration
+
+This `kafka_brokers.json` file is setup to only send non-telemetry redfish events to the "shared-services" kafka. On a production deployment of the collector telemetry is sent to the SMA Kafka instance, for more information of a production deployment of the collector see the [`kafkaBrokers` configuration in the cray-hms-hmcollector helm chart](https://github.com/Cray-HPE/hms-hmcollector-charts/blob/main/charts/v2.15/cray-hms-hmcollector/values.yaml#L68). 
