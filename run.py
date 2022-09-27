@@ -395,6 +395,14 @@ class State:
                 self.console.log("Issuing a rediscovery on: ", json.dumps(redfish_endpoints_to_rediscover))
                 result = requests.post('http://localhost:27779/hsm/v2/Inventory/Discover', json={"xnames": redfish_endpoints_to_rediscover})
                 result.raise_for_status()
+
+            # As a sanity check verify Vault still has the default credentials in it
+            for key in ["meds-cred/global/ipmi", "reds-creds/defaults", "reds-creds/switch_defaults"]:
+                try:
+                    self.vaultClient.secrets.kv.v1.read_secret(key)
+                except hvac.exceptions.InvalidPath as e:
+                    self.error_console.log(f"Expected secret secret/{key} does not exist in Vault")
+                    raise e
             
             sleep(5)
 
