@@ -48,16 +48,6 @@ if ! ./run.py configs/sls/small_mountain.json --wait-attempts-for-discovered-har
   cleanup 1 
 fi
 
-# sleep 120
-
-# docker compose exec vault vault login hms
-# docker compose exec vault vault kv list secret 
-
-# docker compose ps
-# docker compose logs vault
-# docker compose logs cray-meds
-# exit 1
-
 # Run the smoke tests
 for smoke_test in test-smoke-api-gateway-services test-smoke-api-gateway-hmn test-smoke-api-gateway-rie-proxy; do
     if ! docker-compose -f docker-compose.integration.yaml up --exit-code-from "${smoke_test}" "${smoke_test}"; then
