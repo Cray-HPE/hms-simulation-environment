@@ -42,7 +42,7 @@ docker compose -f docker-compose.health.yaml build
 docker compose -f docker-compose.integration.yaml build
 
 # Standup the simulation environment!
-if ! ./run.py configs/sls/small_mountain.json --wait-attempts-for-discovered-hardware=10 --wait-attempts-for-redfish-events=10; then
+if ! ./run.py configs/sls/small_mountain.json; then
   echo "Failed to standup simulation environment!"
   docker compose ps
   docker ps  -a | grep vault
