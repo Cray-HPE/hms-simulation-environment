@@ -281,6 +281,15 @@ class State:
 
         self.console.log("Vault is ready")
 
+        # Wait for Vault to stabilize
+        for i in range(0, 30):
+            try: 
+                self.console.log("Vault Initialized", self.vaultClient.sys.is_initialized())
+                
+            except requests.exceptions.ConnectionError as e:
+                self.console.log(e)
+            sleep(1)
+
     def provision_vault(self):
         # The previous of vault in pervious iterations of the hms-simulation-environment has been fragile
         # so we will stand up each init job one at a time after we know that vault is healthy.
