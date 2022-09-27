@@ -24,7 +24,6 @@
 version: '3.7'
 networks:
   simulation:
-
 services:
   #
   # Vault
@@ -52,7 +51,6 @@ services:
       - vault
     networks:
       - simulation
-
   #
   # SLS
   #
@@ -98,7 +96,6 @@ services:
       - vault
     networks:
       - simulation
-
   #
   # HSM
   #
@@ -114,17 +111,19 @@ services:
     networks:
       - simulation
   cray-smd-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.57.0
     environment:
       - SMD_DBHOST=cray-smd-postgres
       - SMD_DBPORT=5432
     depends_on:
       - cray-smd-postgres
+    volumes:
+      - ./realsystem/data:/data
     networks:
       - simulation
-    command: /entrypoint.sh smd-init
+    command: /data/fill-smd-db.sh && /entrypoint.sh smd-init
   cray-smd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.55.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.57.0
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
@@ -147,7 +146,6 @@ services:
       - "27779:27779"
     networks:
       - simulation
-
   #
   # MEDS
   #
@@ -163,13 +161,12 @@ services:
       VAULT_KEYPATH: secret/hms-creds
       VAULT_REDFISH_DEFAULTS: '{"Username": "root", "Password": "root_password"}'
     command: vault_loader
-    volumes: 
+    volumes:
       - ./configs:/configs
     depends_on:
       - vault-kv-enabler
     networks:
       - simulation
-  
   meds:
     image: artifactory.algol60.net/csm-docker/unstable/cray-meds:1.19.0-20220707210011.d63bc7a
     environment:
@@ -182,18 +179,16 @@ services:
       - VAULT_TOKEN=hms
       - VAULT_KEYPATH=hms-creds # MEDS has a hardcode to prepend secret/ to this path.
       - VAULT_SKIP_VERIFY=true
-
       - MEDS_SYSLOG_TARG=localhost:514
       # - MEDS_SYSLOG_TARG_USE_IP=
       - MEDS_NTP_TARG=localhost:123
       # - MEDS_NTP_TARG_USE_IP=
       - MEDS_CA_URI=
-
       # - MEDS_NTP_TARG="time-hmn:123"
       # - MEDS_SYSLOG_TARG="rsyslog-aggregator.hmnlb:514"
       # - MEDS_NP_RF_URL=/redfish/v1/Managers/BMC/NetworkProtocol
       # - MEDS_ROOT_SSH_KEY=""
-    volumes: 
+    volumes:
       - ./configs:/configs
     networks:
       - simulation
@@ -201,7 +196,6 @@ services:
       - cray-sls-init
       - cray-sls
       - vault
-
   #
   # REDS
   cray-reds-etcd:
@@ -229,7 +223,7 @@ services:
     networks:
       - simulation
     depends_on:
-    - vault-kv-enabler
+      - vault-kv-enabler
   cray-reds:
     image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.23.0
     environment:
@@ -268,3 +262,36 @@ services:
       - "27777:27777"
     networks:
       - simulation
+
+  #
+  # BSS
+  #
+  cray-bss:
+    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.21.0
+    hostname: bss
+    environment:
+      - BSS_ADVERTISE_ADDRESS=http://0.0.0.0:8888
+      - ETCD_HOST=cray-bss-etcd
+      - ETCD_PORT=2379
+      - HSM_URL=http://cray-smd:27779
+      # - NFD_URL=http://fake_hsm_${HSUFFIX:-bss}:${FAKE_SM_PORT:-28000}/hsm/v1
+      - S3_ACCESS_KEY=foo
+      - S3_SECRET_KEY=foo
+      - S3_BUCKET=images
+      - S3_ENDPOINT=s3
+    networks:
+      - simulation
+    ports:
+      - 27778:27778
+  cray-bss-etcd:
+    image: arti.dev.cray.com/third-party-docker-stable-local/coreos/etcd:v3.4.7
+    hostname: etcd
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    networks:
+      - simulation
+    # ports:
+      # - 2379:2379
+      # - 2380:2380

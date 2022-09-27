@@ -1,0 +1,2017 @@
+[
+  {
+    "kernel": "s3://ncn-images/k8s/0.2.89/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://ncn-images/ceph/0.3.31/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/0ba2840c-f4c9-4e03-b81f-befe7c63dd10/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://ncn-images/k8s/0.3.31/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/doom/6.6.6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/73b6e1ae-57e5-4642-9891-d33f863a23d7/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://ncn-images/k8s/doom/6.6.6/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://ncn-images/k8s/0.3.31-1/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://ncn-images/ceph/0.2.89/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/45cce22a-fef6-42f3-82d9-469e58d539c2/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/4e00d604-2db3-4f04-a187-2ab39f217119/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/k8s/doom/6.6.6/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "kernel": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/0ba2840c-f4c9-4e03-b81f-befe7c63dd10/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/k8s/doom/6.6.6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://ncn-images/k8s/doom/6.6.6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://ncn-images/ceph/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/4e00d604-2db3-4f04-a187-2ab39f217119/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://ncn-images/ceph/0.2.89/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://ncn-images/k8s/0.2.89/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://ncn-images/k8s/0.3.31-1/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://ncn-images/k8s/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/73b6e1ae-57e5-4642-9891-d33f863a23d7/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/45cce22a-fef6-42f3-82d9-469e58d539c2/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "initrd": "s3://boot-images/doom/6.6.6/kernel",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "Global"
+    ],
+    "params": "psi=1 metal.no-wipe=1",
+    "cloud-init": {
+      "meta-data": {
+        "ca-certs": {
+          "remove-defaults": false,
+          "trusted": [
+            "-----BEGIN CERTIFICATE-----\nMIIEuDCCAyCgAwIBAgIUcUTBqlsZv/K1QuKcFm2sUhk7OT4wDQYJKoZIhvcNAQEL\nBQAwYTEPMA0GA1UECgwGU2hhc3RhMREwDwYDVQQLDAhQbGF0Zm9ybTE7MDkGA1UE\nAwwyUGxhdGZvcm0gQ0EgKDM1NThmMzI2LTc1MDYtNGY0Yy1iYzgxLTI0MGQ5NTdi\nOGI4YSkwHhcNMjIwODA4MDczMDEwWhcNMzIwODA1MDczMDEwWjBmMQ8wDQYDVQQK\nDAZTaGFzdGExETAPBgNVBAsMCFBsYXRmb3JtMUAwPgYDVQQDDDdQbGF0Zm9ybSBD\nQSAtIEwxICgzNTU4ZjMyNi03NTA2LTRmNGMtYmM4MS0yNDBkOTU3YjhiOGEpMIIB\nojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAut5JuqRcXFOW795B7mvSK1RN\nXOSR4/SuMoozlXyxXYlFXtGyzmS8yzNDTFcprxDoGwxExV/FjZKBdUBPAsPZzKwJ\nwlWpcfHgEz/E+81EMrQwSkpmDkJI3tF4+anhEFx5sEk9UJK6goAZ41nl4te0wL+P\n0LDv1u67zCuLwJiywXMdFYjNF/w0XnvYUpqKggZ0teM63q6jhfVgYysQeQNZKomZ\n90wQv6nNKiZQ8bcAywJE8SA2oQYy7tFL7EQoythlZHnKwj47LOXkOtHltZxzpj+8\nx7p6H1tbvJVlgeGmz6hEuvbqa+klVz3TToqNvsFdDIlG0V2FbHBBalzEdJ/Slpom\nGJ3GvtJxdR12PR3pYd8JSlyrdbtWV9Ikn6tCiu8BbIUkxXMiyID7kENuknZs94IC\nFDfVi2jpzZ73arfTiPwXTX+BadKFgRurB/jAh4QTTtyePWswYwVKSUHKRY5FkeXh\nrwUYF5mpSQvX+fOpMGhX6tA1LAgTGwiUkb1eOg3DAgMBAAGjYzBhMA8GA1UdEwEB\n/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBQ6HS6beB/mbHIut8TH\ne4DzrwpJzTAfBgNVHSMEGDAWgBTrWiHA87JN1fVZHtnjD48Yq6x6vzANBgkqhkiG\n9w0BAQsFAAOCAYEAvTgzH3wmJyxgyb1RhyL70C/Ta5JkzOFZUUb/hFfXKWpWwA+m\nypYkDfPvCnJxg+sXQdOaSQweiZhWKM4g2DwJf/+Fo+rrpUHXekVImRFfu5kECaoH\nCpEEtLEpEEB1eARH1N89jYgHCt/pQAVlBXIYzZjZInL8NCUiyUGh6oqWyStJMVAS\nUiPZMU1ZdhF3GUgerLMp1il20T+w9QAfsrT6Lh7LbMDrF0PYsOCHqLU2hXDtdlfH\nh9V2gFptnFrxY30gFWkiCZHCIGTi1jfrv0Y8+hkRFblbYNBUWthM/oZ8OnG+WY0H\no3QaRSnMMZfXWYTso0tRU8r4BnrP9OGvxDw8ofJtALmhGnxSCThmS2LQV7230yM7\nvbYCKKIkPQNTLmVJ2Z1a0K5v2Ez0rgi2o1kj+3GKAvR5FTjjeXjDbCC1TppYP3zi\nCSyQ5lS2DbBMgAGWMQHmPv6SgrGXXyU6/QbN8c3Ob2NKxE1FrQby1nHgaWa0UlLP\n2YiZ791CvIisntAt\n-----END CERTIFICATE-----\n",
+            "-----BEGIN CERTIFICATE-----\nMIIEkjCCAvqgAwIBAgIUUAcvYs/nsyzvg4g+8mcx1+X2KRswDQYJKoZIhvcNAQEL\nBQAwYTEPMA0GA1UECgwGU2hhc3RhMREwDwYDVQQLDAhQbGF0Zm9ybTE7MDkGA1UE\nAwwyUGxhdGZvcm0gQ0EgKDM1NThmMzI2LTc1MDYtNGY0Yy1iYzgxLTI0MGQ5NTdi\nOGI4YSkwHhcNMjIwODA4MDczMDA5WhcNMzIwODA2MDczMDA5WjBhMQ8wDQYDVQQK\nDAZTaGFzdGExETAPBgNVBAsMCFBsYXRmb3JtMTswOQYDVQQDDDJQbGF0Zm9ybSBD\nQSAoMzU1OGYzMjYtNzUwNi00ZjRjLWJjODEtMjQwZDk1N2I4YjhhKTCCAaIwDQYJ\nKoZIhvcNAQEBBQADggGPADCCAYoCggGBANV5iCPmh+W7Ys4HQBObDeTb4HuDHeFb\nDBZSuAjYAlOLVvfAWxbJZ09tUZTK0KAbm2MESJEeRu8uls14nPMJ2dRBtXEuZqmN\nrxFZ/fikW00cV+hmK4sxVdkSaF4iyn+16WtowBiofz9Kw08ZvTeRPdZuxBNsBAE6\nV9CD5GWbD6PJpWQ7M7BZfiWwniDQx2q0AchVZhyg/e1UlLnlopTQtfxpSkOD69jT\nkKUHmOdHO/o7O7fgaWYYlUyABk39OYnv9OWgobSnxhkO/Ue9a2ETGXCmxI1iHcaT\nnOtNLtQ2UcKM5lnmsP863wMShHpRe3ZZyvJaKQYYq+nJhNX14ExJaA7qfhBJKTbj\n4bHeQh1+nILngjCy1thDmJGVQEWzNWxs+gBrYRvV5aR2lfR8ESyPblfjzOh2Knd7\nxgmqDDqleYuNT+j87U3ZwCPnNaWctJMYBh+Y1icZ+w7bPfYswgfuUdBudCjHI52x\ndGYQQshZ4xro9oyaA3jG1nTWsTkymmVWJQIDAQABo0IwQDAPBgNVHRMBAf8EBTAD\nAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQU61ohwPOyTdX1WR7Z4w+PGKus\ner8wDQYJKoZIhvcNAQELBQADggGBAA8E2KAFPfnAr1GaxTN6MdwhNS0G+XsCyQbR\nezsy0AM153MVH2KjmzFX65ID1UN55U2u/FPiHTti+Ag7/aQYfCArDl4yPk6TpBBQ\nm7VTUACfTQIHKR5n6Qn9OaJJ0AsMptCka1exNQd81FPrsOMj+sGZzMQ+odV97LEs\niCw9NYS4toUt68mJEqc77+hZ4tZGkpNCdylSKJe1sb5/tRJQshII5nhPicR+I5GW\nez7v/LXVd0srX4CqqYr72mMT2APqq6cfIGsBn9+VLYnVU0Ck8mFj30F6O8jVFrvS\nybJxMHRcAgchzRPXnMxrQqU1Qbb1A7AFRCP9LLhxziMuhli8zWir225Rspfl7BXU\ncIsNlABUGujTr4/42YIUGZaDE6sJO1SPNbYs7RSLWqqveTxH4jnHby7X5QgVB0To\nklAtLGljQiHw/KaU6fj0kGKEDYr3y/gZhfUbCkQb3SnGDsbqS3bhZUkBNfoG9UDA\nlQw1GOKjqgClkbulpIrs3XGlseKJEg==\n-----END CERTIFICATE-----\n"
+          ]
+        },
+        "ceph-cephfs-image": "dtr.dev.cray.com/cray/cray-cephfs-provisioner:0.1.0-nautilus-1.3",
+        "ceph-rbd-image": "dtr.dev.cray.com/cray/cray-rbd-provisioner:0.1.0-nautilus-1.3",
+        "cfs_public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCzF1QKjR7aFDnA+PsbwrB3A7oYrXCHd5meiRe5BUe/swxzWsu7D9mW+lc4jq5YCNs6st36LZb7Z0yHZK0WGj+Uwin+MMFwR7WUarvk+gVFIxrBD0ztnIsc1R87SnlhefZok1U8QiVuR4/pv2fTlzkWh+NJrPtwnN1DsmOtHjPtq+GpTTMkwhh7vr2a4WGxL5owLqz4fft79T57Bg4Yr9Pf/Pk8RFaxqqEZ69UBNfIqtV38Fr/RjkPoGrw0XkVisVjbwVnsDCOBbGxJ4332JslU1432B8DagzaxHBvrHeSkxzQbsHTAwF3HfXs5nS+9fC/2sHZS5i0jZ6ZAWWf0h3vNZPHfFQv/qkQWa5OBj6alHnXhseoEBqFm26Ay7d5z+g+n5QrLaWGp++AvCfPKkI8OetBomLrcSo8zwSvvx4B6mtdAkvyfao/hbxWWLcr2BOVnS/tOU8c0VStGa5VywQIZWhXqnuU2SjBYuJWuke5MurveWeG9TAVtZ4hPbur4neg+0xwlg37ioUmbiybjpNzUYKelZ5oJr6sJ78FXiB1HCKNUL0biGm+M+IGulHwYSArhBXLSuAALsIfCcUs6vQr2LzC6LJtUy0s80+mBYuuURZO4Y8r1NKu4upJcKMn5JOgF+dLmF6jmls0tOfjAOvQY6poKLieTr7ibA2oWKar1yw==\n",
+        "dns-server": "10.92.100.225 10.94.100.225",
+        "docker-image-registry": "dtr.dev.cray.com",
+        "domain": "nmn mtl hmn",
+        "first-master-hostname": "ncn-m002",
+        "host_records": [
+          {
+            "aliases": [
+              "ncn-s003.cmn"
+            ],
+            "ip": "10.103.11.19"
+          },
+          {
+            "aliases": [
+              "ncn-s003.hmn"
+            ],
+            "ip": "10.254.1.4"
+          },
+          {
+            "aliases": [
+              "ncn-s003-mgmt"
+            ],
+            "ip": "10.254.1.3"
+          },
+          {
+            "aliases": [
+              "ncn-s003.nmn",
+              "ncn-s003"
+            ],
+            "ip": "10.252.1.4"
+          },
+          {
+            "aliases": [
+              "ncn-s003.mtl"
+            ],
+            "ip": "10.1.1.2"
+          },
+          {
+            "aliases": [
+              "ncn-s002.cmn"
+            ],
+            "ip": "10.103.11.20"
+          },
+          {
+            "aliases": [
+              "ncn-s002.hmn"
+            ],
+            "ip": "10.254.1.6"
+          },
+          {
+            "aliases": [
+              "ncn-s002-mgmt"
+            ],
+            "ip": "10.254.1.5"
+          },
+          {
+            "aliases": [
+              "ncn-s002.nmn",
+              "ncn-s002"
+            ],
+            "ip": "10.252.1.5"
+          },
+          {
+            "aliases": [
+              "ncn-s002.mtl"
+            ],
+            "ip": "10.1.1.3"
+          },
+          {
+            "aliases": [
+              "ncn-s001.cmn"
+            ],
+            "ip": "10.103.11.21"
+          },
+          {
+            "aliases": [
+              "ncn-s001.hmn"
+            ],
+            "ip": "10.254.1.8"
+          },
+          {
+            "aliases": [
+              "ncn-s001-mgmt"
+            ],
+            "ip": "10.254.1.7"
+          },
+          {
+            "aliases": [
+              "ncn-s001.nmn",
+              "ncn-s001"
+            ],
+            "ip": "10.252.1.6"
+          },
+          {
+            "aliases": [
+              "ncn-s001.mtl"
+            ],
+            "ip": "10.1.1.4"
+          },
+          {
+            "aliases": [
+              "ncn-w003.nmn",
+              "ncn-w003"
+            ],
+            "ip": "10.252.1.7"
+          },
+          {
+            "aliases": [
+              "ncn-w003.mtl"
+            ],
+            "ip": "10.1.1.5"
+          },
+          {
+            "aliases": [
+              "ncn-w003.cmn"
+            ],
+            "ip": "10.103.11.22"
+          },
+          {
+            "aliases": [
+              "ncn-w003.hmn"
+            ],
+            "ip": "10.254.1.10"
+          },
+          {
+            "aliases": [
+              "ncn-w003-mgmt"
+            ],
+            "ip": "10.254.1.9"
+          },
+          {
+            "aliases": [
+              "ncn-w002.hmn"
+            ],
+            "ip": "10.254.1.12"
+          },
+          {
+            "aliases": [
+              "ncn-w002-mgmt"
+            ],
+            "ip": "10.254.1.11"
+          },
+          {
+            "aliases": [
+              "ncn-w002.nmn",
+              "ncn-w002"
+            ],
+            "ip": "10.252.1.8"
+          },
+          {
+            "aliases": [
+              "ncn-w002.mtl"
+            ],
+            "ip": "10.1.1.6"
+          },
+          {
+            "aliases": [
+              "ncn-w002.cmn"
+            ],
+            "ip": "10.103.11.23"
+          },
+          {
+            "aliases": [
+              "ncn-w001.cmn"
+            ],
+            "ip": "10.103.11.24"
+          },
+          {
+            "aliases": [
+              "ncn-w001.hmn"
+            ],
+            "ip": "10.254.1.14"
+          },
+          {
+            "aliases": [
+              "ncn-w001-mgmt"
+            ],
+            "ip": "10.254.1.13"
+          },
+          {
+            "aliases": [
+              "ncn-w001.nmn",
+              "ncn-w001"
+            ],
+            "ip": "10.252.1.9"
+          },
+          {
+            "aliases": [
+              "ncn-w001.mtl"
+            ],
+            "ip": "10.1.1.7"
+          },
+          {
+            "aliases": [
+              "ncn-m003.cmn"
+            ],
+            "ip": "10.103.11.25"
+          },
+          {
+            "aliases": [
+              "ncn-m003.hmn"
+            ],
+            "ip": "10.254.1.16"
+          },
+          {
+            "aliases": [
+              "ncn-m003-mgmt"
+            ],
+            "ip": "10.254.1.15"
+          },
+          {
+            "aliases": [
+              "ncn-m003.nmn",
+              "ncn-m003"
+            ],
+            "ip": "10.252.1.10"
+          },
+          {
+            "aliases": [
+              "ncn-m003.mtl"
+            ],
+            "ip": "10.1.1.8"
+          },
+          {
+            "aliases": [
+              "ncn-m002.cmn"
+            ],
+            "ip": "10.103.11.26"
+          },
+          {
+            "aliases": [
+              "ncn-m002.hmn"
+            ],
+            "ip": "10.254.1.18"
+          },
+          {
+            "aliases": [
+              "ncn-m002-mgmt"
+            ],
+            "ip": "10.254.1.17"
+          },
+          {
+            "aliases": [
+              "ncn-m002.nmn",
+              "ncn-m002"
+            ],
+            "ip": "10.252.1.11"
+          },
+          {
+            "aliases": [
+              "ncn-m002.mtl"
+            ],
+            "ip": "10.1.1.9"
+          },
+          {
+            "aliases": [
+              "ncn-m001.hmn"
+            ],
+            "ip": "10.254.1.20"
+          },
+          {
+            "aliases": [
+              "ncn-m001-mgmt"
+            ],
+            "ip": "10.254.1.19"
+          },
+          {
+            "aliases": [
+              "ncn-m001.nmn",
+              "ncn-m001"
+            ],
+            "ip": "10.252.1.12"
+          },
+          {
+            "aliases": [
+              "ncn-m001.mtl"
+            ],
+            "ip": "10.1.1.10"
+          },
+          {
+            "aliases": [
+              "ncn-m001.cmn"
+            ],
+            "ip": "10.103.11.27"
+          },
+          {
+            "aliases": [
+              "kubeapi-vip",
+              "kubeapi-vip.nmn"
+            ],
+            "ip": "10.252.1.2"
+          },
+          {
+            "aliases": [
+              "rgw-vip",
+              "rgw-vip.nmn"
+            ],
+            "ip": "10.252.1.3"
+          },
+          {
+            "aliases": [
+              "pit",
+              "pit.nmn"
+            ],
+            "ip": "10.252.1.12"
+          },
+          {
+            "aliases": [
+              "packages.local",
+              "registry.local"
+            ],
+            "ip": "10.92.100.71"
+          },
+          {
+            "aliases": [
+              "sw-spine-001"
+            ],
+            "ip": "10.254.0.2"
+          },
+          {
+            "aliases": [
+              "sw-spine-002"
+            ],
+            "ip": "10.254.0.3"
+          },
+          {
+            "aliases": [
+              "sw-leaf-bmc-001"
+            ],
+            "ip": "10.254.0.4"
+          },
+          {
+            "aliases": [
+              "packages.local",
+              "registry.local"
+            ],
+            "ip": "10.92.100.71"
+          },
+          {
+            "aliases": [
+              "ncn-w004.cmn"
+            ],
+            "ip": "10.103.11.28"
+          },
+          {
+            "aliases": [
+              "ncn-w004.hmn"
+            ],
+            "ip": "10.254.1.22"
+          },
+          {
+            "aliases": [
+              "ncn-w004.mtl"
+            ],
+            "ip": "10.1.1.11"
+          },
+          {
+            "aliases": [
+              "ncn-w004.nmn",
+              "ncn-w004"
+            ],
+            "ip": "10.252.1.13"
+          },
+          {
+            "aliases": [
+              "ncn-w004-mgmt"
+            ],
+            "ip": "10.254.1.21"
+          }
+        ],
+        "internal-domain": "~FIXME~",
+        "k8s-api-auditing-enabled": false,
+        "k8s-virtual-ip": "10.252.1.2",
+        "kubernetes-max-pods-per-node": "200",
+        "kubernetes-pods-cidr": "10.32.0.0/12",
+        "kubernetes-services-cidr": "10.16.0.0/12",
+        "kubernetes-weave-mtu": "1376",
+        "ncn-mgmt-node-auditing-enabled": false,
+        "num_storage_nodes": 3,
+        "rgw-virtual-ip": "10.252.1.3",
+        "site-domain": "hpc.amslabs.hpecorp.net",
+        "spire": {
+          "fqdn": "10.92.100.82",
+          "trustdomain": "shasta"
+        },
+        "system-name": "surtur",
+        "wipe-ceph-osds": "no"
+      },
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s17b1n0"
+    ],
+    "params": "console=ttyS0,115200 bad_page=panic crashkernel=360M hugepagelist=2m-2g intel_iommu=off intel_pstate=disable iommu.passthrough=on numa_interleave_omit=headless oops=panic pageblock_order=14 rd.neednet=1 rd.retry=10 rd.shell systemd.unified_cgroup_hierarchy=1 ip=dhcp spire_join_token=${SPIRE_JOIN_TOKEN} rd.break=pre-pivot root=craycps-s3:s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs:b82b0c591cf1befd6a97aa1170931cef-238:dvs:api-gw-service-nmn.local:300:hsn0,nmn0:0 nmd_data=url=s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs,etag=b82b0c591cf1befd6a97aa1170931cef-238 bos_session_id=34910d2d-d6f4-4d17-a76b-a5228b2d21fa",
+    "kernel": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/kernel",
+    "initrd": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s17b2n0"
+    ],
+    "params": "console=ttyS0,115200 bad_page=panic crashkernel=360M hugepagelist=2m-2g intel_iommu=off intel_pstate=disable iommu.passthrough=on numa_interleave_omit=headless oops=panic pageblock_order=14 rd.neednet=1 rd.retry=10 rd.shell systemd.unified_cgroup_hierarchy=1 ip=dhcp quiet spire_join_token=${SPIRE_JOIN_TOKEN} root=craycps-s3:s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs:b82b0c591cf1befd6a97aa1170931cef-238:dvs:api-gw-service-nmn.local:300:hsn0,nmn0:0 nmd_data=url=s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs,etag=b82b0c591cf1befd6a97aa1170931cef-238 bos_session_id=1b1eb80f-2afc-4f84-b264-8bb273619e65",
+    "kernel": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/kernel",
+    "initrd": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s17b3n0"
+    ],
+    "params": "console=ttyS0,115200 bad_page=panic crashkernel=360M hugepagelist=2m-2g intel_iommu=off intel_pstate=disable iommu.passthrough=on numa_interleave_omit=headless oops=panic pageblock_order=14 rd.neednet=1 rd.retry=10 rd.shell systemd.unified_cgroup_hierarchy=1 ip=dhcp quiet spire_join_token=${SPIRE_JOIN_TOKEN} root=craycps-s3:s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs:b82b0c591cf1befd6a97aa1170931cef-238:dvs:api-gw-service-nmn.local:300:hsn0,nmn0:0 nmd_data=url=s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs,etag=b82b0c591cf1befd6a97aa1170931cef-238 bos_session_id=1b1eb80f-2afc-4f84-b264-8bb273619e65",
+    "kernel": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/kernel",
+    "initrd": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s17b4n0"
+    ],
+    "params": "console=ttyS0,115200 bad_page=panic crashkernel=360M hugepagelist=2m-2g intel_iommu=off intel_pstate=disable iommu.passthrough=on numa_interleave_omit=headless oops=panic pageblock_order=14 rd.neednet=1 rd.retry=10 rd.shell systemd.unified_cgroup_hierarchy=1 ip=dhcp quiet spire_join_token=${SPIRE_JOIN_TOKEN} root=craycps-s3:s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs:b82b0c591cf1befd6a97aa1170931cef-238:dvs:api-gw-service-nmn.local:300:hsn0,nmn0:0 nmd_data=url=s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/rootfs,etag=b82b0c591cf1befd6a97aa1170931cef-238 bos_session_id=1b1eb80f-2afc-4f84-b264-8bb273619e65",
+    "kernel": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/kernel",
+    "initrd": "s3://boot-images/6374bd88-c612-4087-9721-2f2770c0c9d6/initrd",
+    "cloud-init": {
+      "meta-data": null,
+      "user-data": null,
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s1b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt1:94:40:c9:5f:b5:de ifname=mgmt0:14:02:ec:da:b9:98 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-m001 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-59D98943",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.27/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.20/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.10/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.12/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-m001",
+        "region": "surtur",
+        "shasta-role": "ncn-master",
+        "xname": "x3000c0s1b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-m001",
+        "local_hostname": "ncn-m001",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17",
+            "10.107.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s2b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt1:94:40:c9:5f:a3:a8 ifname=mgmt0:14:02:ec:da:b8:18 ifname=sun1:94:40:c9:5f:a3:a9 ifname=sun0:14:02:ec:da:b8:19 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-m002 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-087ECAF1",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.26/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.18/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.9/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.11/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-m002",
+        "region": "surtur",
+        "shasta-role": "ncn-master",
+        "xname": "x3000c0s2b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-m002",
+        "local_hostname": "ncn-m002",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17",
+            "10.107.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s30b0n0"
+    ],
+    "params": "ifname=mgmt0:14:02:ec:e1:bd:a8 ifname=mgmt1:14:02:ec:e1:bd:a9 ifname=hsn0:88:e9:a4:02:94:14 ifname=hsn1:88:e9:a4:02:84:cc biosdevname=1 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31-1 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks=0 module_blacklist=rpcrdma rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-w004 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31-1/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31-1/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-52BDB132",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.28/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.22/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.11/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.13/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-w004",
+        "region": "surtur",
+        "shasta-role": "ncn-worker",
+        "xname": "x3000c0s30b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-w004",
+        "local_hostname": "ncn-w004",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.103.11.28/25",
+            "10.254.1.22/17",
+            "10.1.1.11/16",
+            "10.252.1.13/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s3b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt1:94:40:c9:5f:b5:cc ifname=mgmt0:14:02:ec:d9:79:e8 ifname=sun1:94:40:c9:5f:b5:cd ifname=sun0:14:02:ec:d9:79:e9 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-m003 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-2E297508",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.25/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.16/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.8/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.10/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-m003",
+        "region": "surtur",
+        "shasta-role": "ncn-master",
+        "xname": "x3000c0s3b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-m003",
+        "local_hostname": "ncn-m003",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.107.0.0/17",
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s4b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt0:14:02:ec:d9:7c:40 ifname=mgmt1:14:02:ec:d9:7c:41 biosdevname=1 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31-1 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks=0 module_blacklist=rpcrdma rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-w004 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31-1/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31-1/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-27D37CF3",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.24/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.14/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.7/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.9/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-w001",
+        "region": "surtur",
+        "shasta-role": "ncn-worker",
+        "xname": "x3000c0s4b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-w001",
+        "local_hostname": "ncn-w001",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.254.0.0/17",
+            "10.252.0.0/17",
+            "10.107.0.0/17",
+            "10.106.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s5b0n0"
+    ],
+    "params": "biosdevname=1 ifname=hsn1:98:03:9b:7f:c0:60 ifname=hsn0:98:03:9b:7f:bf:40 ifname=mgmt0:14:02:ec:d9:76:b8 ifname=mgmt1:14:02:ec:d9:76:b9 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks=0 module_blacklist=rpcrdma rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-w002 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-4C0F9695",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.23/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.12/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.6/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.8/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-w002",
+        "region": "surtur",
+        "shasta-role": "ncn-worker",
+        "xname": "x3000c0s5b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-w002",
+        "local_hostname": "ncn-w002",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.107.0.0/17",
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s6b0n0"
+    ],
+    "params": "biosdevname=1 ifname=hsn0:ec:0d:9a:d9:c5:26 ifname=mgmt0:14:02:ec:da:bb:00 ifname=mgmt1:14:02:ec:da:bb:01 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/k8s/0.3.31-1 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks=0 module_blacklist=rpcrdma rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-w003 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/k8s/0.3.31-1/kernel",
+    "initrd": "s3://ncn-images/k8s/0.3.31-1/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-1BCFED97",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.22/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.10/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.5/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.7/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-w003",
+        "region": "surtur",
+        "shasta-role": "ncn-worker",
+        "xname": "x3000c0s6b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-w003",
+        "local_hostname": "ncn-w003",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17",
+            "10.107.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+          "/srv/cray/scripts/common/join-spire-on-storage.sh",
+          "touch /etc/cloud/cloud-init.disabled"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s7b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt1:94:40:c9:5f:9a:a8 ifname=mgmt0:14:02:ec:d9:7c:88 ifname=sun1:94:40:c9:5f:9a:a9 ifname=sun0:14:02:ec:d9:7c:89 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/ceph/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-s001 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/ceph/0.3.31/kernel",
+    "initrd": "s3://ncn-images/ceph/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-91F14953",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.21/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.8/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.4/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.6/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-s001",
+        "region": "surtur",
+        "shasta-role": "ncn-storage",
+        "xname": "x3000c0s7b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-s001",
+        "local_hostname": "ncn-s001",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.107.0.0/17",
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/pre-load-images.sh",
+          "touch /etc/cloud/cloud-init.disabled",
+          "/srv/cray/scripts/common/ceph-enable-services.sh"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s8b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt1:94:40:c9:5f:b6:5c ifname=mgmt0:14:02:ec:d9:7b:c8 ifname=sun1:94:40:c9:5f:b6:5d ifname=sun0:14:02:ec:d9:7b:c9 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/ceph/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-s002 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/ceph/0.3.31/kernel",
+    "initrd": "s3://ncn-images/ceph/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-7B8044DA",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.20/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.6/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.3/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.5/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-s002",
+        "region": "surtur",
+        "shasta-role": "ncn-storage",
+        "xname": "x3000c0s8b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-s002",
+        "local_hostname": "ncn-s002",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.107.0.0/17",
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/pre-load-images.sh",
+          "touch /etc/cloud/cloud-init.disabled",
+          "/srv/cray/scripts/common/ceph-enable-services.sh"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  },
+  {
+    "hosts": [
+      "x3000c0s9b0n0"
+    ],
+    "params": "biosdevname=1 ifname=mgmt1:94:40:c9:5f:b6:92 ifname=mgmt0:14:02:ec:d9:76:88 ifname=sun1:94:40:c9:5f:b6:93 ifname=sun0:14:02:ec:d9:76:89 pcie_ports=native transparent_hugepage=never console=tty0 console=ttyS0,115200 iommu=pt metal.server=http://rgw-vip.nmn/ncn-images/ceph/0.3.31 ds=nocloud-net;s=http://10.92.100.81:8888/ rootfallback=LABEL=BOOTRAID initrd=initrd.img.xz root=live:LABEL=SQFSRAID rd.live.ram=0 rd.writable.fsimg=0 rd.skipfsck rd.live.squashimg=filesystem.squashfs rd.live.overlay=LABEL=ROOTRAID rd.live.overlay.thin=1 rd.live.overlay.overlayfs=1 rd.luks rd.luks.crypttab=0 rd.lvm.conf=0 rd.lvm=1 rd.auto=1 rd.md=1 rd.dm=0 rd.neednet=0 rd.md.waitclean=1 rd.multipath=0 rd.md.conf=1 rd.bootif=0 hostname=ncn-s003 rd.net.timeout.carrier=120 rd.net.timeout.ifup=120 rd.net.timeout.iflink=120 rd.net.timeout.ipv6auto=0 rd.net.timeout.ipv6dad=0 append nosplash quiet crashkernel=360M log_buf_len=1 rd.retry=10 rd.shell ip=mgmt0:dhcp rd.peerdns=0 rd.net.dhcp.retry=5 psi=1 rd.live.dir=1.3.0-alpha.35 metal.no-wipe=1",
+    "kernel": "s3://ncn-images/ceph/0.3.31/kernel",
+    "initrd": "s3://ncn-images/ceph/0.3.31/initrd",
+    "cloud-init": {
+      "meta-data": {
+        "availability-zone": "x3000",
+        "instance-id": "i-D11FFD4C",
+        "ipam": {
+          "cmn": {
+            "gateway": "10.103.11.1",
+            "ip": "10.103.11.19/25",
+            "parent_device": "bond0",
+            "vlanid": 7
+          },
+          "hmn": {
+            "gateway": "10.254.0.1",
+            "ip": "10.254.1.4/17",
+            "parent_device": "bond0",
+            "vlanid": 4
+          },
+          "mtl": {
+            "gateway": "10.1.0.1",
+            "ip": "10.1.1.2/16",
+            "parent_device": "bond0",
+            "vlanid": 0
+          },
+          "nmn": {
+            "gateway": "10.252.0.1",
+            "ip": "10.252.1.4/17",
+            "parent_device": "bond0",
+            "vlanid": 2
+          }
+        },
+        "local-hostname": "ncn-s003",
+        "region": "surtur",
+        "shasta-role": "ncn-storage",
+        "xname": "x3000c0s9b0n0"
+      },
+      "user-data": {
+        "hostname": "ncn-s003",
+        "local_hostname": "ncn-s003",
+        "mac0": {
+          "gateway": "10.252.0.1",
+          "ip": "",
+          "mask": "10.252.2.0/23"
+        },
+        "ntp": {
+          "allow": [
+            "10.107.0.0/17",
+            "10.106.0.0/17",
+            "10.254.0.0/17",
+            "10.252.0.0/17"
+          ],
+          "config": {
+            "confpath": "/etc/chrony.d/cray.conf",
+            "template": "## template: jinja\n# csm-generated config for {{ local_hostname }}. Do not modify--changes can be overwritten\n{% for pool in pools | sort -%}\n{% if local_hostname == 'ncn-m001' and pool == 'ncn-m001' %}\n{% endif %}\n{% if local_hostname != 'ncn-m001' and pool != 'ncn-m001' %}\n{% else %}\npool {{ pool }} iburst\n{% endif %}\n{% endfor %}\n{% for server in servers | sort -%}\n{% if local_hostname == 'ncn-m001' and server == 'ncn-m001' %}\n# server {{ server }} will not be used as itself for a server\n{% else %}\nserver {{ server }} iburst trust\n{% endif %}\n{% if local_hostname != 'ncn-m001' and server != 'ncn-m001' %}\n# {{ local_hostname }}\n{% endif %}\n{% endfor %}\n{% for peer in peers | sort -%}\n{% if local_hostname == peer %}\n{% else %}\n{% if loop.index <= 9 %}\n{# Only add 9 peers to prevent too much NTP traffic #}\npeer {{ peer }} minpoll -2 maxpoll 9 iburst\n{% endif %}\n{% endif %}\n{% endfor %}\n{% for net in allow | sort -%}\nallow {{ net }}\n{% endfor %}\n{% if local_hostname == 'ncn-m001' %}\n# {{ local_hostname }} has a lower stratum than other NCNs since it is the primary server\nlocal stratum 8 orphan\n{% else %}\n# {{ local_hostname }} has a higher stratum so it selects ncn-m001 in the event of a tie\nlocal stratum 10 orphan\n{% endif %}\nlog measurements statistics tracking\nlogchange 1.0\nmakestep 0.1 3\n"
+          },
+          "enabled": true,
+          "ntp_client": "chrony",
+          "peers": [
+            "ncn-m001",
+            "ncn-m002",
+            "ncn-m003",
+            "ncn-w001",
+            "ncn-w002",
+            "ncn-w003",
+            "ncn-s001",
+            "ncn-s002",
+            "ncn-s003"
+          ],
+          "servers": [
+            "ncn-m001",
+            "ntp.hpecorp.net"
+          ]
+        },
+        "runcmd": [
+          "/srv/cray/scripts/metal/net-init.sh",
+          "/srv/cray/scripts/common/update_ca_certs.py",
+          "/srv/cray/scripts/metal/install.sh",
+          "/srv/cray/scripts/common/pre-load-images.sh",
+          "touch /etc/cloud/cloud-init.disabled",
+          "/srv/cray/scripts/common/ceph-enable-services.sh"
+        ],
+        "timezone": "UTC",
+        "write_files": [
+          {
+            "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+            "permissions": "0644"
+          },
+          {
+            "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+            "owner": "root:root",
+            "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+            "permissions": "0644"
+          }
+        ]
+      },
+      "phone-home": {
+        "pub_key_dsa": "",
+        "pub_key_rsa": "",
+        "pub_key_ecdsa": "",
+        "instance_id": "",
+        "hostname": "",
+        "fqdn": ""
+      }
+    }
+  }
+]
