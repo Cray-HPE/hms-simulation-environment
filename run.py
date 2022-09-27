@@ -241,7 +241,7 @@ class State:
         self.console.log("Started emulated hardware")
 
     def start_hms_services(self):
-        result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "up", "-d"], capture_output=True, text=True)
+        result = subprocess.run(["docker", "compose", "-f", "docker-compose.yaml", "-f", "docker-compose.health.yaml", "up", "-d"], capture_output=True, text=True)
         if result.returncode != 0:
             raise SubprocessException(result)
 
