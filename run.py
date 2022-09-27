@@ -419,7 +419,7 @@ class State:
                     self.console.log(f"Verified secret/{key} exists in Vault")
                 except hvac.exceptions.InvalidPath as e:
                     self.error_console.log(f"Expected secret secret/{key} does not exist in Vault")
-                    raise e
+                    # raise e
 
             sleep(5)
 

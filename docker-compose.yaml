@@ -42,6 +42,8 @@ services:
       - IPC_LOCK
     networks:
       - simulation
+    profiles:
+      - do-not-start-automatically 
   vault-kv-enabler:
     image: artifactory.algol60.net/csm-docker/stable/vault-kv-enabler:1.13.4
     environment:
