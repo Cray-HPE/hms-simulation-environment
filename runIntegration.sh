@@ -38,6 +38,7 @@ function cleanup() {
 }
 
 # Build test images
+docker compose -f docker-compose.yaml build  
 docker compose -f docker-compose.integration.yaml build
 
 # Standup the simulation environment!

@@ -540,3 +540,23 @@ services:
       simulation:
           aliases:
           - api-gateway-hmn
+
+  health:
+    build: 
+      context: tests/health
+      dockerfile: Dockerfile
+    environment:
+      CRAY_VAULT_AUTH_PATH: auth/token/create
+      CRAY_VAULT_ROLE_FILE: configs/namespace
+      CRAY_VAULT_JWT_FILE: configs/token
+      VAULT_ADDR: http://vault:8200
+      VAULT_TOKEN: hms
+      VAULT_KEYPATH: secret/hms-creds
+    env_file:
+    - configs/cray-meds-vault-loader.env
+    volumes: 
+      - ./configs:/configs
+    # depends_on:
+    #   - vault-kv-enabler
+    networks:
+      - simulation
