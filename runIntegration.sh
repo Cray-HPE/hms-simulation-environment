@@ -47,6 +47,7 @@ if ! ./run.py configs/sls/small_mountain.json --wait-attempts-for-discovered-har
   docker compose ps
   docker ps  -a | grep vault
   docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml -f docker-compose.health.yaml -f docker-compose.integration.yaml logs vault 
+  docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml -f docker-compose.health.yaml -f docker-compose.integration.yaml logs health 
   cleanup 1 
 fi
 
