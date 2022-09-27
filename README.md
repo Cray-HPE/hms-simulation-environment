@@ -1,6 +1,6 @@
 # hms-simulation-environment
 
-The HMS Simulation Environment provides... (change to enable)
+The HMS Simulation Environment enables the following uses:
 * An environment for automated tests to be ran against the HMS stack and hardware.
    * Allows for destructive automated testing development without harming a real system.
    * Development of new tests without the need for real hardware.
@@ -20,11 +20,11 @@ The HMS Simulation Environment provides... (change to enable)
     >     ```bash
     >     export PYTHON_EXE=python3.8
     >     ```
-    > 1. Remove any existing Python virtual enviroment.
+    > 1. Remove any existing Python virtual environment.
     >     ```bash
     >     rm -rv venv
     >     ```
-    > 1. Create the Python Virtual Enviroment:
+    > 1. Create the Python Virtual Environment:
     >     ```bash
     >     ./setup_venv.sh
     >     ```
@@ -85,11 +85,11 @@ The HMS Simulation Environment provides... (change to enable)
     | Collector Ingress    | No                  | [https://localhost:8443/apis/collector-ingress/](https://localhost:8443/apis/collector-ingress/) |
     | Collector Poll       | No                  | [https://localhost:8443/apis/collector-poll/](https://localhost:8443/apis/collector-poll/)       |
     | FAS                  | Yes                 | [https://localhost:8443/apis/fas/v1/](https://localhost:8443/apis/fas/v1/)                       |
-    | HSM                  | Yes                 | [https://localhost:8443//apis/smd/hsm/v2/](https://localhost:8443//apis/smd/hsm/v2/)             |
+    | HSM                  | Yes                 | [https://localhost:8443/apis/smd/hsm/v2/](https://localhost:8443/apis/smd/hsm/v2/)               |
     | REDS                 | Yes                 | [https://localhost:8443/apis/reds/v1/](https://localhost:8443/apis/reds/v1/)                     |
     | SLS                  | Yes                 | [https://localhost:8443/apis/sls/v1/](https://localhost:8443/apis/sls/v1/)                       |
     | RIE Redfish Instance | No                  | [https://localhost:8443/BMC_XNAME/redfish/v1/](https://localhost:8443/BMC_XNAME/redfish/v1/)     |
-    > The paths under `/api` are meant to match a production deployment of the HMS Services, with the exception of the collector. The collector is not normally accessible via the NMN or CMN Istio API gateways on a production system, only the HMN Istio API Gateway. For developer, convenience the the API endpoints for the Ingress and Poll instances of the collector have been added.
+    > The paths under `/apis` are meant to match a production deployment of the HMS Services, with the exception of the collector. The collector is not normally accessible via the NMN or CMN Istio API gateways on a production system, only the HMN Istio API Gateway. For developer, convenience the the API endpoints for the Ingress and Poll instances of the collector have been added.
     
 1.  Teardown the simulation environment:
     ```bash
