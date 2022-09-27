@@ -45,7 +45,8 @@ docker compose -f docker-compose.integration.yaml build
 if ! ./run.py configs/sls/small_mountain.json --wait-attempts-for-discovered-hardware=10 --wait-attempts-for-redfish-events=10; then
   echo "Failed to standup simulation environment!"
   docker compose ps
-  docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml -f docker-compose.health.yaml -f docker-compose.integration.yaml logs 
+  docker ps  -a | grep vault
+  docker compose -f docker-compose.yaml -f docker-compose.hardware.yaml -f docker-compose.health.yaml -f docker-compose.integration.yaml logs vault 
   cleanup 1 
 fi
 
