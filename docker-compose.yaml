@@ -48,8 +48,6 @@ services:
       - VAULT_ADDR=http://vault:8200
       - VAULT_TOKEN=hms
       - KV_STORES=secret
-    depends_on:
-      - vault
     networks:
       - simulation
     profiles:
@@ -150,7 +148,6 @@ services:
     depends_on:
       - cray-sls-postgres
       - cray-sls-init
-      - vault
     networks:
       - simulation
 
@@ -197,7 +194,6 @@ services:
     hostname: cray-smd
     depends_on:
       - cray-smd-init
-      - vault
     ports:
       - "27779:27779"
     networks:
@@ -221,8 +217,6 @@ services:
     command: vault_loader
     volumes: 
       - ./configs:/configs
-    # depends_on:
-    #   - vault-kv-enabler
     networks:
       - simulation
     profiles:
@@ -258,8 +252,7 @@ services:
     depends_on:
       - cray-sls-init
       - cray-sls
-      - vault
-
+  
   #
   # REDS
   #
@@ -287,8 +280,6 @@ services:
     command: vault_loader
     networks:
       - simulation
-    # depends_on:
-    # - vault-kv-enabler
     profiles:
       - do-not-start-automatically 
   cray-reds:
@@ -437,7 +428,6 @@ services:
       - cray-smd
       - cray-hms-hmcollector-ingress
       - cray-hms-hmcollector-poll
-      # - vault-kv-enabler
 
   #
   # Collector

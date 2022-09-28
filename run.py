@@ -395,6 +395,14 @@ class State:
                 self.console.log("Issuing a rediscovery on: ", json.dumps(redfish_endpoints_to_rediscover))
                 result = requests.post('http://localhost:27779/hsm/v2/Inventory/Discover', json={"xnames": redfish_endpoints_to_rediscover})
                 result.raise_for_status()
+
+            # As a sanity check verify Vault still has the default credentials in it
+            for key in ["meds-cred/global/ipmi", "reds-creds/defaults", "reds-creds/switch_defaults"]:
+                try:
+                    self.vaultClient.secrets.kv.v1.read_secret(key)
+                except hvac.exceptions.InvalidPath as e:
+                    self.error_console.log(f"Expected secret secret/{key} does not exist in Vault")
+                    raise e
             
             sleep(5)
 
@@ -451,7 +459,7 @@ def main():
     # TODO add in useful help text
     # TODO we should have mockups created from different falvors of management NCNs, as they have different hardware configurations, and therefor would have different redfish data
     parser.add_argument("sls_file", help="Seed SLS file to generate a environment from.")
-    parser.add_argument("--rie-image", default="artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.0")
+    parser.add_argument("--rie-image", default="artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.1")
     parser.add_argument("--wait-attempts-for-discovered-hardware", type=int, default=120)
     parser.add_argument("--wait-attempts-for-redfish-events", type=int, default=120)
     # TODO add args for default hardware types. This might just be hard coded
