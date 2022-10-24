@@ -274,7 +274,7 @@ class State:
                 pass
 
             if i >= attempts:
-                raise IllegalStateException("Exhausted attempts waiting for HSM to become ready")
+                raise IllegalStateException("Exhausted attempts waiting for Vault to become ready")
 
             self.console.log(f"Waiting for Vault to become ready. Attempt {i}/{attempts}")
             sleep(1)
@@ -299,6 +299,32 @@ class State:
             except hvac.exceptions.InvalidPath as e:
                 self.error_console.log(f"Expected secret secret/{key} does not exist in Vault")
                 raise e
+
+    def wait_for_kafka(self):
+        attempts = 12 # There is a 10 second timeout in the kafka ready command 
+        for i in range(1, attempts+1):
+
+            # Use the included cub tool to verify Kakfa is ready
+            result = subprocess.run(["docker", "compose", "exec", "-t", "cray-shared-kafka", "cub", "kafka-ready", "-b", "cray-shared-kafka:9092", "1", "10"], capture_output=True, text=True)
+            if result.returncode == 0:
+                break
+                
+            self.console.log(result)
+
+            if i >= attempts:
+                raise IllegalStateException("Exhausted attempts waiting for Kafka to become ready")
+
+            self.console.log(f"Waiting for Kafka to become ready. Attempt {i}/{attempts}")
+
+        self.console.log("Kafka is ready")
+
+    def provision_kafka(self):
+        # docker compose exec -t cray-shared-kafka kafka-topics --create --topic cray-dmtf-resource-event --if-not-exists --bootstrap-server cray-shared-kafka:9092
+        result = subprocess.run(["docker", "compose", "exec", "-t", "cray-shared-kafka", "kafka-topics", "kafka-ready", "--create", "--topic", "cray-dmtf-resource-event", "--if-not-exists", "--bootstrap-server", "cray-shared-kafka:9092"], capture_output=True, text=True)
+        if result.returncode != 0:
+            raise SubprocessException(result)
+        
+        self.console.log("Created cray-dmtf-resource-event topic in Kafka")
 
     def seed_hsm_with_ethernet_interfaces(self):
         # For context, this function is taking the place of KEA partially. Normally BMCs DHCP with KEA, and then KEA updates
@@ -511,6 +537,12 @@ def main():
         }, {
             "in_progress": "Provisioning Vault...",
             "run": state.provision_vault
+        }, {
+            "in_progress": "Waiting for Kafka to become ready...",
+            "run": state.wait_for_kafka
+        }, {
+            "in_progress": "Provisioning Kafka...",
+            "run": state.provision_kafka
         }, {
             "in_progress": "Waiting for SLS to become ready...",
             "run": state.wait_for_sls
