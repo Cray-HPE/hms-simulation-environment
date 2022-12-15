@@ -31,6 +31,13 @@
       "headers": {}
     },
     {
+      "path": "/apis/power-control/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
       "path": "/apis/bss/boot/v1/service/status/all",
       "expected_status_code": 200,
       "method": "GET",
