@@ -352,6 +352,33 @@ services:
       - simulation
 
   #
+  # PCS
+  #
+  cray-power-control:
+    #TODO: update to stable version when completed and tagged
+    image: artifactory.algol60.net/csm-docker/unstable/cray-power-control:0.0.9-20221215001720.53c83da
+    environment:
+      - SMS_SERVER=http://cray-smd:27779
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+      - VAULT_SKIP_VERIFY=true
+      - VAULT_ENABLED=true
+      - LOG_LEVEL=TRACE
+      - TRS_IMPLEMENTATION=LOCAL
+      - HSMLOCK_ENABLED=true
+      - STORAGE=ETCD
+      - ETCD_HOST=etcd
+      - ETCD_PORT=2379
+    ports:
+      - "28007:28007"
+    networks:
+      - simulation
+
+  #
   # BSS
   #
   cray-bss-etcd:
