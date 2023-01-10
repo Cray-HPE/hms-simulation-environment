@@ -64,6 +64,34 @@
       "method": "GET",
       "body": null,
       "headers": {}
+    },
+    {
+      "path": "/apis/hmnfd/hmi/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/hmnfd/hmi/v2/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/hbtd/hmi/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
+    },
+    {
+      "path": "/apis/scsd/v1/readiness",
+      "expected_status_code": 204,
+      "method": "GET",
+      "body": null,
+      "headers": {}
     }
   ]
 }

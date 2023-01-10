@@ -69,9 +69,12 @@ The HMS Simulation Environment enables the following uses:
     | CAPMC        | 27777 | [http://localhost:27777/capmc/v1/](http://localhost:27777/capmc/v1/)   |
     | FAS          | 28800 | [http://localhost:28800](http://localhost:28800)                       |
     | Kafka        | 2181  |                                                                        |
+    | HBTD         | 28500 | TODO
+    | HMNFD        | 28600 | TODO
     | HSM          | 27779 | [http://localhost:27779/hsm/v2/](http://localhost:27779/hsm/v2/)       |
     | HSM Database | 54322 |                                                                        |
     | S3           | 9000  | [http://localhost:8376/v1/](http://localhost:8376/v1)                  |
+    | SCSD         | 25309 | TODO
     | SLS          | 8376  | [http://localhost:82000](http://localhost:82000)                       | 
     | SLS Database | 54321 |                                                                        |
     | Vault        | 8200  | [http://localhost:82000](http://localhost:82000)                       | 
@@ -86,6 +89,8 @@ The HMS Simulation Environment enables the following uses:
     | Collector Poll       | No                  | [https://localhost:8443/apis/collector-poll/](https://localhost:8443/apis/collector-poll/)       |
     | FAS                  | Yes                 | [https://localhost:8443/apis/fas/v1/](https://localhost:8443/apis/fas/v1/)                       |
     | HSM                  | Yes                 | [https://localhost:8443/apis/smd/hsm/v2/](https://localhost:8443/apis/smd/hsm/v2/)               |
+    | HBTD                 | Yes                 | TODO
+    | HMNFD                | Yes                 | TODO
     | REDS                 | Yes                 | [https://localhost:8443/apis/reds/v1/](https://localhost:8443/apis/reds/v1/)                     |
     | SLS                  | Yes                 | [https://localhost:8443/apis/sls/v1/](https://localhost:8443/apis/sls/v1/)                       |
     | RIE Redfish Instance | No                  | [https://localhost:8443/BMC_XNAME/redfish/v1/](https://localhost:8443/BMC_XNAME/redfish/v1/)     |

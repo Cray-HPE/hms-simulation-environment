@@ -191,6 +191,7 @@ services:
       - SMD_WVAULT=true
       - SMD_RVAULT=true
       - SMD_SLS_HOST=http://cray-sls:8376/v1
+      - SMD_HBTD_HOST=http://cray-hbtd:28500/hmi/v1
     hostname: cray-smd
     depends_on:
       - cray-smd-init
@@ -402,7 +403,7 @@ services:
       - ETCD_HOST=cray-bss-etcd
       - ETCD_PORT=2379
       - HSM_URL=http://cray-smd:27779
-      # - NFD_URL=http://fake_hsm_${HSUFFIX:-bss}:${FAKE_SM_PORT:-28000}/hsm/v1
+      - NFD_URL=http://cray-hmnfd:28600
       - S3_ACCESS_KEY=foo
       - S3_SECRET_KEY=foo
       - S3_BUCKET=images
@@ -523,22 +524,84 @@ services:
   #
   # Heart Beat Tracking Deamon
   #
+  cray-hbtd-etcd:
+    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    # ports:
+    #   - 2379:2379
+    #   - 2380:2380
+    networks:
+      - simulation
+  cray-hbtd:
+    image: artifactory.algol60.net/csm-docker/stable/cray-hbtd:1.19.0
+    environment:
+      - SM_URL=http://cray-smd:27779/hsm/v2
+      - USE_TELEMETRY=0
+      # This is for SMA kafka
+      # - TELEMETRY_HOST=kafka:9092:cray-hmsheartbeat-notifications
+      - KV_URL=http://cray-hbtd-etcd:2379
+    networks:
+      - simulation
+    ports:
+      - "28500:28500"
 
-  # TODO Add
-  # cray-hbtd-etcd
-  # cray-hbtd
 
   #
   # Fanout Deamon
   #
-
-  # TODO Add
-  # cray-hmnfd-etcd
-  # cray-hmnfd
+  cray-hmnfd-etcd:
+    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    # ports:
+    #   - 2379:2379
+    #   - 2380:2380
+    networks:
+      - simulation
+  cray-hmnfd:
+    hostname: cray-hmnfd
+    image: artifactory.algol60.net/csm-docker/stable/cray-hmnfd:1.18.0
+    environment:
+      - DEBUG=0
+      - SM_URL=http://cray-smd:27779/hsm/v2
+      - INBOUND_SCN_URL=http://cray-hmnfd:28600/hmi/v1/scn
+      - SM_RETRIES=3
+      - SM_TIMEOUT=10
+      - PORT=28600
+      - ETCD_HOST=cray-hmnfd-etcd
+      - ETCD_PORT=2379
+      # SMA telemetry
+      - USE_TELEMETRY=
+      - TELEMETRY_HOST=kafka:9092:cray-hmsstatechange-notifications
+    networks:
+      - simulation
+    ports:
+      - "28600:28600"
 
   #
   # SCSD
   #
+  cray-scsd:
+    image: artifactory.algol60.net/csm-docker/stable/cray-scsd:1.17.0
+    environment:
+      - SCSD_SMD_URL=http://cray-smd:27779/hsm/v2
+      - SCSD_HTTP_LISTEN_PORT=25309
+      - SCSD_LOCAL_MODE=true
+      - CRAY_VAULT_AUTH_PATH=auth/token/create
+      - CRAY_VAULT_ROLE_FILE=configs/namespace
+      - CRAY_VAULT_JWT_FILE=configs/token
+      - VAULT_ADDR=http://vault:8200
+      - VAULT_TOKEN=hms
+      - VAULT_KEYPATH=secret/hms-creds
+    networks:
+      - simulation
+    ports:
+      - "25309:25309"
 
   # TODO Add SCSD
 
