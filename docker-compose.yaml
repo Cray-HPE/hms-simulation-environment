@@ -24,7 +24,6 @@
 version: '3.7'
 networks:
   simulation:
-
 services:
   #
   # Vault
@@ -51,8 +50,7 @@ services:
     networks:
       - simulation
     profiles:
-      - do-not-start-automatically 
-
+      - do-not-start-automatically
   #
   # Kafka
   #
@@ -82,7 +80,6 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
     networks:
       - simulation
-
   #
   # S3
   #
@@ -92,7 +89,7 @@ services:
     environment:
       MINIO_ACCESS_KEY: s3-access-key
       MINIO_SECRET_KEY: s3-secret-key
-    command:  server /data
+    command: server /data
     ports:
       - "9000:9000"
   # TODO figure how to deal with buckets, this should maybe be done with the standup 
@@ -121,7 +118,7 @@ services:
     networks:
       - simulation
   cray-sls-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.28.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.0.0
     command: ["sls-init"]
     environment:
       - POSTGRES_HOST=sls-postgres
@@ -132,7 +129,7 @@ services:
     networks:
       - simulation
   cray-sls:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:1.28.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.0.0
     environment:
       - POSTGRES_HOST=cray-sls-postgres
       - DBOPTS=sslmode=disable
@@ -150,7 +147,6 @@ services:
       - cray-sls-init
     networks:
       - simulation
-
   #
   # HSM
   #
@@ -166,7 +162,7 @@ services:
     networks:
       - simulation
   cray-smd-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.58.1
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.62.0
     environment:
       - SMD_DBHOST=cray-smd-postgres
       - SMD_DBPORT=5432
@@ -176,7 +172,7 @@ services:
       - simulation
     command: /entrypoint.sh smd-init
   cray-smd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.58.1
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.62.0
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
@@ -199,7 +195,6 @@ services:
       - "27779:27779"
     networks:
       - simulation
-
   #
   # MEDS
   #
@@ -214,15 +209,14 @@ services:
       VAULT_TOKEN: hms
       VAULT_KEYPATH: secret/hms-creds
     env_file:
-    - configs/cray-meds-vault-loader.env
+      - configs/cray-meds-vault-loader.env
     command: vault_loader
-    volumes: 
+    volumes:
       - ./configs:/configs
     networks:
       - simulation
     profiles:
-      - do-not-start-automatically 
-
+      - do-not-start-automatically
   cray-meds:
     image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
@@ -235,25 +229,22 @@ services:
       - VAULT_TOKEN=hms
       - VAULT_KEYPATH=hms-creds # MEDS has a hardcode to prepend secret/ to this path.
       - VAULT_SKIP_VERIFY=true
-
       - MEDS_SYSLOG_TARG=localhost:514
       # - MEDS_SYSLOG_TARG_USE_IP=
       - MEDS_NTP_TARG=localhost:123
       # - MEDS_NTP_TARG_USE_IP=
       - MEDS_CA_URI=
-
       # - MEDS_NTP_TARG="time-hmn:123"
       # - MEDS_SYSLOG_TARG="rsyslog-aggregator.hmnlb:514"
       # - MEDS_NP_RF_URL=/redfish/v1/Managers/BMC/NetworkProtocol
       # - MEDS_ROOT_SSH_KEY=""
-    volumes: 
+    volumes:
       - ./configs:/configs
     networks:
       - simulation
     depends_on:
       - cray-sls-init
       - cray-sls
-  
   #
   # REDS
   #
@@ -282,7 +273,7 @@ services:
     networks:
       - simulation
     profiles:
-      - do-not-start-automatically 
+      - do-not-start-automatically
   cray-reds:
     image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.24.0
     environment:
@@ -302,7 +293,6 @@ services:
     depends_on:
       - cray-sls
       # - cray-reds-init
-
   #
   # HMS Discovery job
   #
@@ -322,18 +312,17 @@ services:
       DISCOVER_MOUNTAIN: "true"
       DISCOVER_RIVER: "true"
       LOG_LEVEL: DEBUG
-    volumes: 
+    volumes:
       - ./configs:/configs
     networks:
       - simulation
     profiles:
       - do-not-start-automatically
-
   #
   # CAPMC
   #
   cray-capmc:
-    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:2.5.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:2.6.0
     environment:
       - HSM_URL=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -351,7 +340,6 @@ services:
       - "27777:27777"
     networks:
       - simulation
-
   #
   # PCS
   #
@@ -378,7 +366,6 @@ services:
       - "28007:28007"
     networks:
       - simulation
-
   #
   # BSS
   #
@@ -391,12 +378,11 @@ services:
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     networks:
       - simulation
-    # ports:
+      # ports:
       # - 2379:2379
       # - 2380:2380
-
   cray-bss:
-    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.21.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.22.0
     hostname: bss
     environment:
       - BSS_ADVERTISE_ADDRESS=http://0.0.0.0:8888
@@ -412,7 +398,6 @@ services:
       - simulation
     ports:
       - 27778:27778
- 
   #
   # FAS
   #
@@ -428,7 +413,7 @@ services:
     networks:
       - simulation
   cray-fas:
-    image: artifactory.algol60.net/csm-docker/stable/cray-firmware-action:1.23.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-firmware-action:1.24.0
     environment:
       - SMS_SERVER=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -456,16 +441,14 @@ services:
       - cray-smd
       - cray-hms-hmcollector-ingress
       - cray-hms-hmcollector-poll
-
   #
   # Collector
   #
   cray-hms-hmcollector-ingress:
-    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.20.0
+    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.23.0
     environment:
       - LOG_LEVEL=TRACE
       - SM_URL=http://cray-smd:27779
-     
       - VAULT_ADDR=http://vault:8200
       - VAULT_ENABLED=false
       - VAULT_TOKEN=hms
@@ -473,30 +456,25 @@ services:
       - CRAY_VAULT_JWT_FILE=configs/token
       - CRAY_VAULT_ROLE_FILE=configs/namespace
       - CRAY_VAULT_AUTH_PATH=auth/token/create
- 
       - POLLING_ENABLED=false
       - POLLING_INTERVAL=30
       - RF_SUBSCRIBE_ENABLED=false
       - RF_STREAMING_ENABLED=false
       - REST_PORT=80
       - REST_ENABLED=true
-
       - HSM_REFRESH_INTERVAL=30
       - REST_URL=http://api-gateway-hmn/
-      
     volumes:
       - ./configs/collector/kafka_brokers.json:/configs/kafka_brokers.json
       - ./configs/namespace:/configs/namespace
       - ./configs/token:/configs/token
     networks:
       - simulation
-
   cray-hms-hmcollector-poll:
-    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.20.0
+    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.23.0
     environment:
       - LOG_LEVEL=INFO
       - SM_URL=http://cray-smd:27779
-     
       - VAULT_ADDR=http://vault:8200
       - VAULT_ENABLED=true
       - VAULT_TOKEN=hms
@@ -504,14 +482,12 @@ services:
       - CRAY_VAULT_JWT_FILE=configs/token
       - CRAY_VAULT_ROLE_FILE=configs/namespace
       - CRAY_VAULT_AUTH_PATH=auth/token/create
- 
       - POLLING_ENABLED=true
       - POLLING_INTERVAL=30
       - RF_SUBSCRIBE_ENABLED=true
       - RF_STREAMING_ENABLED=true
       - REST_PORT=80
       - REST_ENABLED=true
-
       - HSM_REFRESH_INTERVAL=30
       - REST_URL=http://api-gateway-hmn/
     volumes:
@@ -520,7 +496,6 @@ services:
       - ./configs/token:/configs/token
     networks:
       - simulation
-
   #
   # Heart Beat Tracking Deamon
   #
@@ -547,8 +522,6 @@ services:
       - simulation
     ports:
       - "28500:28500"
-
-
   #
   # Fanout Deamon
   #
@@ -582,7 +555,6 @@ services:
       - simulation
     ports:
       - "28600:28600"
-
   #
   # SCSD
   #
@@ -602,9 +574,6 @@ services:
       - simulation
     ports:
       - "25309:25309"
-
-  # TODO Add SCSD
-
   # Nginx is being used as a standin for the Istio Ingress API gateway we use on
   # real systems.
   api-gateway:
@@ -618,5 +587,5 @@ services:
       - ./configs/nginx/certs:/etc/nginx/certs
     networks:
       simulation:
-          aliases:
+        aliases:
           - api-gateway-hmn
