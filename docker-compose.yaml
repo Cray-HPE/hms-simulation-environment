@@ -201,7 +201,6 @@ services:
   cray-meds-vault-loader:
     image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
-      HSM_URL: http://cray-smd:27779/hsm/v1
       CRAY_VAULT_AUTH_PATH: auth/token/create
       CRAY_VAULT_ROLE_FILE: configs/namespace
       CRAY_VAULT_JWT_FILE: configs/token
@@ -215,13 +214,12 @@ services:
       - ./configs:/configs
     networks:
       - simulation
-    restart: on-failure
     profiles:
       - do-not-start-automatically
   cray-meds:
     image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
-      - HSM_URL=http://cray-smd:27779/hsm/v1
+      - HSM_URL=http://cray-smd:27779/hsm/v2
       - "MEDS_OPTS=-sls http://cray-sls:8376/v1"
       - CRAY_VAULT_AUTH_PATH=auth/token/create
       - CRAY_VAULT_ROLE_FILE=configs/namespace
@@ -243,6 +241,7 @@ services:
       - ./configs:/configs
     networks:
       - simulation
+    restart: on-failure
     depends_on:
       - cray-sls-init
       - cray-sls
@@ -278,7 +277,7 @@ services:
   cray-reds:
     image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.24.0
     environment:
-      - HSM_URL=http://cray-smd:27779/hsm/v1
+      - HSM_URL=http://cray-smd:27779/hsm/v2
       - CRAY_VAULT_AUTH_PATH=auth/token/create
       - CRAY_VAULT_ROLE_FILE=configs/namespace
       - CRAY_VAULT_JWT_FILE=configs/token
