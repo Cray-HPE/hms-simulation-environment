@@ -162,7 +162,7 @@ services:
     networks:
       - simulation
   cray-smd-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.62.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.2.0
     environment:
       - SMD_DBHOST=cray-smd-postgres
       - SMD_DBPORT=5432
@@ -172,7 +172,7 @@ services:
       - simulation
     command: /entrypoint.sh smd-init
   cray-smd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:1.62.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.2.0
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
@@ -215,6 +215,7 @@ services:
       - ./configs:/configs
     networks:
       - simulation
+    restart: on-failure
     profiles:
       - do-not-start-automatically
   cray-meds:
