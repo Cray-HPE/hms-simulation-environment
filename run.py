@@ -23,7 +23,6 @@
 # OTHER DEALINGS IN THE SOFTWARE.
 #
 import argparse
-from distutils.log import error
 import subprocess
 import shutil
 import sys
