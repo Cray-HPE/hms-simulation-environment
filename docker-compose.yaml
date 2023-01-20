@@ -439,7 +439,7 @@ services:
       - TRS_IMPLEMENTATION=LOCAL
       - HSMLOCK_ENABLED=true
       - STORAGE=ETCD
-      - ETCD_HOST=etcd
+      - ETCD_HOST=cray-fas-etcd
       - ETCD_PORT=2379
     networks:
       - simulation
