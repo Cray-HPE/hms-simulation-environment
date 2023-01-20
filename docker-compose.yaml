@@ -356,8 +356,7 @@ services:
       # - 2379:2379
       # - 2380:2380
   cray-power-control:
-    #TODO: update to stable version when completed and tagged
-    image: artifactory.algol60.net/csm-docker/unstable/cray-power-control:0.0.9-20221215001720.53c83da
+    image: artifactory.algol60.net/csm-docker/stable/cray-power-control:1.0.0
     environment:
       - SMS_SERVER=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
