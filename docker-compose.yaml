@@ -252,7 +252,7 @@ services:
     image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
-      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-reds-etcd:2379
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     networks:
       - simulation
@@ -322,7 +322,7 @@ services:
   # CAPMC
   #
   cray-capmc:
-    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:2.6.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:3.1.0
     environment:
       - HSM_URL=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -336,6 +336,7 @@ services:
       - LOG_LEVEL=DEBUG
       - TRS_IMPLEMENTATION=LOCAL
       - HSMLOCK_ENABLED=true
+      - PCS_URL=http://cray-power-control:28007
     ports:
       - "27777:27777"
     networks:
@@ -343,6 +344,17 @@ services:
   #
   # PCS
   #
+  cray-power-control-etcd:
+    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    environment:
+      - ALLOW_NONE_AUTHENTICATION=yes
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-power-control-etcd:2379
+      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
+    networks:
+      - simulation
+      # ports:
+      # - 2379:2379
+      # - 2380:2380
   cray-power-control:
     #TODO: update to stable version when completed and tagged
     image: artifactory.algol60.net/csm-docker/unstable/cray-power-control:0.0.9-20221215001720.53c83da
@@ -360,7 +372,7 @@ services:
       - TRS_IMPLEMENTATION=LOCAL
       - HSMLOCK_ENABLED=true
       - STORAGE=ETCD
-      - ETCD_HOST=etcd
+      - ETCD_HOST=cray-power-control-etcd
       - ETCD_PORT=2379
     ports:
       - "28007:28007"
@@ -371,10 +383,9 @@ services:
   #
   cray-bss-etcd:
     image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
-    hostname: etcd
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
-      - ETCD_ADVERTISE_CLIENT_URLS=http://etcd:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-bss-etcd:2379
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     networks:
       - simulation
@@ -503,7 +514,7 @@ services:
     image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
-      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-hbtd-etcd:2379
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     # ports:
     #   - 2379:2379
@@ -529,7 +540,7 @@ services:
     image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
-      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
+      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-hmnfd-etcd:2379
       - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
     # ports:
     #   - 2379:2379
