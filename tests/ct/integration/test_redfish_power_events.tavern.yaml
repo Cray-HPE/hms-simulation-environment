@@ -72,6 +72,8 @@ stages:
   delay_after: 10 # Wait to allow the event to propagate from RIE to HSM
 
 - name: Verify current power state of node is off with CAPMC
+  delay_after: 5
+  max_retries: 60
   request:
     url: "{capmc_base_url}/capmc/v1/get_xname_status"
     method: POST
@@ -88,6 +90,8 @@ stages:
         - "{node_xname}"
 
 - name: Verify power state in HSM is now Off
+  delay_after: 5
+  max_retries: 60
   request:
     url: "{hsm_base_url}/hsm/v2/State/Components/{node_xname}"
     method: GET
