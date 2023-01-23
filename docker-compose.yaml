@@ -248,16 +248,8 @@ services:
   #
   # REDS
   #
-  cray-reds-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
-    environment:
-      - ALLOW_NONE_AUTHENTICATION=yes
-      - ETCD_ADVERTISE_CLIENT_URLS=http://cray-reds-etcd:2379
-      - ETCD_LISTEN_CLIENT_URLS=http://0.0.0.0:2379
-    networks:
-      - simulation
   cray-reds-vault-loader:
-    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.24.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-reds:2.0.0
     environment:
       CRAY_VAULT_AUTH_PATH: auth/token/create
       CRAY_VAULT_ROLE_FILE: configs/namespace
@@ -275,7 +267,7 @@ services:
     profiles:
       - do-not-start-automatically
   cray-reds:
-    image: artifactory.algol60.net/csm-docker/stable/cray-reds:1.24.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-reds:2.0.0
     environment:
       - HSM_URL=http://cray-smd:27779/hsm/v2
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -286,7 +278,6 @@ services:
       - VAULT_KEYPATH=hms-creds
       - VAULT_SKIP_VERIFY=true
       - VAULT_ENABLED=true
-      - DATASTORE_URL=http://cray-reds-etcd:2379
       - SLS_ADDR=cray-sls:8376/v1
     networks:
       - simulation
