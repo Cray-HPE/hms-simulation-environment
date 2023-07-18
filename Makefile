@@ -20,6 +20,12 @@
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
+.PHONY: \
+	all \
+	setup-venv \
+	integration \
+	update-application-versions
+
 all: integration
 
 setup-venv:
@@ -27,3 +33,12 @@ setup-venv:
 
 integration: setup-venv
 	./runIntegration.sh
+
+vendor/hms-nightly-integration:
+	mkdir -p vendor
+	git clone git@github.com:Cray-HPE/hms-nightly-integration.git vendor/hms-nightly-integration --single-branch
+	python3 -m venv vendor/hms-nightly-integration/venv
+	. ./vendor/hms-nightly-integration/venv/bin/activate; pip install -r vendor/hms-nightly-integration/requirements.txt
+
+update-application-versions: vendor/hms-nightly-integration
+	. ./vendor/hms-nightly-integration/venv/bin/activate; ./update_application_versions.sh
