@@ -9,7 +9,7 @@ The HMS Simulation Environment enables the following uses:
 
 ## Usage
 1.  Create a Python virtual environment and install required dependencies:
-    > If running Python 3.10 on macOS, then issues may arise when installing the Cray CLI. 
+    > If running Python 3.10 on macOS, then issues may arise when installing the Cray CLI. **This is not needed if running Python 3.11 on macOS.**
     >
     > To enable installing the Cray CLI under Python 3.10 on macOS the following workaround can be applied..
     > 1. Install Python 3.8
