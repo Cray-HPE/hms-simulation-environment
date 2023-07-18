@@ -105,6 +105,9 @@ def get_mockup_type(hardware: dict, default: str):
     if "ExtraProperties" in hardware and "@rie.mockup" in hardware["ExtraProperties"]:
         mockup = hardware["ExtraProperties"]["@rie.mockup"]
 
+    # Return non
+    if mockup == "none":
+        return None
 
     # Determine if this is a supported mockup
     if mockup not in SUPPORTED_MOCKUP_TYPES:
