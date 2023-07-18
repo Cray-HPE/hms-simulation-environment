@@ -242,3 +242,27 @@ curl -k https://localhost:8443/x1000c0b0/redfish/v1/EventService/Subscriptions
 ```bash
 docker compose exec -it x1000c0s0b0 sh 
 ```
+
+## Updating Application versions
+1. Specify artifactory credentials:
+    ```bash
+    export ARTIFACTORY_ALGOL60_READONLY_USERNAME=your-username-here
+    export ARTIFACTORY_ALGOL60_READONLY_TOKEN=your-token-here
+    ```
+2. Specify CSM branch to target:
+   > Make sure to choose a branch that is specified  `vendor/hms-nightly-integration/csm-manifest-extractor-configuration.yaml`.
+   > ```bash
+   > $ yq .configuration.targeted-csm-branches  vendor/hms-nightly-integration/csm-manifest-extractor-configuration.yaml
+   > - main
+   > - release/1.6
+   > - stable/1.5
+   > - release/1.4
+   > ```
+
+   ```bash
+   export CSM_BRANCH=stable/1.5
+   ```
+3. Update application versions specified in `docker-compose.yaml`
+    ```bash
+    make update-application-versions
+    ```
