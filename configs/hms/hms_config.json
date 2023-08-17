@@ -1,0 +1,22 @@
+{
+   "HMSExtendedDefinitions":{
+      "Role":[
+         "Compute",
+         "Service",
+         "System",
+         "Application",
+         "Storage",
+         "Management"
+      ],
+      "SubRole":[
+         "Worker",
+         "Master",
+         "Storage",
+         "UAN",
+         "Gateway",
+         "LNETRouter",
+         "Visualization",
+         "UserDefined"
+      ]
+   }
+}
