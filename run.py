@@ -2,7 +2,7 @@
 #
 # MIT License
 #
-# (C) Copyright 2021-2022 Hewlett Packard Enterprise Development LP
+# (C) Copyright 2021-2023 Hewlett Packard Enterprise Development LP
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -39,6 +39,7 @@ import secrets
 import pathlib
 import jinja2
 import base64
+import os
 
 from time import sleep
 from rich.console import Console
@@ -54,11 +55,12 @@ class IllegalStateException(Exception):
 
 class State:
 
-    def __init__(self, args: argparse.Namespace, sls_state: dict, console: Console, error_console: Console):
+    def __init__(self, args: argparse.Namespace, sls_state: dict, console: Console, error_console: Console, hms_config: string):
         self.args = args
         self.sls_state = sls_state
         self.console = console
         self.error_console = error_console
+        self.hms_config = hms_config
 
         self.generated_config_files = None
         self.credentials = {}
@@ -225,6 +227,20 @@ class State:
         with open("configs/seed_ethernet_interfaces.json", "w") as f:
             json.dump(self.generated_config_files["seed_ethernet_interfaces"], f, indent=4, sort_keys=True)
         self.console.log("Wrote configs/seed_ethernet_interfaces.json")
+
+        hms_config_dir = "configs/hms_config"
+        hms_config_file = f"{hms_config_dir}/hms_config.json"
+        if not os.path.exists(hms_config_dir):
+            os.makedirs(hms_config_dir)
+            self.console.log(f"Created directory {hms_config_dir}")
+        if self.hms_config == "":
+            if os.path.exists(hms_config_file):
+                os.remove(hms_config_file)
+                self.console.log(f"Removed hms config {hms_config_file}")
+            self.console.log(f"Running with no hms config file")
+        else:
+            shutil.copyfile(self.hms_config, hms_config_file)
+            self.console.log(f"Copied hms config from {self.hms_config} to {hms_config_file}")
 
         self.console.log("Generated hardware configuration files from provided SLS file")
 
@@ -487,6 +503,7 @@ def main():
     parser.add_argument("--rie-image", default="artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.1")
     parser.add_argument("--wait-attempts-for-discovered-hardware", type=int, default=120)
     parser.add_argument("--wait-attempts-for-redfish-events", type=int, default=120)
+    parser.add_argument("--hms-config", default="configs/hms/hms_config.json")
     # TODO add args for default hardware types. This might just be hard coded
     # parser.add_argument("--default-mockup-management-ncn", type=str, default="DL325")
     # parser.add_argument("--default-mockup-air-cooled-compute", type=str, default="Gigabyte")
@@ -509,7 +526,7 @@ def main():
     #
     # Build up task list
     #
-    state = State(args=args, sls_state=sls_state, console=console, error_console=error_console)
+    state = State(args=args, sls_state=sls_state, console=console, error_console=error_console, hms_config=args.hms_config)
 
     tasks = [
         {
