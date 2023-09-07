@@ -2,7 +2,7 @@
 #
 # MIT License
 #
-# (C) Copyright 2021-2022 Hewlett Packard Enterprise Development LP
+# (C) Copyright 2021-2023 Hewlett Packard Enterprise Development LP
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -115,8 +115,8 @@ def doRest(uri, authToken):
 # Get HSM component data
 
 def getHSMComponents(authToken):
-	# url = "https://api-gw-service-nmn.local/apis/smd/hsm/v1/State/Components"
-	url = "http://localhost:27779/hsm/v1/State/Components"
+	# url = "https://api-gw-service-nmn.local/apis/smd/hsm/v2/State/Components"
+	url = "http://localhost:27779/hsm/v2/State/Components"
 	compsJSON, rstat = doRest(url, authToken)
 	return compsJSON, rstat
 
@@ -125,8 +125,8 @@ def getHSMComponents(authToken):
 # Get HSM RFEP data
 
 def getHSMRFEP(authToken):
-	# url = "https://api-gw-service-nmn.local/apis/smd/hsm/v1/Inventory/RedfishEndpoints"
-	url = "http://localhost:27779/hsm/v1/Inventory/RedfishEndpoints"
+	# url = "https://api-gw-service-nmn.local/apis/smd/hsm/v2/Inventory/RedfishEndpoints"
+	url = "http://localhost:27779/hsm/v2/Inventory/RedfishEndpoints"
 	rfepJSON, rstat = doRest(url, authToken)
 	return rfepJSON, rstat
 
