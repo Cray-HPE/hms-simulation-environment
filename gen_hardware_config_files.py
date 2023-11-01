@@ -39,6 +39,7 @@ SUPPORTED_MOCKUP_TYPES = {
     "EX235n": ["Hill", "Mountain"],
     "EX420": ["Hill", "Mountain"],
     "EX425": ["Hill", "Mountain"],
+    "EX4252": ["Hill", "Mountain"],
     "Gigabyte": ["River"],
     "Intel": ["River"],
     "public-rackmount1": ["River"],
@@ -51,13 +52,19 @@ EXPECTED_BLADE_BMCS = {
         "EX235n": ["b0"],       # Grizzly Peak
         "EX425":  ["b0", "b1"], # Windom
         "EX420":  ["b0", "b1"], # Castle
+        "EX255a": ["b0", "b1"], # Parry Peak
+        "EX4252": ["b0"],       # Antero
+        "EX254n": ["b0", "b1"], # Blanca Peak
     }
 
 EXPECTED_BMC_NODES = {
-    "EX235a": ["n0"],       # Bard Peak
-    "EX235n": ["n0", "n1"], # Grizzly Peak
-    "EX425":  ["n0", "n1"], # Windom
-    "EX420":  ["n0", "n1"], # Castle
+    "EX235a": ["n0"],                   # Bard Peak
+    "EX235n": ["n0", "n1"],             # Grizzly Peak
+    "EX425":  ["n0", "n1"],             # Windom
+    "EX420":  ["n0", "n1"],             # Castle
+    "EX255a": ["n0"],                   # Parry Peak
+    "EX4252": ["n0", "n1", "n2", "n3"], # Antero
+    "EX254n": ["n0"],                   # Blanca Peak
 }
 
 def make_emulator(rie_image: str, xname: str, mockup: str, network: str, root_password: str) -> dict:
@@ -338,7 +345,8 @@ if __name__ == "__main__":
     with open(sys.argv[1], "r") as f:
         sls_hardware = json.load(f)["Hardware"]
 
-    config_files = generate_hardware_config_files("artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.0", sls_hardware, "")
+    #config_files = generate_hardware_config_files("artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.0", sls_hardware, "")
+    config_files = generate_hardware_config_files("artifactory.algol60.net/csm-docker/unstable/csm-rie:1.5.0-20231030221753.5865473", sls_hardware, "")
 
     #
     # Write out config files
