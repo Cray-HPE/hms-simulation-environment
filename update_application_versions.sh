@@ -1,6 +1,8 @@
+#! /usr/bin/env bash
+#
 # MIT License
 #
-# (C) Copyright 2022 Hewlett Packard Enterprise Development LP
+# (C) Copyright 2023 Hewlett Packard Enterprise Development LP
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -14,31 +16,35 @@
 #
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
 # THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
 # OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 # ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
-.PHONY: \
-	all \
-	setup-venv \
-	integration \
-	update-application-versions
+set -eu
 
-all: integration
+# The following environment variables need to be set for access to artifactory
+if [[ -z "${ARTIFACTORY_ALGOL60_READONLY_USERNAME}" ]]; then
+    echo "Environment variable ARTIFACTORY_ALGOL60_READONLY_USERNAME is not set"
+    exit 1
+fi
 
-setup-venv:
-	./setup_venv.sh
+if [[ -z "${ARTIFACTORY_ALGOL60_READONLY_TOKEN}" ]]; then
+    echo "Environment variable ARTIFACTORY_ALGOL60_READONLY_TOKEN is not set"
+    exit 1
+fi
 
-integration: setup-venv
-	./runIntegration.sh
+# Verify a branch is specified
+if [[ -z "${CSM_BRANCH}" ]]; then
+    echo "Environment variable CSM_BRANCH is not set"
+    exit 1
+fi
 
-vendor/hms-nightly-integration:
-	mkdir -p vendor
-	git clone git@github.com:Cray-HPE/hms-nightly-integration.git vendor/hms-nightly-integration --single-branch
-	python3 -m venv vendor/hms-nightly-integration/venv
-	. ./vendor/hms-nightly-integration/venv/bin/activate; pip install -r vendor/hms-nightly-integration/requirements.txt
+pushd ./vendor/hms-nightly-integration || exit 
+   # Extract image versions from the CSM manifests
+   ./csm_manifest_extractor.py
 
-update-application-versions: vendor/hms-nightly-integration
-	. ./vendor/hms-nightly-integration/venv/bin/activate; ./update_application_versions.sh
+    # Apply them to the compose file
+    ./update_docker_compose.py --csm-release "${CSM_BRANCH}" --docker-compose-file ../../docker-compose.yaml
+popd || exit
