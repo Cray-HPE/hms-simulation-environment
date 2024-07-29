@@ -45,6 +45,7 @@ SUPPORTED_MOCKUP_TYPES = {
     "public-rackmount1": ["River"],
     "Slingshot_Switch_Blade": ["River", "Hill", "Mountain"],
     "XL675d_A40":  ["River"],
+    "XD224_Paradise":  ["River"], # Name reserved for paradise nodes. Due to licensing issues this data has to be added manually to RIE
 }
 
 EXPECTED_BLADE_BMCS = {
@@ -345,8 +346,7 @@ if __name__ == "__main__":
     with open(sys.argv[1], "r") as f:
         sls_hardware = json.load(f)["Hardware"]
 
-    #config_files = generate_hardware_config_files("artifactory.algol60.net/csm-docker/stable/csm-rie:1.3.0", sls_hardware, "")
-    config_files = generate_hardware_config_files("artifactory.algol60.net/csm-docker/unstable/csm-rie:1.5.0-20231030221753.5865473", sls_hardware, "")
+    config_files = generate_hardware_config_files("artifactory.algol60.net/csm-docker/stable/csm-rie:1.6.0", sls_hardware, "")
 
     #
     # Write out config files
