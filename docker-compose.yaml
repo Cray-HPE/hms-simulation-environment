@@ -154,9 +154,9 @@ services:
     hostname: hmsds-postgres
     image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
     environment:
-      - POSTGRES_PASSWORD=hmsdsuser
       - POSTGRES_USER=hmsdsuser
       - POSTGRES_DB=hmsds
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - "54322:5432"
     networks:
@@ -176,6 +176,8 @@ services:
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
+      - DBOPTS=sslmode=disable
+      - DBUSER=hmsdsuser
       - POSTGRES_PORT=5432
       - RF_MSG_HOST=cray-shared-kafka:9092:cray-dmtf-resource-event
       - CRAY_VAULT_AUTH_PATH=auth/token/create
