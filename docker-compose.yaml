@@ -108,7 +108,7 @@ services:
   #
   cray-sls-postgres:
     hostname: sls-postgres
-    image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/library/postgres:13.2-alpine
     environment:
       - POSTGRES_USER=slsuser
       - POSTGRES_DB=sls
@@ -152,7 +152,7 @@ services:
   #
   cray-smd-postgres:
     hostname: hmsds-postgres
-    image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/library/postgres:13.2-alpine
     environment:
       - POSTGRES_USER=hmsdsuser
       - POSTGRES_DB=hmsds
@@ -340,7 +340,7 @@ services:
   # PCS
   #
   cray-power-control-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-power-control-etcd:2379
@@ -376,7 +376,7 @@ services:
   # BSS
   #
   cray-bss-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-bss-etcd:2379
@@ -407,7 +407,7 @@ services:
   # FAS
   #
   cray-fas-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
@@ -505,7 +505,7 @@ services:
   # Heart Beat Tracking Deamon
   #
   cray-hbtd-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-hbtd-etcd:2379
@@ -531,7 +531,7 @@ services:
   # Fanout Deamon
   #
   cray-hmnfd-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-hmnfd-etcd:2379
