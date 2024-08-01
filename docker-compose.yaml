@@ -108,7 +108,7 @@ services:
   #
   cray-sls-postgres:
     hostname: sls-postgres
-    image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/library/postgres:13.2-alpine
     environment:
       - POSTGRES_USER=slsuser
       - POSTGRES_DB=sls
@@ -118,7 +118,7 @@ services:
     networks:
       - simulation
   cray-sls-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.0.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.2.0
     command: ["sls-init"]
     environment:
       - POSTGRES_HOST=sls-postgres
@@ -152,17 +152,17 @@ services:
   #
   cray-smd-postgres:
     hostname: hmsds-postgres
-    image: artifactory.algol60.net/docker.io/library/postgres:11-alpine
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/library/postgres:13.2-alpine
     environment:
-      - POSTGRES_PASSWORD=hmsdsuser
       - POSTGRES_USER=hmsdsuser
       - POSTGRES_DB=hmsds
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - "54322:5432"
     networks:
       - simulation
   cray-smd-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.2.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.28.0
     environment:
       - SMD_DBHOST=cray-smd-postgres
       - SMD_DBPORT=5432
@@ -172,10 +172,12 @@ services:
       - simulation
     command: /entrypoint.sh smd-init
   cray-smd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.2.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.28.0
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
+      - DBOPTS=sslmode=disable
+      - DBUSER=hmsdsuser
       - POSTGRES_PORT=5432
       - RF_MSG_HOST=cray-shared-kafka:9092:cray-dmtf-resource-event
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -290,7 +292,7 @@ services:
   # HMS Discovery job
   #
   hms-discovery:
-    image: artifactory.algol60.net/csm-docker/stable/hms-discovery:1.14.0
+    image: artifactory.algol60.net/csm-docker/stable/hms-discovery:1.16.0
     environment:
       SLS_URL: http://cray-sls:8376
       HSM_URL: http://cray-smd:27779
@@ -315,7 +317,7 @@ services:
   # CAPMC
   #
   cray-capmc:
-    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:3.1.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-capmc:3.6.0
     environment:
       - HSM_URL=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -338,7 +340,7 @@ services:
   # PCS
   #
   cray-power-control-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-power-control-etcd:2379
@@ -349,7 +351,7 @@ services:
       # - 2379:2379
       # - 2380:2380
   cray-power-control:
-    image: artifactory.algol60.net/csm-docker/stable/cray-power-control:1.0.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-power-control:2.4.0
     environment:
       - SMS_SERVER=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -374,7 +376,7 @@ services:
   # BSS
   #
   cray-bss-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-bss-etcd:2379
@@ -385,7 +387,7 @@ services:
       # - 2379:2379
       # - 2380:2380
   cray-bss:
-    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.22.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.26.0
     hostname: bss
     environment:
       - BSS_ADVERTISE_ADDRESS=http://0.0.0.0:8888
@@ -405,7 +407,7 @@ services:
   # FAS
   #
   cray-fas-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-fas-etcd:2379
@@ -416,7 +418,7 @@ services:
     networks:
       - simulation
   cray-fas:
-    image: artifactory.algol60.net/csm-docker/stable/cray-firmware-action:1.24.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-firmware-action:1.33.0
     environment:
       - SMS_SERVER=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
@@ -503,7 +505,7 @@ services:
   # Heart Beat Tracking Deamon
   #
   cray-hbtd-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-hbtd-etcd:2379
@@ -514,7 +516,7 @@ services:
     networks:
       - simulation
   cray-hbtd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-hbtd:1.19.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-hbtd:1.20.0
     environment:
       - SM_URL=http://cray-smd:27779/hsm/v2
       - USE_TELEMETRY=0
@@ -529,7 +531,7 @@ services:
   # Fanout Deamon
   #
   cray-hmnfd-etcd:
-    image: artifactory.algol60.net/quay.io/coreos/etcd:v3.4.7
+    image: artifactory.algol60.net/csm-docker/stable/docker.io/bitnami/etcd:3.5.9-debian-11-r148
     environment:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ADVERTISE_CLIENT_URLS=http://cray-hmnfd-etcd:2379
@@ -562,7 +564,7 @@ services:
   # SCSD
   #
   cray-scsd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-scsd:1.17.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-scsd:1.19.0
     environment:
       - SCSD_SMD_URL=http://cray-smd:27779/hsm/v2
       - SCSD_HTTP_LISTEN_PORT=25309
