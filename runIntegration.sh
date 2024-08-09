@@ -50,14 +50,14 @@ fi
 
 # Run the smoke tests
 for smoke_test in test-smoke-api-gateway-services test-smoke-api-gateway-hmn test-smoke-api-gateway-rie-proxy; do
-    if ! docker-compose -f docker-compose.integration.yaml up --exit-code-from "${smoke_test}" "${smoke_test}"; then
+    if ! docker compose -f docker-compose.integration.yaml up --exit-code-from "${smoke_test}" "${smoke_test}"; then
         echo "Smoke test ${smoke_test} FAILED!"
         cleanup 1
     fi
 done
 
 # Run the integration tests
-if ! docker-compose -f docker-compose.integration.yaml up --exit-code-from test-integration test-integration; then
+if ! docker compose -f docker-compose.integration.yaml up --exit-code-from test-integration test-integration; then
     echo "Integration tests FAILED!"
     cleanup 1
 fi

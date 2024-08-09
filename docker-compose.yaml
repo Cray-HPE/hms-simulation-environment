@@ -1,7 +1,7 @@
 #
 # MIT License
 #
-# (C) Copyright 2022-2023 Hewlett Packard Enterprise Development LP
+# (C) Copyright 2022-2024 Hewlett Packard Enterprise Development LP
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -450,7 +450,7 @@ services:
   # Collector
   #
   cray-hms-hmcollector-ingress:
-    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.23.0
+    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.33.0
     environment:
       - LOG_LEVEL=TRACE
       - SM_URL=http://cray-smd:27779
@@ -476,7 +476,7 @@ services:
     networks:
       - simulation
   cray-hms-hmcollector-poll:
-    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.23.0
+    image: artifactory.algol60.net/csm-docker/stable/hms-hmcollector:2.33.0
     environment:
       - LOG_LEVEL=INFO
       - SM_URL=http://cray-smd:27779
@@ -543,7 +543,7 @@ services:
       - simulation
   cray-hmnfd:
     hostname: cray-hmnfd
-    image: artifactory.algol60.net/csm-docker/stable/cray-hmnfd:1.18.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-hmnfd:1.21.0
     environment:
       - DEBUG=0
       - SM_URL=http://cray-smd:27779/hsm/v2
