@@ -240,6 +240,21 @@
                 ]
             }
         },
+        "x3000c0s26b0n0": {
+            "Parent": "x3000c0s26b0",
+            "Xname": "x3000c0s26b0n0",
+            "Type": "comptype_node",
+            "Class": "River",
+            "TypeString": "Node",
+            "ExtraProperties": {
+                "@rie.mockup": "XD224_Paradise",
+                "NID": 1,
+                "Role": "Compute",
+                "Aliases": [
+                    "nid000001"
+                ]
+            }
+        },
         "x3000c0s2b0n0": {
             "Parent": "x3000c0s2b0",
             "Xname": "x3000c0s2b0n0",
@@ -539,6 +554,19 @@
                 "Aliases": [
                     "sw-leaf-bmc-002"
                 ]
+            }
+        },
+        "x3000c0w32j35": {
+            "Parent": "x3000c0w32",
+            "Xname": "x3000c0w32j35",
+            "Type": "comptype_mgmt_switch_connector",
+            "Class": "River",
+            "TypeString": "MgmtSwitchConnector",
+            "ExtraProperties": {
+                "NodeNics": [
+                    "x3000c0s26b0"
+                ],
+                "VendorName": "1/1/35"
             }
         },
         "x3000c0w32j36": {
