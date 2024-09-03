@@ -351,7 +351,7 @@ services:
       # - 2379:2379
       # - 2380:2380
   cray-power-control:
-    image: artifactory.algol60.net/csm-docker/stable/cray-power-control:2.4.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-power-control:2.5.0
     environment:
       - SMS_SERVER=http://cray-smd:27779
       - CRAY_VAULT_AUTH_PATH=auth/token/create
