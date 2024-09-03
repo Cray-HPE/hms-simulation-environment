@@ -554,12 +554,6 @@ def main():
             "in_progress": "Provisioning Vault...",
             "run": state.provision_vault
         }, {
-            "in_progress": "Waiting for Kafka to become ready...",
-            "run": state.wait_for_kafka
-        }, {
-            "in_progress": "Provisioning Kafka...",
-            "run": state.provision_kafka
-        }, {
             "in_progress": "Waiting for SLS to become ready...",
             "run": state.wait_for_sls
         }, {
