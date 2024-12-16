@@ -118,7 +118,7 @@ services:
     networks:
       - simulation
   cray-sls-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.6.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.2.0
     command: ["sls-init"]
     environment:
       - POSTGRES_HOST=sls-postgres
@@ -129,7 +129,7 @@ services:
     networks:
       - simulation
   cray-sls:
-    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.6.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-sls:2.2.0
     environment:
       - POSTGRES_HOST=cray-sls-postgres
       - DBOPTS=sslmode=disable
@@ -162,7 +162,7 @@ services:
     networks:
       - simulation
   cray-smd-init:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.30.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.11.18
     environment:
       - SMD_DBHOST=cray-smd-postgres
       - SMD_DBPORT=5432
@@ -172,7 +172,7 @@ services:
       - simulation
     command: /entrypoint.sh smd-init
   cray-smd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.30.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-smd:2.11.18
     environment:
       - POSTGRES_HOST=cray-smd-postgres
       - SMD_DBHOST=cray-smd-postgres
@@ -203,7 +203,7 @@ services:
   # MEDS
   #
   cray-meds-vault-loader:
-    image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.21.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
       CRAY_VAULT_AUTH_PATH: auth/token/create
       CRAY_VAULT_ROLE_FILE: configs/namespace
@@ -221,7 +221,7 @@ services:
     profiles:
       - do-not-start-automatically
   cray-meds:
-    image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.21.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-meds:1.20.0
     environment:
       - HSM_URL=http://cray-smd:27779/hsm/v2
       - "MEDS_OPTS=-sls http://cray-sls:8376/v1"
@@ -292,7 +292,7 @@ services:
   # HMS Discovery job
   #
   hms-discovery:
-    image: artifactory.algol60.net/csm-docker/stable/hms-discovery:1.17.0
+    image: artifactory.algol60.net/csm-docker/stable/hms-discovery:1.14.1
     environment:
       SLS_URL: http://cray-sls:8376
       HSM_URL: http://cray-smd:27779
@@ -387,7 +387,7 @@ services:
       # - 2379:2379
       # - 2380:2380
   cray-bss:
-    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.29.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.26.0
     hostname: bss
     environment:
       - BSS_ADVERTISE_ADDRESS=http://0.0.0.0:8888
@@ -516,7 +516,7 @@ services:
     networks:
       - simulation
   cray-hbtd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-hbtd:1.21.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-hbtd:1.20.0
     environment:
       - SM_URL=http://cray-smd:27779/hsm/v2
       - USE_TELEMETRY=0
@@ -543,7 +543,7 @@ services:
       - simulation
   cray-hmnfd:
     hostname: cray-hmnfd
-    image: artifactory.algol60.net/csm-docker/stable/cray-hmnfd:1.22.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-hmnfd:1.21.0
     environment:
       - DEBUG=0
       - SM_URL=http://cray-smd:27779/hsm/v2
@@ -564,7 +564,7 @@ services:
   # SCSD
   #
   cray-scsd:
-    image: artifactory.algol60.net/csm-docker/stable/cray-scsd:1.20.0
+    image: artifactory.algol60.net/csm-docker/stable/cray-scsd:1.17.0
     environment:
       - SCSD_SMD_URL=http://cray-smd:27779/hsm/v2
       - SCSD_HTTP_LISTEN_PORT=25309
