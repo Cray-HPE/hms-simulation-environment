@@ -387,7 +387,8 @@ services:
       # - 2379:2379
       # - 2380:2380
   cray-bss:
-    image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.29.0
+    # image: artifactory.algol60.net/csm-docker/stable/cray-bss:1.29.0
+    image: cray-bss:1.26.0
     hostname: bss
     environment:
       - BSS_ADVERTISE_ADDRESS=http://0.0.0.0:8888
